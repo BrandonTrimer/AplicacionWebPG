@@ -4,23 +4,59 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
-.rounded {
-  padding-right: 10%;
-  padding-top: 10%;
-
-  width: 40%;
-  height: 40%;
+/*--------------- BARRA SUPERIOR ---------------*/
+.navbar {
+  background: rgba(0, 0, 0, 0);
 }
-.texto {
-  padding-left: 10%;
+.navbar-brand {
+  padding-left: 50px;
 }
+/*--------------- CONTENIDO ---------------*/
+.fondo {
+  margin-top: 100px;
+}
+/*------ imagen*/
+.rounded.img {
+  margin-right: 160px;
 
+  width: 320px;
+  height: 320px;
+}
+/*------ letras y boton*/
+.texto-boton {
+  margin-left: 150px;
+  padding-top: 40px;
+  font-size: 20px;
+  width: 450px;
+}
 .btn-circle {
-  width: 100px;
-  height: 100px;
-  margin-top: 10%;
-  margin-left: 10%;
+  width: 150px;
+  height: 150px;
+  margin-top: 40px;
+  margin-left: 50px;
   border-radius: 50%;
-  padding-top: 35px;
+  cursor: pointer;
+  font-size: 40px;
+
+  border: 2px solid;
+  background: rgb(15, 83, 107);
+  background: linear-gradient(
+    90deg,
+    rgba(15, 83, 107, 1) 0%,
+    rgba(58, 153, 191, 1) 50%,
+    rgba(190, 228, 236, 1) 100%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+
+/*--------------- EFECTOS HOVER ---------------*/
+.btn-circle:hover {
+  animation: rubberBand;
+  animation-duration: 1s;
+
+  border: 2px solid;
 }
