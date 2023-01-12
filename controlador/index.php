@@ -15,4 +15,9 @@ class modeloController{
 
         require_once("vista/index.php");
     }
+
+    //pagina menu
+    static function paginaMenu(){
+        require_once("vista/paginaMenu.php");
+    }
 }
