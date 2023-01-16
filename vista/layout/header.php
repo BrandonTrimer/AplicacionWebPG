@@ -13,6 +13,6 @@
 
 <nav class="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="vista/index">Juega Mate</a>
+    <a class="navbar-brand" href="index">Juega Mate</a>
   </div>
 </nav>
