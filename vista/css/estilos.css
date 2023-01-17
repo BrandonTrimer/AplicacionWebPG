@@ -29,6 +29,7 @@ body {
   font-size: 20px;
   width: 450px;
 }
+/*------ boton INICIO*/
 .btn-circle {
   width: 150px;
   height: 150px;
@@ -51,6 +52,19 @@ body {
   justify-content: center;
   align-items: center;
   transition: all 1s;
+}
+/*------ boton NIVELES*/
+.btn-nivel {
+  border: solid;
+  width: 170px;
+  height: 70px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.contenedor-nivel {
+  border: solid;
+  width: 350px;
+  margin-left: 40px;
 }
 
 /*--------------- EFECTOS HOVER ---------------*/
