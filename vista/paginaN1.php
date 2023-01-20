@@ -34,40 +34,40 @@ require_once("layout/header.php");
             <div class="col-md-4 align-self-center"><h2>245 = </h2></div>
             <div class="col-md-8 cont-ejer-n1">
                 <div class="row ejer-n1">
-                    <div id="btn-ejer" class="col-3 colum"><h5>CENTENA</h5></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
+                    <div class="col-3 colum"><h5>CENTENA</h5></div>
+                    <div id="btn-ejer1" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer2" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer3" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer4" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer5" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer6" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer7" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer8" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer9" class="col-1 colum btn-fondo"></div>
                 </div>
                 <div class="row ejer-n1">
-                    <div id="btn-ejer" class="col-3 colum"><h5>DECENA</h5></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
+                    <div class="col-3 colum"><h5>DECENA</h5></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
                 </div>
                 <div class="row ejer-n1">
-                    <div id="btn-ejer" class="col-3 colum"><h5>UNIDAD</h5></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
-                    <div id="btn-ejer" class="col-1 colum"></div>
+                    <div class="col-3 colum"><h5>UNIDAD</h5></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
+                    <div id="btn-ejer" class="col-1 colum btn-fondo"></div>
                 </div>
             </div>
         </div>
@@ -75,5 +75,6 @@ require_once("layout/header.php");
   </div>
   
 </div>
+
 <?php
 require_once("layout/footer.php");

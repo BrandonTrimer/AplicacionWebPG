@@ -112,6 +112,12 @@ body {
 .cont-ejer-n1 {
   min-width: 450px;
 }
+.btn-fondo {
+  background-color: white;
+}
+.colum.fondo-rojo {
+  background-color: red;
+}
 
 /*--------------- EFECTOS HOVER ---------------*/
 /*------ boton inicio*/

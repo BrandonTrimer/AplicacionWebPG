@@ -16,9 +16,9 @@ class Modelo{
         }else {
             return false;
         }
-     }
+    }
 
-     public function mostrar($tabla,$condicion){
+    public function mostrar($tabla,$condicion){
         $consul="select * from ".$tabla." where ".$condicion.";";
             $resu=$this->db->query($consul);
             while($filas = $resu->FETCHALL(PDO::FETCH_ASSOC)) {
