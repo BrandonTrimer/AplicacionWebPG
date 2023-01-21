@@ -7,7 +7,7 @@ require_once("layout/header.php");
     <a href="paginaMenu" class="btn btn-outline-white btn-circle" role="button">Jugar</a>
   </div>  
   <div class="container col-md-4">
-    <img src="vista/img/pizarra2.png" class="img pulse animate__animated animate__bounceInDown" alt="">
+    <img src="vista/img/pizarra2.png" class="img animate__animated animate__bounceInDown" alt="">
   </div>
   
 </div>

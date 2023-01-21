@@ -1,28 +1,126 @@
-var contCen = 0;
-var contDec = 0;
-var contUni = 0;
-var contColCen1 = 0,
-  contColCen2 = 0,
-  contColCen3 = 0,
-  contColCen4 = 0,
-  contColCen5 = 0,
-  contColCen6 = 0,
-  contColCen7 = 0,
-  contColCen8 = 0,
-  contColCen9 = 0;
-var contColDec = 0;
-var contColUni = 0;
-var btncolor1 = document.getElementById("btn-ejer1");
-var btncolor2 = document.getElementById("btn-ejer2");
-var btncolor3 = document.getElementById("btn-ejer3");
-var btncolor4 = document.getElementById("btn-ejer4");
-var btncolor5 = document.getElementById("btn-ejer5");
-var btncolor6 = document.getElementById("btn-ejer6");
-var btncolor7 = document.getElementById("btn-ejer7");
-var btncolor8 = document.getElementById("btn-ejer8");
-var btncolor9 = document.getElementById("btn-ejer9");
+var contCen = 1;
+var contDec = 1;
+var contUni = 1;
 
-function cambiarColor1() {
+/*--------------- Funciones agregar y quitar en CENTENA---------------*/
+/*-------------------------------------------------------------------*/
+function cambiarColorCentena() {
+  if (contCen <= 9) {
+    for (var i = 1; i <= 9; i++) {
+      if (contCen == i) {
+        document
+          .getElementById("btn-cen-ejer" + i)
+          .classList.add("fondo-naranja");
+        contCen = contCen + 1;
+        break;
+      }
+    }
+  } else {
+    contCen = 9;
+  }
+}
+document
+  .getElementById("btn-centena-mas")
+  .addEventListener("click", cambiarColorCentena, true);
+
+function quitarColorCentena() {
+  if (contCen >= 1) {
+    for (var i = 1; i <= 9; i++) {
+      if (contCen == i) {
+        document
+          .getElementById("btn-cen-ejer" + i)
+          .classList.remove("fondo-naranja");
+        contCen = contCen - 1;
+        break;
+      }
+    }
+  } else {
+    contCen = 1;
+  }
+}
+document
+  .getElementById("btn-centena-menos")
+  .addEventListener("click", quitarColorCentena, true);
+
+/*--------------- Funciones agregar y quitar en DECENA---------------*/
+/*-------------------------------------------------------------------*/
+function cambiarColorDecena() {
+  if (contDec <= 9) {
+    for (var i = 1; i <= 9; i++) {
+      if (contDec == i) {
+        document
+          .getElementById("btn-dec-ejer" + i)
+          .classList.add("fondo-amarillo");
+        contDec = contDec + 1;
+        break;
+      }
+    }
+  } else {
+    contDec = 9;
+  }
+}
+document
+  .getElementById("btn-decena-mas")
+  .addEventListener("click", cambiarColorDecena, true);
+
+function quitarColorDecena() {
+  if (contDec >= 1) {
+    for (var i = 1; i <= 9; i++) {
+      if (contDec == i) {
+        document
+          .getElementById("btn-dec-ejer" + i)
+          .classList.remove("fondo-amarillo");
+        contDec = contDec - 1;
+        break;
+      }
+    }
+  } else {
+    contDec = 1;
+  }
+}
+document
+  .getElementById("btn-decena-menos")
+  .addEventListener("click", quitarColorDecena, true);
+
+/*--------------- Funciones agregar y quitar en UNIDAD---------------*/
+/*-------------------------------------------------------------------*/
+function cambiarColorUnidad() {
+  if (contUni <= 9) {
+    for (var i = 1; i <= 9; i++) {
+      if (contUni == i) {
+        document.getElementById("btn-uni-ejer" + i).classList.add("fondo-rojo");
+        contUni = contUni + 1;
+        break;
+      }
+    }
+  } else {
+    contUni = 9;
+  }
+}
+document
+  .getElementById("btn-unidad-mas")
+  .addEventListener("click", cambiarColorUnidad, true);
+
+function quitarColorUnidad() {
+  if (contUni >= 1) {
+    for (var i = 1; i <= 9; i++) {
+      if (contUni == i) {
+        document
+          .getElementById("btn-uni-ejer" + i)
+          .classList.remove("fondo-rojo");
+        contUni = contUni - 1;
+        break;
+      }
+    }
+  } else {
+    contUni = 1;
+  }
+}
+document
+  .getElementById("btn-unidad-menos")
+  .addEventListener("click", quitarColorUnidad, true);
+
+/*function cambiarColor1() {
   if (contColCen1 == 0) {
     btncolor1.classList.add("fondo-rojo");
     contColCen1 = 1;
@@ -147,6 +245,6 @@ function cambiarColor9() {
 }
 document
   .getElementById("btn-ejer9")
-  .addEventListener("click", cambiarColor9, true);
+  .addEventListener("click", cambiarColor9, true);*/
 
-document.getElementById("btn-ejer4").innerHTML = contCen;
+/*document.getElementById("btn-ejer4").innerHTML = contColCen9;*/
