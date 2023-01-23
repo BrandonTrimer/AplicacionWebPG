@@ -117,12 +117,19 @@ body {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+.btn-ayuda {
+  margin-top: -40px;
+}
 
 /*--------------- CONTENIDO EJERCICIOS NIVEL 1---------------*/
 /*------ ejercicio*/
 .ejer-n1 > .colum {
   border: solid;
   height: 50px;
+}
+.ejer-n1 > .colum > h6 {
+  margin-top: 10px;
+  font-size: 15px;
 }
 .cont-ejer-n1 {
   min-width: 450px;
@@ -139,6 +146,9 @@ body {
 .colum.fondo-rojo {
   background-color: #dc0606;
 }
+.fondo-verde {
+  background-color: #44da7f;
+}
 .btn-pintar {
   border-radius: 50%;
   font-size: 17px;
@@ -150,6 +160,9 @@ body {
   height: 40px;
   margin-right: 15px;
   margin-left: 15px;
+  background-color: #7933ff;
+  color: white;
+  transition: all 0.4s;
 }
 .img-sig {
   margin-top: -40px;
@@ -162,6 +175,34 @@ body {
 .bt-contenedor-pintar {
   min-width: 131px;
 }
+/*--------------- CONTENIDO EJERCICIO N2 ---------------*/
+.contenedor-min {
+  min-width: 300px;
+}
+.simb-mas {
+  font-size: 27px;
+}
+.btn-aum-num {
+  background-color: #6ffc36;
+  margin-top: 5px;
+  border: solid 1px;
+}
+.btn-dis-num {
+  background-color: #ff4f21;
+  border: solid 1px;
+}
+.img-flecha-num {
+  width: 20px;
+  height: 20px;
+  transition: all 0.1s;
+}
+.ar {
+  transform: rotate(0.5turn);
+}
+.contenedor-invi {
+  visibility: hidden;
+}
+
 /*--------------- EFECTOS HOVER ---------------*/
 /*------ boton inicio*/
 .btn-circle:hover {
@@ -178,19 +219,31 @@ body {
 }
 
 .img-sig:hover {
-  animation: jello;
+  animation: shakeX;
   animation-duration: 1s;
 }
 
 .btn-confirmar:hover {
-  animation: headShake;
+  animation: heartBeat;
   animation-duration: 1s;
+  background-color: #874aff;
+  color: white;
 }
 
 .btn-pintar:hover {
   animation: pulse;
   animation-duration: 1s;
 }
-.border {
-  border: solid;
+
+.btn-aum-num:hover {
+  background-color: #99ff5f;
+}
+.btn-dis-num:hover {
+  background-color: #ff7b58;
+}
+.btn-dis-num:hover .img-flecha-num {
+  width: 28px;
+}
+.btn-aum-num:hover .img-flecha-num {
+  width: 28px;
 }

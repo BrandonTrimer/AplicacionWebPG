@@ -12,13 +12,13 @@ require_once("layout/header.php");
       <a href="paginaN2" class="btn btn-outline-white btn-nivel" role="button">Nivel 2 - Suma</a>
     </div>
     <div class="row">
-      <a href="#" class="btn btn-outline-white btn-nivel" role="button">Nivel 3 - Resta</a>
+      <a href="paginaN3" class="btn btn-outline-white btn-nivel" role="button">Nivel 3 - Resta</a>
     </div>
     <div class="row">
-      <a href="#" class="btn btn-outline-white btn-nivel" role="button">Nivel 4 - Multiplicacion</a>
+      <a href="paginaN4" class="btn btn-outline-white btn-nivel" role="button">Nivel 4 - Multiplicacion</a>
     </div>
     <div class="row">
-      <a href="index" class="btn btn-outline-white btn-nivel" role="button">Nivel 5 - Division</a>
+      <a href="paginaN5" class="btn btn-outline-white btn-nivel" role="button">Nivel 5 - Division</a>
     </div>
     <div class="row">
       <a href="index" class="btn btn-outline-white btn-nivel" role="button">Historia</a>

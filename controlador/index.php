@@ -20,12 +20,19 @@ class modeloController{
     static function paginaMenu(){
         require_once("vista/paginaMenu.php");
     }
+
     //pagina N1
     static function paginaN1(){
         require_once("vista/paginaN1.php");
     }
+
     //pagina N2
     static function paginaN2(){
         require_once("vista/paginaN2.php");
+    }
+
+    //pagina N3
+    static function paginaN3(){
+        require_once("vista/paginaN3.php");
     }
 }
