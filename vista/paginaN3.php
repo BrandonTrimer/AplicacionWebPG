@@ -21,7 +21,7 @@ require_once("layout/header.php");
       <a href="paginaN5" class="btn btn-outline-white btn-nivel" role="button">Nivel 5 - Division</a>
     </div>
     <div class="row">
-      <a href="index" class="btn btn-outline-white btn-nivel" role="button">Historia</a>
+      <a href="paginaHistoria" class="btn btn-outline-white btn-nivel" role="button">Historia</a>
     </div>
   </div>
 
@@ -148,8 +148,74 @@ require_once("layout/header.php");
         </a>
       </div>
     </div>
+
+    <div class="row text-center justify-content-star">
+      <div class="col-2">
+        <div class="dropdown btn-ayuda">
+          <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown">
+            Ayuda
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal-img1">Ver Imagen de ayuda</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal-video">Ver Video</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
   
+</div>
+
+<!----------------- CONTENIDO MODALS ---------------------->
+<div class="modal fade" id="modal-img1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen de ayuda</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="vista/img/img1AyudaN3.png" width="100%" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-img2">Siguiente</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-img2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen de ayuda</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="vista/img/img2AyudaN3.png" width="100%" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-video" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Video de ayuda</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ratio ratio-4x3">
+        <iframe width="1309" height="499" src="https://www.youtube.com/embed/yYKRArjXnZM" title="La RESTA de DOS CIFRAS sin llevar✔👩‍🏫PRIMARIA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <?php

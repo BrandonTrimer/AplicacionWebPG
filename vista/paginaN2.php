@@ -21,7 +21,7 @@ require_once("layout/header.php");
       <a href="paginaN5" class="btn btn-outline-white btn-nivel" role="button">Nivel 5 - Division</a>
     </div>
     <div class="row">
-      <a href="index" class="btn btn-outline-white btn-nivel" role="button">Historia</a>
+      <a href="paginaHistoria" class="btn btn-outline-white btn-nivel" role="button">Historia</a>
     </div>
   </div>
 

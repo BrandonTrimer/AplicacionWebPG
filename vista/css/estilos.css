@@ -202,6 +202,48 @@ body {
 .contenedor-invi {
   visibility: hidden;
 }
+/*--------------- CONTENIDO EJERCICIO N4 ---------------*/
+.contenedor-ejerN4 {
+  margin-top: 25px;
+}
+.espacio-btn-sig {
+  margin-top: 9%;
+}
+.select-conten-color {
+  background-color: #9eff50;
+  animation: pulse;
+  animation-duration: 0.4s;
+}
+.select-conten {
+  cursor: pointer;
+}
+/*--------------- CONTENIDO HISTORIA ---------------*/
+.content-hist-min {
+  min-width: 634px;
+}
+.contenedor-ejercicios-minH {
+  min-width: 585px;
+}
+.contan-text {
+  margin-top: 100px;
+}
+.img-hist {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.img-ciudad {
+  width: 300px;
+  height: 200px;
+  border-radius: 10%;
+}
+
+.img-debil {
+  transition: all 0.5s;
+}
 
 /*--------------- EFECTOS HOVER ---------------*/
 /*------ boton inicio*/
@@ -246,4 +288,30 @@ body {
 }
 .btn-aum-num:hover .img-flecha-num {
   width: 28px;
+}
+
+.img-meteoro:hover {
+  animation: tada;
+  animation-duration: 1s;
+}
+.img-ciudad:hover {
+  animation: wobble;
+  animation-duration: 0.5s;
+}
+.img-robot1:hover {
+  animation: pulse;
+  animation-duration: 1s;
+}
+.img-robot2:hover {
+  animation: heartBeat;
+  animation-duration: 1s;
+}
+.img-debil:hover {
+  padding: 20px 20px 20px 20px;
+  animation: headShake;
+  animation-duration: 1s;
+}
+.img-fuerte:hover {
+  animation: heartBeat;
+  animation-duration: 1s;
 }

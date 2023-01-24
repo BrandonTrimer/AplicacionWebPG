@@ -35,4 +35,19 @@ class modeloController{
     static function paginaN3(){
         require_once("vista/paginaN3.php");
     }
+
+    //pagina N4
+    static function paginaN4(){
+        require_once("vista/paginaN4.php");
+    }
+
+    //pagina N5
+    static function paginaN5(){
+        require_once("vista/paginaN5.php");
+    }
+
+    //pagina historia
+    static function paginaHistoria(){
+        require_once("vista/paginaHistoria.php");
+    }
 }
