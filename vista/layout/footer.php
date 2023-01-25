@@ -3,5 +3,6 @@
 <script src="vista/js/nivel1Ejercicios.js"></script>
 <script src="vista/js/nivel2Ejercicios.js"></script>
 <script src="vista/js/nivel4Ejercicios.js"></script>
+<script src="vista/js/historiaPreguntas.js"></script>
 </body>
 </html>

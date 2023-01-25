@@ -143,7 +143,7 @@ require_once("layout/header.php");
     </div>
     <div class="row text-center justify-content-end">
       <div class="col-2">
-        <a href="index" role="button">
+        <a href="#" role="button">
           <img src="vista/img/flechaD.png" class="img-sig" alt="">
         </a>
       </div>

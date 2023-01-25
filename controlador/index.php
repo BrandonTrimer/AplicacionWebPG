@@ -50,4 +50,9 @@ class modeloController{
     static function paginaHistoria(){
         require_once("vista/paginaHistoria.php");
     }
+
+    //pagina historia ejercicios
+    static function paginaHistoriaEjer(){
+        require_once("vista/paginaHistoriaEjer.php");
+    }
 }

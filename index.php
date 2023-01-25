@@ -12,6 +12,3 @@ if(isset($_GET['ruta'])){
 else{
     modeloController::index();
 }
-
-//var_dump(urlsite);
-//phpinfo();

@@ -47,7 +47,7 @@ require_once("layout/header.php");
              <div class="accordion-body ">
                <h5>Salva la tierra creando un robot capaza de destruirla.</h5>
                <div class="col">
-                    <img src="vista/img/imgRobot1t.png" alt="" class="img-hist img-robot2">
+                    <img src="vista/img/imgRobot1t.png" alt="" class="img-hist img-robot1">
                </div>
              </div>
            </div>
@@ -113,8 +113,8 @@ require_once("layout/header.php");
     
     <div class="row text-center justify-content-end espacio-btn-sig">
       <div class="col-2">
-        <a href="#" role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <img src="vista/img/flechaD.png" class="img-sig" alt="">
+        <a href="paginaHistoriaEjer" role="button">
+          <img src="vista/img/imgComt.png" class="img-border-circulo" alt="">
         </a>
       </div>
     </div>
