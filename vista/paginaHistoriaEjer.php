@@ -184,6 +184,10 @@ require_once("layout/header.php");
                   <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" data-bs-toggle="collapse" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   <label class="btn btn-outline-dark" for="btnradio3">Parte 3</label>
                 </div>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" data-bs-toggle="collapse" data-bs-target="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  <label class="btn btn-outline-dark" for="btnradio4">Resultados</label>
+                </div>
             </div>
         </div>
 
