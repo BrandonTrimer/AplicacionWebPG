@@ -10,9 +10,6 @@ class modeloController{
 
     //mostrar
     static function index(){
-        $producto = new Modelo();
-        $dato = $producto->mostrar("productos","1");
-
         require_once("vista/index.php");
     }
 
@@ -23,7 +20,15 @@ class modeloController{
 
     //pagina N1
     static function paginaN1(){
+        $producto = new Modelo();
+        $dato = $producto->mostrar("ejerciciosvalornum","idvalornum = 1");
         require_once("vista/paginaN1.php");
+    }
+    //pagina N1
+    static function pagina2N1(){
+        $producto = new Modelo();
+        $dato = $producto->mostrar("ejerciciosvalornum","idvalornum = 1");
+        require_once("vista/pagina2N1.php");
     }
 
     //pagina N2
@@ -54,5 +59,10 @@ class modeloController{
     //pagina historia ejercicios
     static function paginaHistoriaEjer(){
         require_once("vista/paginaHistoriaEjer.php");
+    }
+
+    //pagina historia resultados
+    static function paginaHistoriaRes(){
+        require_once("vista/paginaHistoriaRes.php");
     }
 }

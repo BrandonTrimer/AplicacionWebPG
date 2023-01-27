@@ -125,8 +125,7 @@ body {
   height: 50px;
 }
 .ejer-n1 > .colum > h6 {
-  margin-top: 10px;
-  font-size: 15px;
+  margin-top: 9px;
 }
 .cont-ejer-n1 {
   min-width: 450px;
@@ -179,6 +178,14 @@ body {
 .bt-contenedor-pintar {
   min-width: 131px;
 }
+
+.txt-select-num {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 10px;
+  border-radius: 50%;
+}
+
 /*--------------- CONTENIDO EJERCICIO N2 ---------------*/
 .contenedor-min {
   min-width: 300px;
@@ -226,7 +233,7 @@ body {
   min-width: 634px;
 }
 .contenedor-ejercicios-minH {
-  min-width: 585px;
+  min-width: 630px;
 }
 .contan-text {
   margin-top: 100px;
@@ -247,6 +254,19 @@ body {
 
 .img-debil {
   transition: all 0.5s;
+}
+.img-ganador {
+  width: 150px;
+  height: 150px;
+}
+.img-perdedor {
+  width: 150px;
+  height: 150px;
+}
+.img-ciudadRes {
+  width: 250px;
+  height: 200px;
+  border-radius: 10%;
 }
 
 .espacio-group-btn {
@@ -339,4 +359,28 @@ body {
 .img-border-circulo:hover {
   animation: jello;
   animation-duration: 1s;
+}
+.img-ciudadVic:hover {
+  animation: bounce;
+  animation-duration: 0.8s;
+  animation-iteration-count: 2;
+}
+.img-ciudadPer:hover {
+  animation: headShake;
+  animation-duration: 0.8s;
+  animation-iteration-count: 2;
+}
+/*----------------ANIMACIONES---------------*/
+.contenedor-nivel > .row > .animate__animated.animate__zoomInDown {
+  animation-delay: 0.6s;
+}
+.contenedor-nivel > .row > .animate__animated.animate__bounceInRight {
+  animation-delay: 0.4s;
+}
+
+.contenedor-nivel > .row > .animate__animated.animate__fadeInDown {
+  animation-delay: 0.5s;
+}
+.contenedor-nivel > .row > .animate__animated.animate__fadeInRight {
+  animation-delay: 1s;
 }

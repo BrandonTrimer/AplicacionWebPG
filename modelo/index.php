@@ -5,17 +5,7 @@ class Modelo{
     private $datos;
     public function __construct(){
         $this->Modelo = array();
-        $this->db = new PDO('mysql:host=localhost;dbname=pruevamvc','root','');
-    }
-
-    public function insertar($tabla, $data){
-        $consulta="insert into ".$tabla." values(null,". $data .")";
-        $resultado=$this->db->query($consulta);
-        if ($resultado) {
-            return true;
-        }else {
-            return false;
-        }
+        $this->db = new PDO('mysql:host=localhost;dbname=juegamate','root','');
     }
 
     public function mostrar($tabla,$condicion){
@@ -25,5 +15,13 @@ class Modelo{
                 $this->datos[]=$filas;
             }
             return $this->datos;
+        } 
+
+        public function mostrarU($tabla,$condicion){
+        $consul="select unidad from ".$tabla." where ".$condicion.";";
+        $resu=$this->db->query($consul);
+        $uni = $resu->FETCHALL(PDO::FETCH_ASSOC);
+
+        return $resu;
         } 
 }
