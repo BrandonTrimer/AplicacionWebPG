@@ -2,8 +2,8 @@ var select1 = document.getElementById("selec1");
 var select2 = document.getElementById("selec2");
 var select3 = document.getElementById("selec3");
 var select4 = document.getElementById("selec4");
-var select2A = document.getElementById("selec2A");
-var select2B = document.getElementById("selec2B");
+var select2a = document.getElementById("selec2a");
+var select2b = document.getElementById("selec2b");
 var select3A = document.getElementById("selec3A");
 var select3B = document.getElementById("selec3B");
 var select3C = document.getElementById("selec3C");
@@ -12,8 +12,8 @@ var cont1 = 0,
   cont2 = 0,
   cont3 = 0,
   cont4 = 0,
-  cont2A = 0,
-  cont2B = 0,
+  cont2a = 0,
+  cont2b = 0,
   cont3A = 0,
   cont3B = 0,
   cont3C = 0,
@@ -78,25 +78,25 @@ select4.addEventListener("click", pintarSelect4, true);
 
 /*--------------------------EJERCICIO 2----------------- */
 function pintarSelect2A() {
-  if (cont2A == 0) {
-    select2A.classList.add("select-conten-color");
-    select2B.classList.remove("select-conten-color");
+  if (cont2a == 0) {
+    select2a.classList.add("select-conten-color");
+    select2b.classList.remove("select-conten-color");
 
-    cont2A++;
+    cont2a++;
     cont2B = 0;
   }
 }
-select2A.addEventListener("click", pintarSelect2A, true);
-function pintarSelect2B() {
-  if (cont2B == 0) {
-    select2B.classList.add("select-conten-color");
-    select2A.classList.remove("select-conten-color");
+select2a.addEventListener("click", pintarSelect2A, true);
+function pintarSelect2b() {
+  if (cont2b == 0) {
+    select2b.classList.add("select-conten-color");
+    select2a.classList.remove("select-conten-color");
 
-    cont2B++;
-    cont2A = 0;
+    cont2b++;
+    cont2a = 0;
   }
 }
-select2B.addEventListener("click", pintarSelect2B, true);
+select2b.addEventListener("click", pintarSelect2b, true);
 
 /*--------------------------- EJERCICIO 3-----------------------*/
 function pintarSelect3A() {

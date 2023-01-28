@@ -1,17 +1,21 @@
 <?php
 require_once("layout/header.php");
 require_once("layout/niveles.php");
+$numUniRam = rand(1,9);
+$numDecRam = rand(1,9);
+$numCenRam = rand(1,9);
 ?>
 
   <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row">
+          
             <h2>Ejercicio 1</h2>
             <h5>Llena las casillas según el valor que representa el número</h5>
         </div>
         <div class="row">
             <div class="col-md-3 align-self-center">
-              <h2>245 = </h2>
+              <h2><?php echo ($numCenRam.$numDecRam.$numUniRam) ?> = </h2>
             </div>
             <div class="col-md-9 cont-ejer-n1">
                 <div class="row ejer-n1">
@@ -81,7 +85,7 @@ require_once("layout/niveles.php");
     </div>
     <div class="row justify-content-md-center text-center">
       <div class="col-md-3">
-        <button type="button" class="btn btn-confirmar">Revisar</button>
+        <button type="button" onclick="RevisarEjer2(<?php echo $numUniRam?>,<?php echo $numDecRam?>,<?php echo $numCenRam?>)" class="btn btn-confirmar">Revisar</button>
       </div>
     </div>
     <div class="row text-center justify-content-end">
@@ -105,6 +109,12 @@ require_once("layout/niveles.php");
           </ul>
         </div>
       </div>
+    </div>
+    <div onclick="cerrarAlertas()" id="mensajeB" class="alert alert-success alert-dismissible fade show msj-alertaB" role="alert">
+      <strong>Excelente!</strong> Respondiste muy bien.
+    </div>
+    <div onclick="cerrarAlertas()" id="mensajeM" class="alert alert-danger alert-dismissible fade show msj-alertaM" role="alert">
+      <strong>Ups...</strong> No respondiste bien..
     </div>
   </div>
   

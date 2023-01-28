@@ -13,18 +13,18 @@ require_once("layout/niveles.php");
           <div class="col-6">
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
-              <div class="col-2 colum btn-fondo"><h6>3</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>4</h6></div>
+              <div class="col-2 colum btn-fondo"><h4>3</h4></div>
+              <div class="col-2 colum btn-fondo"><h4>4</h4></div>
             </div>
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"><h6 class="simb-mas">+</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>2</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>4</h6></div>
+              <div class="col-2 colum btn-fondo"><h4>2</h4></div>
+              <div class="col-2 colum btn-fondo"><h4>4</h4></div>
             </div>
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
-              <div class="col-2 colum fondo-verde"><h6 id="num-ejer1-res1"></h6></div>
-              <div class="col-2 colum fondo-verde"><h6 id="num-ejer1-res2"></h6></div>
+              <div class="col-2 colum fondo-verde"><h4 id="num-ejer1-res1"></h4></div>
+              <div class="col-2 colum fondo-verde"><h4 id="num-ejer1-res2"></h4></div>
             </div>
             <div class="row justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
@@ -62,18 +62,18 @@ require_once("layout/niveles.php");
           <div class="col-6">
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
-              <div class="col-2 colum btn-fondo"><h6>3</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>4</h6></div>
+              <div class="col-2 colum btn-fondo"><h4>3</h4></div>
+              <div class="col-2 colum btn-fondo"><h4>4</h4></div>
             </div>
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"><h6 class="simb-mas">+</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>2</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>4</h6></div>
+              <div class="col-2 colum btn-fondo"><h4>2</h4></div>
+              <div class="col-2 colum btn-fondo"><h4>4</h4></div>
             </div>
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
-              <div class="col-2 colum fondo-verde"><h6 id="num-ejer2-res1"></h6></div>
-              <div class="col-2 colum fondo-verde"><h6 id="num-ejer2-res2"></h6></div>
+              <div class="col-2 colum fondo-verde"><h4 id="num-ejer2-res1"></h4></div>
+              <div class="col-2 colum fondo-verde"><h4 id="num-ejer2-res2"></h4></div>
             </div>
             <div class="row justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>

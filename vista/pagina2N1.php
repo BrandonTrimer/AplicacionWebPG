@@ -1,50 +1,57 @@
 <?php
 require_once("layout/header.php");
 require_once("layout/niveles.php");
+
+$numUniRam = rand(1,9);
+$numDecRam = rand(1,9);
+$numCenRam = rand(1,9);
+$numUniMRam = rand(1,9);
+$numDecMRam = rand(1,9);
+$numCenMRam = rand(1,9);
 ?>
 
   <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row">
             <h2>Ejercicio 2</h2>
-            <h5>Llena las casillas según el valor que representa el número</h5>
+            <h5>Ordena los números en la tabla según su valor posicional </h5>
         </div>
         <div class="row">
-            <div class="col-md-2 align-self-center">
-              <h2>245 = </h2>
+            <div class="col-md-3 align-self-center">
+              <h2><?php echo ($numUniRam.$numDecRam.$numCenRam." ".$numUniMRam.$numDecMRam.$numCenMRam)?> = </h2>
             </div>
-            <div class="col-md-10 cont-ejer-n1">
+            <div class="col-md-9 cont-ejer-n1">
                 <div class="row ejer-n1">
-                    <div class="col-2 colum btn-fondo"><h6>CENTENA MIL</h6></div>
-                    <div class="col-2 colum btn-fondo"><h6>DECENA MIL</h6></div>
-                    <div class="col-2 colum btn-fondo"><h6>UNIDAD MIL</h6></div>
-                    <div class="col-2 colum btn-fondo"><h6>CENTENA</h6></div>
-                    <div class="col-2 colum btn-fondo"><h6>DECENA</h6></div>
-                    <div class="col-2 colum btn-fondo"><h6>UNIDAD</h6></div>
+                    <div class="col-2 colum btn-fondo"><h1>CENTENA MIL</h1></div>
+                    <div class="col-2 colum btn-fondo"><h1>DECENA MIL</h1></div>
+                    <div class="col-2 colum btn-fondo"><h1>UNIDAD MIL</h1></div>
+                    <div class="col-2 colum btn-fondo"><h1>CENTENA</h1></div>
+                    <div class="col-2 colum btn-fondo"><h1>DECENA</h1></div>
+                    <div class="col-2 colum btn-fondo"><h1>UNIDAD</h1></div>
                 </div>
                 <div class="row ejer-n1">
-                    <div id="btn-dec-ejer9" class="col-2 colum btn-fondo"></div>
-                    <div id="btn-dec-ejer8" class="col-2 colum btn-fondo"></div>
-                    <div id="btn-dec-ejer7" class="col-2 colum btn-fondo"></div>
-                    <div id="btn-dec-ejer6" class="col-2 colum btn-fondo"></div>
-                    <div id="btn-dec-ejer5" class="col-2 colum btn-fondo"></div>
-                    <div id="btn-dec-ejer4" class="col-2 colum btn-fondo"></div>
+                    <div onclick="mostrarGroupNum(6)" class="col-2 colum fondo-azul"><h2 id="txt-num6"></h2></div>
+                    <div onclick="mostrarGroupNum(5)" class="col-2 colum fondo-lila"><h2 id="txt-num5"></h2></div>
+                    <div onclick="mostrarGroupNum(4)" class="col-2 colum fondo-verde"><h2 id="txt-num4"></h2></div>
+                    <div onclick="mostrarGroupNum(3)" class="col-2 colum fondo-naranja"><h2 id="txt-num3"></h2></div>
+                    <div onclick="mostrarGroupNum(2)" class="col-2 colum fondo-amarillo"><h2 id="txt-num2"></h2></div>
+                    <div onclick="mostrarGroupNum(1)" class="col-2 colum fondo-rojo"><h2 id="txt-num1"></h2></div>
                 </div>
             </div>
         </div>
-        <div class="row ">
+        <div id="contenedor-num" class="row cont-select-num">
             <div class="col-md-12 cont-ejer-n1">
                 <div class="row ejer-n1 justify-content-md-center text-center">
-                    <div id="btn-dec-ejer9" class="col-1 offset-1 colum btn-fondo txt-select-num">1</div>
-                    <div id="btn-dec-ejer8" class="col-1 colum btn-fondo txt-select-num">2</div>
-                    <div id="btn-dec-ejer7" class="col-1 colum btn-fondo txt-select-num">3</div>
-                    <div id="btn-dec-ejer6" class="col-1 colum btn-fondo txt-select-num">4</div>
-                    <div id="btn-dec-ejer5" class="col-1 colum btn-fondo txt-select-num">5</div>
-                    <div id="btn-dec-ejer4" class="col-1 colum btn-fondo txt-select-num">6</div>
-                    <div id="btn-dec-ejer4" class="col-1 colum btn-fondo txt-select-num">7</div>
-                    <div id="btn-dec-ejer4" class="col-1 colum btn-fondo txt-select-num">8</div>
-                    <div id="btn-dec-ejer4" class="col-1 colum btn-fondo txt-select-num">9</div>
-                    <div id="btn-dec-ejer4" class="col-1 colum btn-fondo txt-select-num">0</div>
+                    <div onclick="cambiarNum(0)" class="col-1 offset-1 colum btn-fondo txt-select-num"><h4>0</h4></div>
+                    <div onclick="cambiarNum(1)" class="col-1 colum btn-fondo txt-select-num"><h4>1</h4></div>
+                    <div onclick="cambiarNum(2)" class="col-1 colum btn-fondo txt-select-num"><h4>2</h4></div>
+                    <div onclick="cambiarNum(3)" class="col-1 colum btn-fondo txt-select-num"><h4>3</h4></div>
+                    <div onclick="cambiarNum(4)" class="col-1 colum btn-fondo txt-select-num"><h4>4</h4></div>
+                    <div onclick="cambiarNum(5)" class="col-1 colum btn-fondo txt-select-num"><h4>5</h4></div>
+                    <div onclick="cambiarNum(6)" class="col-1 colum btn-fondo txt-select-num"><h4>6</h4></div>
+                    <div onclick="cambiarNum(7)" class="col-1 colum btn-fondo txt-select-num"><h4>7</h4></div>
+                    <div onclick="cambiarNum(8)" class="col-1 colum btn-fondo txt-select-num"><h4>8</h4></div>
+                    <div onclick="cambiarNum(9)" class="col-1 colum btn-fondo txt-select-num"><h4>9</h4></div>
                 </div>
             </div>
         </div>
@@ -52,14 +59,7 @@ require_once("layout/niveles.php");
     
     <div class="row justify-content-md-center text-center">
       <div class="col-md-3">
-        <button type="button" class="btn btn-confirmar">Revisar</button>
-      </div>
-    </div>
-    <div class="row text-center justify-content-end">
-      <div class="col-2">
-        <a href="#" role="button">
-          <img src="vista/img/flechaD.png" class="img-sig" alt="">
-        </a>
+        <button type="button" onclick="RevisarEjer(<?php echo ($numUniRam.','.$numDecRam.','.$numCenRam.','.$numUniMRam.','.$numDecMRam.','.$numCenMRam)?>)" class="btn btn-confirmar">Revisar</button>
       </div>
     </div>
 
@@ -77,6 +77,14 @@ require_once("layout/niveles.php");
         </div>
       </div>
     </div>
+
+    <div onclick="cerrarAlertas2()" id="mensajeB" class="alert alert-success alert-dismissible fade show msj-alertaB" role="alert">
+      <strong>Excelente!</strong> Respondiste muy bien.
+    </div>
+    <div onclick="cerrarAlertas2()" id="mensajeM" class="alert alert-danger alert-dismissible fade show msj-alertaM" role="alert">
+      <strong>Ups...</strong> No respondiste bien..
+    </div>
+
   </div>
   
 </div>
