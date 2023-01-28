@@ -187,3 +187,20 @@ function cerrarAlertas2() {
   document.getElementById("mensajeB").style.display = "none";
   document.getElementById("mensajeM").style.display = "none";
 }
+
+/*--------------- MODAL ---------------*/
+/*-------------------------------------------------------------------*/
+var myModelB = new bootstrap.Modal("#modal-bien");
+var myModelM = new bootstrap.Modal("#modal-mal");
+
+function RevisarEjerModal($numRu, $numRd, $numRc) {
+  if ($numRu == contUni && $numRd == contDec && $numRc == contCen) {
+    myModelB.show();
+  } else {
+    myModelM.show();
+  }
+}
+function cerrarAlertas() {
+  document.getElementById("mensajeB").style.display = "none";
+  document.getElementById("mensajeM").style.display = "none";
+}

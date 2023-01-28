@@ -85,7 +85,7 @@ $numCenRam = rand(1,9);
     </div>
     <div class="row justify-content-md-center text-center">
       <div class="col-md-3">
-        <button type="button" onclick="RevisarEjer2(<?php echo $numUniRam?>,<?php echo $numDecRam?>,<?php echo $numCenRam?>)" class="btn btn-confirmar">Revisar</button>
+        <button type="button" onclick="RevisarEjerModal(<?php echo $numUniRam?>,<?php echo $numDecRam?>,<?php echo $numCenRam?>)" class="btn btn-confirmar">Revisar</button>
       </div>
     </div>
     <div class="row text-center justify-content-end">
@@ -120,6 +120,7 @@ $numCenRam = rand(1,9);
   
 </div>
 
+
 <!----------------- CONTENIDO MODALS ---------------------->
 <div class="modal fade" id="modal-img" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
@@ -147,6 +148,41 @@ $numCenRam = rand(1,9);
       </div>
       <div class="modal-body ratio ratio-4x3">
         <iframe width="1310" height="499" src="https://www.youtube.com/embed/TkAhaG1EcTs" title="🤓 VALOR POSICIONAL | Unidades, Decenas y Centenas 👩🏻‍🏫" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----------------- CONTENIDO MODALS RESULTADOS---------------------->
+<div class="modal fade" id="modal-bien" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Respondiste perfectamente !!!</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-mal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="exampleModalLabel">Ups...</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>No respondiste bien...</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
