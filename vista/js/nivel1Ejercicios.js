@@ -6,6 +6,12 @@ var btnCasillaU = document.getElementById("btn-casilla-u");
 var contGroupNum = 0;
 var contNum = 0;
 
+var resArray = [];
+var contCorrectos = 0;
+
+var myModelB = new bootstrap.Modal("#modal-bien");
+var myModelM = new bootstrap.Modal("#modal-mal");
+
 /*--------------- Funciones agregar y quitar en CENTENA---------------*/
 /*-------------------------------------------------------------------*/
 function cambiarColorCentena() {
@@ -141,46 +147,46 @@ function cerrarAlertas() {
 
 /*--------------- Funciones cambiar VALOR EJERCICIO 2---------------*/
 /*-------------------------------------------------------------------*/
-var resArray = [];
-var contCorrectos = 0;
 
 function mostrarGroupNum($num) {
   if (contGroupNum == 0) {
     document
       .getElementById("contenedor-num")
       .classList.remove("cont-select-num");
-
     contGroupNum = 1;
     contNum = $num;
   } else {
     document.getElementById("contenedor-num").classList.add("cont-select-num");
-
     contGroupNum = 0;
-    contNum = 0;
   }
 }
 function cambiarNum($num) {
-  document.getElementById("txt-num" + contNum).textContent = $num;
-  document.getElementById("contenedor-num").classList.add("cont-select-num");
-  resArray[contNum] = $num;
-
   contGroupNum = 0;
+  document.getElementById("contenedor-num").classList.add("cont-select-num");
+  document.getElementById("txt-num" + contNum).textContent = $num;
+  resArray[contNum - 1] = $num;
 }
 
-/*--------------- Funciones VERIFICAR RESULTADOS EJERCICIO 1---------------*/
+/*--------------- Funciones VERIFICAR RESULTADOS EJERCICIO 2---------------*/
 /*-------------------------------------------------------------------*/
 
 function RevisarEjer2($numRu, $numRd, $numRc, $numRuM, $numRdM, $numRcM) {
-  var pregArray = [$numRu, $numRd, $numRc, $numRuM, $numRdM, $numRcM];
+  var pregArray = [$numRcM, $numRdM, $numRuM, $numRc, $numRd, $numRu];
   for (var i = 0; i < 6; i++) {
     if (pregArray[i] == resArray[i]) {
       contCorrectos++;
     }
   }
+  console.log(pregArray);
+  console.log(resArray);
+  console.log(contCorrectos);
+
   if (contCorrectos == 6) {
-    document.getElementById("mensajeB").style.display = "block";
+    myModelB.show();
+    contCorrectos = 0;
   } else {
-    document.getElementById("mensajeM").style.display = "block";
+    myModelM.show();
+    contCorrectos = 0;
   }
 }
 function cerrarAlertas2() {
@@ -190,8 +196,6 @@ function cerrarAlertas2() {
 
 /*--------------- MODAL ---------------*/
 /*-------------------------------------------------------------------*/
-var myModelB = new bootstrap.Modal("#modal-bien");
-var myModelM = new bootstrap.Modal("#modal-mal");
 
 function RevisarEjerModal($numRu, $numRd, $numRc) {
   if ($numRu == contUni && $numRd == contDec && $numRc == contCen) {

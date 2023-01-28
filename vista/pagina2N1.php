@@ -30,12 +30,12 @@ $numCenMRam = rand(1,9);
                     <div class="col-2 colum btn-fondo"><h1>UNIDAD</h1></div>
                 </div>
                 <div class="row ejer-n1">
-                    <div onclick="mostrarGroupNum(6)" class="col-2 colum fondo-azul"><h2 id="txt-num6"></h2></div>
-                    <div onclick="mostrarGroupNum(5)" class="col-2 colum fondo-lila"><h2 id="txt-num5"></h2></div>
-                    <div onclick="mostrarGroupNum(4)" class="col-2 colum fondo-verde"><h2 id="txt-num4"></h2></div>
-                    <div onclick="mostrarGroupNum(3)" class="col-2 colum fondo-naranja"><h2 id="txt-num3"></h2></div>
-                    <div onclick="mostrarGroupNum(2)" class="col-2 colum fondo-amarillo"><h2 id="txt-num2"></h2></div>
-                    <div onclick="mostrarGroupNum(1)" class="col-2 colum fondo-rojo"><h2 id="txt-num1"></h2></div>
+                    <div id="casilla6" onclick="mostrarGroupNum(6)" class="col-2 colum select-casilla fondo-azul"><h2 id="txt-num6"></h2></div>
+                    <div id="casilla5" onclick="mostrarGroupNum(5)" class="col-2 colum select-casilla fondo-lila"><h2 id="txt-num5"></h2></div>
+                    <div id="casilla4" onclick="mostrarGroupNum(4)" class="col-2 colum select-casilla fondo-verde"><h2 id="txt-num4"></h2></div>
+                    <div id="casilla3" onclick="mostrarGroupNum(3)" class="col-2 colum select-casilla fondo-naranja"><h2 id="txt-num3"></h2></div>
+                    <div id="casilla2" onclick="mostrarGroupNum(2)" class="col-2 colum select-casilla fondo-amarillo"><h2 id="txt-num2"></h2></div>
+                    <div id="casilla1" onclick="mostrarGroupNum(1)" class="col-2 colum select-casilla fondo-rojo"><h2 id="txt-num1"></h2></div>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@ $numCenMRam = rand(1,9);
     
     <div class="row justify-content-md-center text-center">
       <div class="col-md-3">
-        <button type="button" onclick="RevisarEjer(<?php echo ($numUniRam.','.$numDecRam.','.$numCenRam.','.$numUniMRam.','.$numDecMRam.','.$numCenMRam)?>)" class="btn btn-confirmar">Revisar</button>
+        <button type="button" onclick="RevisarEjer2(<?php echo ($numUniRam.','.$numDecRam.','.$numCenRam.','.$numUniMRam.','.$numDecMRam.','.$numCenMRam)?>)" class="btn btn-confirmar">Revisar</button>
       </div>
     </div>
 
@@ -76,13 +76,6 @@ $numCenMRam = rand(1,9);
           </ul>
         </div>
       </div>
-    </div>
-
-    <div onclick="cerrarAlertas2()" id="mensajeB" class="alert alert-success alert-dismissible fade show msj-alertaB" role="alert">
-      <strong>Excelente!</strong> Respondiste muy bien.
-    </div>
-    <div onclick="cerrarAlertas2()" id="mensajeM" class="alert alert-danger alert-dismissible fade show msj-alertaM" role="alert">
-      <strong>Ups...</strong> No respondiste bien..
     </div>
 
   </div>
@@ -119,6 +112,41 @@ $numCenMRam = rand(1,9);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----------------- CONTENIDO MODALS RESULTADOS---------------------->
+<div class="modal fade" id="modal-bien" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Respondiste perfectamente !!!</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-mal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="exampleModalLabel">Ups...</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>No respondiste bien...</h4>
+      </div>
+      <div class="modal-footer">
+        <a href="pagina2N1" class="btn btn-danger">Cerrar</a>
       </div>
     </div>
   </div>

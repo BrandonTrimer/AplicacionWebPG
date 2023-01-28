@@ -110,12 +110,6 @@ $numCenRam = rand(1,9);
         </div>
       </div>
     </div>
-    <div onclick="cerrarAlertas()" id="mensajeB" class="alert alert-success alert-dismissible fade show msj-alertaB" role="alert">
-      <strong>Excelente!</strong> Respondiste muy bien.
-    </div>
-    <div onclick="cerrarAlertas()" id="mensajeM" class="alert alert-danger alert-dismissible fade show msj-alertaM" role="alert">
-      <strong>Ups...</strong> No respondiste bien..
-    </div>
   </div>
   
 </div>
@@ -185,7 +179,8 @@ $numCenRam = rand(1,9);
         <h4>No respondiste bien...</h4>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <a href="pagina2N1" class="btn btn-danger">Siguiente ejercicio</a>
+        <a href="paginaN1" class="btn btn-danger">repetir</a>
       </div>
     </div>
   </div>

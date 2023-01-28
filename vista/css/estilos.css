@@ -134,13 +134,13 @@ body {
 .btn-fondo {
   background-color: white;
 }
-.colum.fondo-naranja {
+.fondo-naranja {
   background-color: #f05700;
 }
-.colum.fondo-amarillo {
+.fondo-amarillo {
   background-color: #e7e426;
 }
-.colum.fondo-rojo {
+.fondo-rojo {
   background-color: #dc0606;
 }
 .fondo-verde {
@@ -195,6 +195,7 @@ body {
   cursor: pointer;
 }
 .select-casilla {
+  cursor: pointer;
   transition: all 0.3s;
 }
 .cont-select-num {
@@ -400,6 +401,10 @@ body {
 .txt-select-num:hover {
   margin-top: 30px;
   background-color: #3ad6ab;
+}
+.select-casilla:hover {
+  animation: pulse;
+  animation-duration: 0.5s;
 }
 
 /*----------------ANIMACIONES---------------*/
