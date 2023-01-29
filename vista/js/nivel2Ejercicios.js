@@ -1,3 +1,4 @@
+/* ------------ VARIABLES NIVEL 2 ---------- */
 var btnAum1Ejer1 = document.getElementById("btn-ejer1-aum1");
 var btnDis1Ejer1 = document.getElementById("btn-ejer1-dis1");
 var btnAum2Ejer1 = document.getElementById("btn-ejer1-aum2");
@@ -20,6 +21,9 @@ var cont1Ejer2 = 0,
 numRes1Ejer2.textContent = 0;
 numRes2Ejer2.textContent = 0;
 
+var myModelB = new bootstrap.Modal("#modal-bien");
+var myModelM = new bootstrap.Modal("#modal-mal");
+/*-------------------------------------------------- NIVEL 2 ---------------------------------------*/
 /* --------------------------- EJERCICIO 1 -------------------------------- */
 /*-------------------- AUMENTAR Y DISMINUIR NUMERO DE LA COLUMNA 1*/
 function aumentarNumCol1Ejer1() {
@@ -89,3 +93,27 @@ function disminuirNumCol2Ejer2() {
   }
 }
 btnDis2Ejer2.addEventListener("click", disminuirNumCol2Ejer2, true);
+
+/*-------------------- RESULTADO EJERCICIO 1--------------------*/
+function resultadoEjer1($num1, $num2, $num3, $num4) {
+  var res1 = $num1 + $num2;
+  var res2 = $num3 + $num4;
+
+  if (cont1Ejer1 == res1 && cont2Ejer1 == res2) {
+    myModelB.show();
+  } else {
+    myModelM.show();
+  }
+}
+
+/*-------------------- RESULTADO EJERCICIO 2--------------------*/
+function resultadoEjer2($num1, $num2, $num3, $num4) {
+  var res1 = $num1 + $num2;
+  var res2 = $num3 + $num4;
+
+  if (cont1Ejer2 == res1 && cont2Ejer2 == res2) {
+    myModelB.show();
+  } else {
+    myModelM.show();
+  }
+}

@@ -198,6 +198,9 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
+.content-casillas {
+  height: 50px;
+}
 .cont-select-num {
   visibility: hidden;
   animation: fadeOutDown;
@@ -219,12 +222,13 @@ body {
 }
 .btn-aum-num {
   background-color: #6ffc36;
-  margin-top: 8px;
-  border-radius: 10%;
+  margin-top: 5px;
+  border-color: #6ffc36;
 }
 .btn-dis-num {
   background-color: #ff4f21;
-  border-radius: 10%;
+  border-color: #ff4f21;
+  margin-bottom: -15px;
 }
 .img-flecha-num {
   width: 20px;
@@ -239,7 +243,8 @@ body {
 }
 /*--------------- CONTENIDO EJERCICIO N4 ---------------*/
 .contenedor-ejerN4 {
-  margin-top: 25px;
+  margin-top: 30px;
+  height: 80px;
 }
 .espacio-btn-sig {
   margin-top: 9%;
@@ -251,6 +256,29 @@ body {
 }
 .select-conten {
   cursor: pointer;
+}
+.select-conten2 {
+  cursor: pointer;
+  height: 100%;
+  border: solid;
+  padding-top: 2%;
+  margin: 5px 10px 5px 10px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+.select-conten2-a {
+  background-color: #41dc54;
+}
+.select-conten2-b {
+  background-color: #e02323;
+}
+.select-conten2-b > a {
+  padding-top: 50px;
+  text-decoration: none;
+}
+.cont-opt {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 /*--------------- CONTENIDO HISTORIA ---------------*/
 .content-hist-min {
@@ -405,6 +433,17 @@ body {
 .select-casilla:hover {
   animation: pulse;
   animation-duration: 0.5s;
+}
+.select-conten2:hover {
+  border-width: 3px 7px 7px;
+  animation: pulse;
+  animation-duration: 0.5s;
+}
+.select-conten2-a:hover {
+  background-color: #32b442;
+}
+.select-conten2-b:hover {
+  background-color: #bb1f1f;
 }
 
 /*----------------ANIMACIONES---------------*/

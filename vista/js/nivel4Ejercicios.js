@@ -16,6 +16,9 @@ var cont2A = 0,
   cont2C = 0,
   cont2D = 0;
 
+var myModelB = new bootstrap.Modal("#modal-bien");
+var myModelM = new bootstrap.Modal("#modal-mal");
+var selectOp = "";
 /* --------------------------------- FUNCIONES EJERCICIO 1*/
 function pintarSelectA() {
   if (contA == 0) {
@@ -131,3 +134,28 @@ function pintarSelect2D() {
   }
 }
 select2D.addEventListener("click", pintarSelect2D, true);
+
+/* --------------------------------- RESULTADOS --------------*/
+
+function almacenarOpcion($dato) {
+  selectOp = $dato;
+}
+function compararRes($dato) {
+  if (selectOp == $dato) {
+    myModelB.show();
+  } else {
+    myModelM.show();
+  }
+  console.log(selectOp);
+  console.log($dato);
+}
+
+function respuestaBuscarN4($dato) {
+  for (let index = 1; index <= $dato.length; index++) {
+    if (selectOp == $dato[index]) {
+      myModelB.show();
+    } else {
+      myModelM.show();
+    }
+  }
+}

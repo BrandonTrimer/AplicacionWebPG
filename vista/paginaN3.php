@@ -1,6 +1,15 @@
 <?php
 require_once("layout/header.php");
 require_once("layout/niveles.php");
+
+$num1f1 = rand(5,9);
+$num2f1 = rand(5,9);
+$num1f2 = rand(1,5);
+$num2f2 = rand(0,5);
+$num1f1Ej2 = rand(5,9);
+$num2f1Ej2 = rand(5,9);
+$num1f2Ej2 = rand(1,5);
+$num2f2Ej2 = rand(0,5);
 ?>
 
   <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight">
@@ -13,41 +22,41 @@ require_once("layout/niveles.php");
           <div class="col-6">
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
-              <div class="col-2 colum btn-fondo"><h6>8</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>9</h6></div>
+              <div class="col-2 colum btn-fondo"><h4><?php echo $num1f1 ?></h6></div>
+              <div class="col-2 colum btn-fondo"><h4><?php echo $num2f1 ?></h6></div>
             </div>
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"><h6 class="simb-mas">-</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>5</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>2</h6></div>
+              <div class="col-2 colum btn-fondo"><h4><?php echo $num1f2 ?></h6></div>
+              <div class="col-2 colum btn-fondo"><h4><?php echo $num2f2 ?></h6></div>
             </div>
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
-              <div class="col-2 colum fondo-verde"><h6 id="num-ejer1-res1"></h6></div>
-              <div class="col-2 colum fondo-verde"><h6 id="num-ejer1-res2"></h6></div>
+              <div class="col-2 colum fondo-verde"><h4 id="num-ejer1-res1N3"></h4></div>
+              <div class="col-2 colum fondo-verde"><h4 id="num-ejer1-res2N3"></h4></div>
             </div>
             <div class="row justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
               <div class="col-2">
                 <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer1-aum1" type="button" class="btn-aum-num">
+                  <button id="btn-ejer1-aum1N3" type="button" class="btn-aum-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
                   </button>
                 </div>
                 <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer1-dis1" type="button" class="btn-dis-num">
+                  <button id="btn-ejer1-dis1N3" type="button" class="btn-dis-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
                   </button>
                 </div>
               </div>
               <div class="col-2">
                 <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer1-aum2" type="button" class="btn-aum-num">
+                  <button id="btn-ejer1-aum2N3" type="button" class="btn-aum-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
                   </button>
                 </div>
                 <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer1-dis2" type="button" class="btn-dis-num">
+                  <button id="btn-ejer1-dis2N3" type="button" class="btn-dis-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
                   </button>
                 </div>
@@ -55,48 +64,48 @@ require_once("layout/niveles.php");
             </div>
             <div class="row justify-content-md-center text-center">
               <div class="col-1">
-                <button type="button" class="btn btn-confirmar">Revisar</button>
+                <button type="button" onclick="resultadoEjer1Res(<?php echo $num1f1.','.$num1f2.','.$num2f1.','.$num2f2?>)" class="btn btn-confirmar">Revisar</button>
               </div>
             </div>
           </div>
           <div class="col-6">
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
-              <div class="col-2 colum btn-fondo"><h6>7</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>5</h6></div>
+              <div class="col-2 colum btn-fondo"><h4><?php echo $num1f1Ej2 ?></h4></div>
+              <div class="col-2 colum btn-fondo"><h4><?php echo $num2f1Ej2 ?></h4></div>
             </div>
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"><h6 class="simb-mas">-</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>6</h6></div>
-              <div class="col-2 colum btn-fondo"><h6>2</h6></div>
+              <div class="col-2 colum btn-fondo"><h4><?php echo $num1f2Ej2 ?></h4></div>
+              <div class="col-2 colum btn-fondo"><h4><?php echo $num2f2Ej2 ?></h4></div>
             </div>
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
-              <div class="col-2 colum fondo-verde"><h6 id="num-ejer2-res1"></h6></div>
-              <div class="col-2 colum fondo-verde"><h6 id="num-ejer2-res2"></h6></div>
+              <div class="col-2 colum fondo-verde"><h4 id="num-ejer2-res1N3"></h4></div>
+              <div class="col-2 colum fondo-verde"><h4 id="num-ejer2-res2N3"></h4></div>
             </div>
             <div class="row justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
               <div class="col-2">
                 <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer2-aum1" type="button" class="btn-aum-num">
+                  <button id="btn-ejer2-aum1N3" type="button" class="btn-aum-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
                   </button>
                 </div>
                 <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer2-dis1" type="button" class="btn-dis-num">
+                  <button id="btn-ejer2-dis1N3" type="button" class="btn-dis-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
                   </button>
                 </div>
               </div>
               <div class="col-2">
                 <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer2-aum2" type="button" class="btn-aum-num">
+                  <button id="btn-ejer2-aum2N3" type="button" class="btn-aum-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
                   </button>
                 </div>
                 <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer2-dis2" type="button" class="btn-dis-num">
+                  <button id="btn-ejer2-dis2N3" type="button" class="btn-dis-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
                   </button>
                 </div>
@@ -104,7 +113,7 @@ require_once("layout/niveles.php");
             </div>
             <div class="row justify-content-md-center text-center">
               <div class="col-1">
-                <button type="button" class="btn btn-confirmar">Revisar</button>
+                <button type="button" onclick="resultadoEjer2Res(<?php echo $num1f1Ej2.','.$num1f2Ej2.','.$num2f1Ej2.','.$num2f2Ej2?>)" class="btn btn-confirmar">Revisar</button>
               </div>
             </div>
           </div>
@@ -191,6 +200,41 @@ require_once("layout/niveles.php");
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----------------- CONTENIDO MODALS RESULTADOS---------------------->
+<div class="modal fade" id="modal-bien" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Respondiste perfectamente !!!</h4>
+      </div>
+      <div class="modal-footer">
+        <a href="paginaN3" class="btn btn-primary">repetir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-mal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="exampleModalLabel">Ups...</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Te equivocaste con algo, intentalo de nuevo</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Volver a intentar</button>
       </div>
     </div>
   </div>

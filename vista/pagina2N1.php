@@ -56,7 +56,6 @@ $numCenMRam = rand(1,9);
             </div>
         </div>
     </div>
-    
     <div class="row justify-content-md-center text-center">
       <div class="col-md-3">
         <button type="button" onclick="RevisarEjer2(<?php echo ($numUniRam.','.$numDecRam.','.$numCenRam.','.$numUniMRam.','.$numDecMRam.','.$numCenMRam)?>)" class="btn btn-confirmar">Revisar</button>
@@ -129,7 +128,8 @@ $numCenMRam = rand(1,9);
         <h4>Respondiste perfectamente !!!</h4>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <a href="pagina2N1" class="btn btn-success">Siguiente ejercicio</a>
+        <a href="paginaN1" class="btn btn-primary">repetir</a>
       </div>
     </div>
   </div>
@@ -143,10 +143,10 @@ $numCenMRam = rand(1,9);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h4>No respondiste bien...</h4>
+        <h4>Te equivocaste con algo, intentalo de nuevo</h4>
       </div>
       <div class="modal-footer">
-        <a href="pagina2N1" class="btn btn-danger">Cerrar</a>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Volver a intentar</button>
       </div>
     </div>
   </div>

@@ -162,7 +162,8 @@ $numCenRam = rand(1,9);
         <h4>Respondiste perfectamente !!!</h4>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <a href="pagina2N1" class="btn btn-success">Siguiente ejercicio</a>
+        <a href="paginaN1" class="btn btn-primary">repetir</a>
       </div>
     </div>
   </div>
@@ -176,11 +177,10 @@ $numCenRam = rand(1,9);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h4>No respondiste bien...</h4>
+        <h4>Te equivocaste con algo, intentalo de nuevo</h4>
       </div>
       <div class="modal-footer">
-        <a href="pagina2N1" class="btn btn-danger">Siguiente ejercicio</a>
-        <a href="paginaN1" class="btn btn-danger">repetir</a>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Volver a intentar</button>
       </div>
     </div>
   </div>
