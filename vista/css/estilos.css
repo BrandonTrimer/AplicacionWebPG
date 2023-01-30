@@ -11,6 +11,9 @@ body {
 .navbar-brand {
   margin-left: 50px;
 }
+.navbar-text {
+  margin-right: 50px;
+}
 /*--------------- CONTENIDO ---------------*/
 .fondo {
   margin-top: 100px;
@@ -243,7 +246,7 @@ body {
 }
 /*--------------- CONTENIDO EJERCICIO N4 ---------------*/
 .contenedor-ejerN4 {
-  margin-top: 30px;
+  margin-top: 10px;
   height: 80px;
 }
 .espacio-btn-sig {
@@ -273,11 +276,15 @@ body {
   background-color: #e02323;
 }
 .select-conten2-b > a {
-  padding-top: 50px;
   text-decoration: none;
+  color: rgb(19, 17, 17);
+}
+.select-conten2-b > a > h4 {
+  height: 100%;
+  width: 100%;
 }
 .cont-opt {
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 20px;
 }
 /*--------------- CONTENIDO HISTORIA ---------------*/

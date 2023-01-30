@@ -1,6 +1,7 @@
 <?php
 require_once("layout/header.php");
 require_once("layout/niveles.php");
+
 ?>
 
   <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInDown">

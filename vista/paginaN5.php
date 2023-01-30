@@ -1,54 +1,72 @@
 <?php
 require_once("layout/header.php");
 require_once("layout/niveles.php");
+
+$posicion = [];
+
+$preg1 = "12 ÷ 6 = 2";
+$opciones1 = array(
+  1 => "12 = 6 x 2",
+  2 => "12 x 6 = 2",
+  3 => "2 = 12 x 6",
+  4 => "12 x 2 = 6",
+  5 => "12 x 6 = 2",
+  6 => "2 x 12 = 6",
+  7 => "2 x 6 = 8",
+  8 => "6 x 6 = 2"
+);
+$preg2 = "3 x 5";
+$numR1 = array_rand($opciones1, 4);
+
+$posicion[0] = $opciones1[$numR1[0]];
+$posicion[1] = $opciones1[$numR1[1]];
+$posicion[2] = $opciones1[$numR1[2]];
+$posicion[3] = $opciones1[$numR1[3]];
+
+
 ?>
 
   <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row">
             <h2>Ejercicio 5</h2>
-            <h5>Seleccione la división interpretada como multiplicación  </h5>
+            <h5>Seleccione la división interpretada como multiplicación, si no ves la respuesta presiona el boton rojo para seguir buscando</h5>
         </div>
-        <div class="row">
+        <div class="row justify-content-md-center text-center cont-opt">
             <div class="col-md-3 align-self-center">
-              <h2>12 ÷ 6 = 2</h2>
+              <h2><?php echo $preg1; ?></h2>
             </div>
             <div class="col-md-7 col-10">
-                <div class="row ejer-n1">
-                    <div id="ejerA" class="col-6 colum btn-fondo select-conten"><h6>a) 12 x 6 = 2</h6></div>
-                    <div id="ejerB" class="col-6 colum btn-fondo select-conten"><h6>b) 2 = 12 x 6</h6></div>
+              <div class="row ejer-n1">
+                <div id="ejerA" onclick="almacenarOpcion('<?php echo $posicion[0]; ?>')" class="col-6 colum btn-fondo select-conten">
+                  <h5>a) <?php echo $posicion[0]; ?></h5>
                 </div>
-                <div class="row ejer-n1">
-                    <div id="ejerC" class="col-6 colum btn-fondo select-conten"><h6>c) 12 = 6 x 2</h6></div>
-                    <div id="ejerD" class="col-6 colum btn-fondo select-conten"><h6>d) 12 x 2 = 6</h6></div>
+                <div id="ejerB" onclick="almacenarOpcion('<?php echo $posicion[1]; ?>')" class="col-6 colum btn-fondo select-conten">
+                  <h5>b) <?php echo $posicion[1]; ?></h5>
                 </div>
-            </div>
-            <div class="col-2">
-                <button type="button" class="btn btn-confirmar">Revisar</button>
+              </div>
+              <div class="row ejer-n1">
+                <div id="ejerC" onclick="almacenarOpcion('<?php echo $posicion[2]; ?>')" class="col-6 colum btn-fondo select-conten">
+                  <h5>c) <?php echo $posicion[2]; ?></h5>
+                </div>
+                <div id="ejerD" onclick="almacenarOpcion('<?php echo $posicion[3]; ?>')" class="col-6 colum btn-fondo select-conten">
+                  <h5>d) <?php echo $posicion[3]; ?></h5>
+                </div>
+              </div>
             </div>
         </div>
 
-        <div class="row contenedor-ejerN4">
-            <div class="col-md-3 align-self-center">
-              <h2>45 ÷ 5 = 9</h2>
-            </div>
-            <div class="col-md-7 col-10">
-                <div class="row ejer-n1">
-                    <div id="ejer2A" class="col-6 colum btn-fondo select-conten"><h6>a) 45 x 5 = 9</h6></div>
-                    <div id="ejer2B" class="col-6 colum btn-fondo select-conten"><h6>b) 45 = 5 x 9</h6></div>
-                </div>
-                <div class="row ejer-n1">
-                    <div id="ejer2C" class="col-6 colum btn-fondo select-conten"><h6>c) 9 = 5 x 45</h6></div>
-                    <div id="ejer2D" class="col-6 colum btn-fondo select-conten"><h6>c) 45 x 9 = 5</h6></div>
-                </div>
-            </div>
-            <div class="col-2">
-                <button type="button" class="btn btn-confirmar">Revisar</button>
-            </div>
+        <div class="row contenedor-ejerN4 justify-content-md-center text-center">
+          <div onclick="compararRes('<?php echo $opciones1[1]; ?>')" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-a">
+            <h4>Ahi esta la respuesta</h4>
+          </div>
+          <div href="index" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-b">
+            <a href="paginaN5">
+              <h4>La respuesta no esta aqui</h4>
+            </a>
+          </div>
         </div>
     </div>
-
-    
     
     <div class="row text-center justify-content-end espacio-btn-sig">
       <div class="col-2">
@@ -123,6 +141,41 @@ require_once("layout/niveles.php");
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----------------- CONTENIDO MODALS RESULTADOS---------------------->
+<div class="modal fade" id="modal-bien" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Respondiste perfectamente !!!</h4>
+      </div>
+      <div class="modal-footer">
+        <a href="paginaN5" class="btn btn-primary">repetir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-mal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="exampleModalLabel">Ups...</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Te equivocaste con algo, intentalo de nuevo</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="sumP()" class="btn btn-primary" data-bs-dismiss="modal">Volver a intentar</button>
       </div>
     </div>
   </div>

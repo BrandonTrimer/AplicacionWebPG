@@ -1,157 +1,232 @@
-var select1 = document.getElementById("selec1");
-var select2 = document.getElementById("selec2");
-var select3 = document.getElementById("selec3");
-var select4 = document.getElementById("selec4");
-var select2a = document.getElementById("selec2a");
-var select2b = document.getElementById("selec2b");
-var select3A = document.getElementById("selec3A");
-var select3B = document.getElementById("selec3B");
-var select3C = document.getElementById("selec3C");
-var select3D = document.getElementById("selec3D");
-var cont1 = 0,
-  cont2 = 0,
-  cont3 = 0,
-  cont4 = 0,
-  cont2a = 0,
-  cont2b = 0,
-  cont3A = 0,
-  cont3B = 0,
-  cont3C = 0,
-  cont3D = 0;
+var select1H = document.getElementById("selec1H");
+var select2H = document.getElementById("selec2H");
+var select3H = document.getElementById("selec3H");
+var select4H = document.getElementById("selec4H");
+var select2AH = document.getElementById("selec2AH");
+var select2BH = document.getElementById("selec2BH");
+var select3AH = document.getElementById("selec3AH");
+var select3BH = document.getElementById("selec3BH");
+var select3CH = document.getElementById("selec3CH");
+var select3DH = document.getElementById("selec3DH");
+var cont1H = 0,
+  cont2H = 0,
+  cont3H = 0,
+  cont4H = 0,
+  cont2AH = 0,
+  cont2BH = 0,
+  cont3AH = 0,
+  cont3BH = 0,
+  cont3CH = 0,
+  cont3DH = 0;
 
-function pintarSelect1() {
-  if (cont1 == 0) {
-    select1.classList.add("select-conten-color");
-    select2.classList.remove("select-conten-color");
-    select3.classList.remove("select-conten-color");
-    select4.classList.remove("select-conten-color");
+var myModelB = new bootstrap.Modal("#modal-bien");
+var myModelM = new bootstrap.Modal("#modal-mal");
+var myModelMbusca = new bootstrap.Modal("#modal-mal-busca");
+var myModelBobs = new bootstrap.Modal("#modal-bien-obs");
 
-    cont1++;
-    cont2 = 0;
-    cont3 = 0;
-    cont4 = 0;
+var myModelBC2 = new bootstrap.Modal("#modal-bien-c2");
+var myModelMC2 = new bootstrap.Modal("#modal-mal-c2");
+var myModelMbuscaC2 = new bootstrap.Modal("#modal-mal-busca-c2");
+var myModelBobsC2 = new bootstrap.Modal("#modal-bien-obs-c2");
+
+var selectOp = "";
+var suma = 0;
+var sumId = 0;
+
+function pintarSelect1H() {
+  if (cont1H == 0) {
+    select1H.classList.add("select-conten-color");
+    select2H.classList.remove("select-conten-color");
+    select3H.classList.remove("select-conten-color");
+    select4H.classList.remove("select-conten-color");
+
+    cont1H++;
+    cont2H = 0;
+    cont3H = 0;
+    cont4H = 0;
   }
 }
-select1.addEventListener("click", pintarSelect1, true);
-function pintarSelect2() {
-  if (cont2 == 0) {
-    select2.classList.add("select-conten-color");
-    select1.classList.remove("select-conten-color");
-    select3.classList.remove("select-conten-color");
-    select4.classList.remove("select-conten-color");
+select1H.addEventListener("click", pintarSelect1H, true);
+function pintarSelect2H() {
+  if (cont2H == 0) {
+    select2H.classList.add("select-conten-color");
+    select1H.classList.remove("select-conten-color");
+    select3H.classList.remove("select-conten-color");
+    select4H.classList.remove("select-conten-color");
 
-    cont2++;
-    cont1 = 0;
-    cont3 = 0;
-    cont4 = 0;
+    cont2H++;
+    cont1H = 0;
+    cont3H = 0;
+    cont4H = 0;
   }
 }
-select2.addEventListener("click", pintarSelect2, true);
-function pintarSelect3() {
-  if (cont3 == 0) {
-    select3.classList.add("select-conten-color");
-    select2.classList.remove("select-conten-color");
-    select1.classList.remove("select-conten-color");
-    select4.classList.remove("select-conten-color");
+select2H.addEventListener("click", pintarSelect2H, true);
+function pintarSelect3H() {
+  if (cont3H == 0) {
+    select3H.classList.add("select-conten-color");
+    select2H.classList.remove("select-conten-color");
+    select1H.classList.remove("select-conten-color");
+    select4H.classList.remove("select-conten-color");
 
-    cont3++;
-    cont2 = 0;
-    cont1 = 0;
-    cont4 = 0;
+    cont3H++;
+    cont2H = 0;
+    cont1H = 0;
+    cont4H = 0;
   }
 }
-select3.addEventListener("click", pintarSelect3, true);
-function pintarSelect4() {
-  if (cont4 == 0) {
-    select4.classList.add("select-conten-color");
-    select2.classList.remove("select-conten-color");
-    select3.classList.remove("select-conten-color");
-    select1.classList.remove("select-conten-color");
+select3H.addEventListener("click", pintarSelect3H, true);
+function pintarSelect4H() {
+  if (cont4H == 0) {
+    select4H.classList.add("select-conten-color");
+    select2H.classList.remove("select-conten-color");
+    select3H.classList.remove("select-conten-color");
+    select1H.classList.remove("select-conten-color");
 
-    cont4++;
-    cont2 = 0;
-    cont3 = 0;
-    cont1 = 0;
+    cont4H++;
+    cont2H = 0;
+    cont3H = 0;
+    cont1H = 0;
   }
 }
-select4.addEventListener("click", pintarSelect4, true);
+select4H.addEventListener("click", pintarSelect4H, true);
 
 /*--------------------------EJERCICIO 2----------------- */
-function pintarSelect2A() {
-  if (cont2a == 0) {
-    select2a.classList.add("select-conten-color");
-    select2b.classList.remove("select-conten-color");
+function pintarSelect2AH() {
+  if (cont2AH == 0) {
+    select2AH.classList.add("select-conten-color");
+    select2BH.classList.remove("select-conten-color");
 
-    cont2a++;
-    cont2B = 0;
+    cont2AH++;
+    cont2BH = 0;
   }
 }
-select2a.addEventListener("click", pintarSelect2A, true);
-function pintarSelect2b() {
-  if (cont2b == 0) {
-    select2b.classList.add("select-conten-color");
-    select2a.classList.remove("select-conten-color");
+select2AH.addEventListener("click", pintarSelect2AH, true);
+function pintarSelect2BH() {
+  if (cont2BH == 0) {
+    select2BH.classList.add("select-conten-color");
+    select2AH.classList.remove("select-conten-color");
 
-    cont2b++;
-    cont2a = 0;
+    cont2BH++;
+    cont2AH = 0;
   }
 }
-select2b.addEventListener("click", pintarSelect2b, true);
+select2BH.addEventListener("click", pintarSelect2BH, true);
 
 /*--------------------------- EJERCICIO 3-----------------------*/
-function pintarSelect3A() {
-  if (cont3A == 0) {
-    select3A.classList.add("select-conten-color");
-    select3B.classList.remove("select-conten-color");
-    select3C.classList.remove("select-conten-color");
-    select3D.classList.remove("select-conten-color");
+function pintarSelect3AH() {
+  if (cont3AH == 0) {
+    select3AH.classList.add("select-conten-color");
+    select3BH.classList.remove("select-conten-color");
+    select3CH.classList.remove("select-conten-color");
+    select3DH.classList.remove("select-conten-color");
 
-    cont3A++;
-    cont3B = 0;
-    cont3C = 0;
-    cont3D = 0;
+    cont3AH++;
+    cont3BH = 0;
+    cont3CH = 0;
+    cont3DH = 0;
   }
 }
-select3A.addEventListener("click", pintarSelect3A, true);
-function pintarSelect3B() {
-  if (cont3B == 0) {
-    select3B.classList.add("select-conten-color");
-    select3A.classList.remove("select-conten-color");
-    select3C.classList.remove("select-conten-color");
-    select3D.classList.remove("select-conten-color");
+select3AH.addEventListener("click", pintarSelect3AH, true);
+function pintarSelect3BH() {
+  if (cont3BH == 0) {
+    select3BH.classList.add("select-conten-color");
+    select3AH.classList.remove("select-conten-color");
+    select3CH.classList.remove("select-conten-color");
+    select3DH.classList.remove("select-conten-color");
 
-    cont3B++;
-    cont3A = 0;
-    cont3C = 0;
-    cont3D = 0;
+    cont3BH++;
+    cont3AH = 0;
+    cont3CH = 0;
+    cont3DH = 0;
   }
 }
-select3B.addEventListener("click", pintarSelect3B, true);
-function pintarSelect3C() {
-  if (cont3C == 0) {
-    select3C.classList.add("select-conten-color");
-    select3A.classList.remove("select-conten-color");
-    select3B.classList.remove("select-conten-color");
-    select3D.classList.remove("select-conten-color");
+select3BH.addEventListener("click", pintarSelect3BH, true);
+function pintarSelect3CH() {
+  if (cont3CH == 0) {
+    select3CH.classList.add("select-conten-color");
+    select3AH.classList.remove("select-conten-color");
+    select3BH.classList.remove("select-conten-color");
+    select3DH.classList.remove("select-conten-color");
 
-    cont3C++;
-    cont3A = 0;
-    cont3B = 0;
-    cont3D = 0;
+    cont3CH++;
+    cont3AH = 0;
+    cont3BH = 0;
+    cont3DH = 0;
   }
 }
-select3C.addEventListener("click", pintarSelect3C, true);
-function pintarSelect3D() {
-  if (cont3D == 0) {
-    select3D.classList.add("select-conten-color");
-    select3A.classList.remove("select-conten-color");
-    select3B.classList.remove("select-conten-color");
-    select3C.classList.remove("select-conten-color");
+select3CH.addEventListener("click", pintarSelect3CH, true);
+function pintarSelect3DH() {
+  if (cont3DH == 0) {
+    select3DH.classList.add("select-conten-color");
+    select3AH.classList.remove("select-conten-color");
+    select3BH.classList.remove("select-conten-color");
+    select3CH.classList.remove("select-conten-color");
 
-    cont3D++;
-    cont3A = 0;
-    cont3B = 0;
-    cont3C = 0;
+    cont3DH++;
+    cont3AH = 0;
+    cont3BH = 0;
+    cont3CH = 0;
   }
 }
-select3D.addEventListener("click", pintarSelect3D, true);
+select3DH.addEventListener("click", pintarSelect3DH, true);
+
+/* --------------------------------- RESULTADOS --------------*/
+/* --------------- CUADRO 1 ---------------------- */
+function almacenarOpcion($dato) {
+  selectOp = $dato;
+}
+function compararRes($dato) {
+  if (selectOp == $dato) {
+    myModelB.show();
+  } else {
+    myModelM.show();
+  }
+}
+function buscarRes($dato1, $dato2, $dato3, $dato4, $datoRes) {
+  var opciones = [$dato1, $dato2, $dato3, $dato4];
+
+  var cont = 0;
+  for (let index = 0; index < opciones.length; index++) {
+    if (opciones[index] == $datoRes) {
+      myModelMbusca.show();
+    } else {
+      cont++;
+    }
+  }
+  if (cont == 4) {
+    myModelBobs.show();
+  }
+}
+
+/* --------------- CUADRO 2 ---------------------- */
+function almacenarSuma($dato1, $dato2, $datoId) {
+  suma = $dato1 + $dato2;
+  sumId = $datoId;
+  console.log(suma);
+  console.log($dato1, $dato2);
+  console.log(sumId);
+}
+function compararSum($dato1, $dato2) {
+  if (sumId == 1 && suma == $dato1) {
+    myModelBC2.show();
+  } else {
+    if (sumId == 2 && suma == $dato2) {
+      myModelBC2.show();
+    } else {
+      myModelMC2.show();
+    }
+  }
+  console.log($dato1, $dato2);
+}
+function buscarSum($dato1, $dato2, $dato3, $dato4, $datoRes1, $datoRes2) {
+  var suma1 = $dato1 + $dato2;
+  var suma2 = $dato3 + $dato4;
+
+  if (suma1 == $datoRes1 || suma2 == $datoRes2) {
+    myModelMbuscaC2.show();
+  } else {
+    myModelBobsC2.show();
+  }
+  console.log("sum1-" + suma1 + " , sum2-" + suma2);
+  console.log("res1-" + $datoRes1 + ", res2-" + $datoRes2);
+}

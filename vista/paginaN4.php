@@ -48,18 +48,18 @@ $posicion[3] = $opciones1[$numR1[3]];
             <div class="col-md-7 col-10">
               <div class="row ejer-n1">
                 <div id="ejerA" onclick="almacenarOpcion('<?php echo $posicion[0]; ?>')" class="col-6 colum btn-fondo select-conten">
-                  <h6>a) <?php echo $posicion[0]; ?></h6>
+                  <h5>a) <?php echo $posicion[0]; ?></h5>
                 </div>
                 <div id="ejerB" onclick="almacenarOpcion('<?php echo $posicion[1]; ?>')" class="col-6 colum btn-fondo select-conten">
-                  <h6>b) <?php echo $posicion[1]; ?></h6>
+                  <h5>b) <?php echo $posicion[1]; ?></h5>
                 </div>
               </div>
               <div class="row ejer-n1">
                 <div id="ejerC" onclick="almacenarOpcion('<?php echo $posicion[2]; ?>')" class="col-6 colum btn-fondo select-conten">
-                  <h6>c) <?php echo $posicion[2]; ?></h6>
+                  <h5>c) <?php echo $posicion[2]; ?></h5>
                 </div>
                 <div id="ejerD" onclick="almacenarOpcion('<?php echo $posicion[3]; ?>')" class="col-6 colum btn-fondo select-conten">
-                  <h6>d) <?php echo $posicion[3]; ?></h6>
+                  <h5>d) <?php echo $posicion[3]; ?></h5>
                 </div>
               </div>
             </div>
@@ -71,7 +71,7 @@ $posicion[3] = $opciones1[$numR1[3]];
           </div>
           <div href="index" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-b">
             <a href="paginaN4">
-              <h4 class="border">La respuesta no esta aqui</h4>
+              <h4>La respuesta no esta aqui</h4>
             </a>
           </div>
         </div>
