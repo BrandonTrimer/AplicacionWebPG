@@ -29,9 +29,23 @@ var myModelMC2 = new bootstrap.Modal("#modal-mal-c2");
 var myModelMbuscaC2 = new bootstrap.Modal("#modal-mal-busca-c2");
 var myModelBobsC2 = new bootstrap.Modal("#modal-bien-obs-c2");
 
+var myModelBC3 = new bootstrap.Modal("#modal-bien-c3");
+var myModelMC3 = new bootstrap.Modal("#modal-mal-c3");
+var myModelMbuscaC3 = new bootstrap.Modal("#modal-mal-busca-c3");
+var myModelBobsC3 = new bootstrap.Modal("#modal-bien-obs-c3");
+
 var selectOp = "";
 var suma = 0;
 var sumId = 0;
+var numCantidad = 0;
+var numDigito = 0;
+
+var contPuntos = 0;
+var puntos1 = document.getElementById("puntos1");
+var puntos2 = document.getElementById("puntos2");
+var puntos3 = document.getElementById("puntos3");
+var puntos4 = document.getElementById("puntos4");
+var puntos5 = document.getElementById("puntos5");
 
 function pintarSelect1H() {
   if (cont1H == 0) {
@@ -178,6 +192,12 @@ function almacenarOpcion($dato) {
 function compararRes($dato) {
   if (selectOp == $dato) {
     myModelB.show();
+    contPuntos++;
+    puntos1.textContent = contPuntos;
+    puntos2.textContent = contPuntos;
+    puntos3.textContent = contPuntos;
+    puntos4.textContent = contPuntos;
+    puntos5.textContent = contPuntos;
   } else {
     myModelM.show();
   }
@@ -195,6 +215,12 @@ function buscarRes($dato1, $dato2, $dato3, $dato4, $datoRes) {
   }
   if (cont == 4) {
     myModelBobs.show();
+    contPuntos++;
+    puntos1.textContent = contPuntos;
+    puntos2.textContent = contPuntos;
+    puntos3.textContent = contPuntos;
+    puntos4.textContent = contPuntos;
+    puntos5.textContent = contPuntos;
   }
 }
 
@@ -209,9 +235,21 @@ function almacenarSuma($dato1, $dato2, $datoId) {
 function compararSum($dato1, $dato2) {
   if (sumId == 1 && suma == $dato1) {
     myModelBC2.show();
+    contPuntos++;
+    puntos1.textContent = contPuntos;
+    puntos2.textContent = contPuntos;
+    puntos3.textContent = contPuntos;
+    puntos4.textContent = contPuntos;
+    puntos5.textContent = contPuntos;
   } else {
     if (sumId == 2 && suma == $dato2) {
       myModelBC2.show();
+      contPuntos++;
+      puntos1.textContent = contPuntos;
+      puntos2.textContent = contPuntos;
+      puntos3.textContent = contPuntos;
+      puntos4.textContent = contPuntos;
+      puntos5.textContent = contPuntos;
     } else {
       myModelMC2.show();
     }
@@ -226,7 +264,86 @@ function buscarSum($dato1, $dato2, $dato3, $dato4, $datoRes1, $datoRes2) {
     myModelMbuscaC2.show();
   } else {
     myModelBobsC2.show();
+    contPuntos++;
+    puntos1.textContent = contPuntos;
+    puntos2.textContent = contPuntos;
+    puntos3.textContent = contPuntos;
+    puntos4.textContent = contPuntos;
+    puntos5.textContent = contPuntos;
   }
   console.log("sum1-" + suma1 + " , sum2-" + suma2);
   console.log("res1-" + $datoRes1 + ", res2-" + $datoRes2);
+}
+
+/* --------------- CUADRO 3 ---------------------- */
+function almacenarMult($datoD, $datoC) {
+  numCantidad = $datoC;
+  numDigito = $datoD;
+}
+
+function compararMult($datoD, $datoC) {
+  if (numCantidad == $datoC && numDigito == $datoD) {
+    myModelBC3.show();
+    contPuntos++;
+    puntos1.textContent = contPuntos;
+    puntos2.textContent = contPuntos;
+    puntos3.textContent = contPuntos;
+    puntos4.textContent = contPuntos;
+    puntos5.textContent = contPuntos;
+  } else {
+    myModelMC3.show();
+  }
+  console.log(numCantidad, numDigito);
+  console.log($datoC, $datoD);
+}
+
+function buscarMult(
+  $datod1,
+  $datoc1,
+  $datod2,
+  $datoc2,
+  $datod3,
+  $datoc3,
+  $datod4,
+  $datoc4,
+  $datoResD,
+  $datoResC
+) {
+  if ($datoResD == $datod1 && $datoResC == $datoc1) {
+    myModelMbuscaC3.show();
+  } else {
+    if ($datoResD == $datod2 && $datoResC == $datoc2) {
+      myModelMbuscaC3.show();
+    } else {
+      if ($datoResD == $datod3 && $datoResC == $datoc3) {
+        myModelMbuscaC3.show();
+      } else {
+        if ($datoResD == $datod4 && $datoResC == $datoc4) {
+          myModelMbuscaC3.show();
+        } else {
+          myModelBobsC3.show();
+          contPuntos++;
+          puntos1.textContent = contPuntos;
+          puntos2.textContent = contPuntos;
+          puntos3.textContent = contPuntos;
+          puntos4.textContent = contPuntos;
+          puntos5.textContent = contPuntos;
+        }
+      }
+    }
+  }
+}
+
+function obtenerPuntos() {
+  return contPuntos;
+}
+
+function mostrarContenidoRes() {
+  if (contPuntos < 3) {
+    document.getElementById("txt-perdida").style.display = "block";
+    document.getElementById("contenido-perdida").style.display = "flex";
+  } else {
+    document.getElementById("txt-victoria").style.display = "block";
+    document.getElementById("contenido-victoria").style.display = "flex";
+  }
 }

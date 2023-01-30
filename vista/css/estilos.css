@@ -310,8 +310,27 @@ body {
   height: 200px;
   border-radius: 10%;
 }
-
+.img-ciudadVic {
+  animation: bounce;
+  animation-duration: 0.8s;
+  animation-iteration-count: 2;
+  animation-delay: 2.5s;
+}
+.img-ciudadPer {
+  animation: headShake;
+  animation-duration: 0.8s;
+  animation-iteration-count: 2;
+  animation-delay: 2.5s;
+}
+.img-fuerte {
+  animation: heartBeat;
+  animation-duration: 1s;
+  animation-delay: 1.3s;
+}
 .img-debil {
+  animation: headShake;
+  animation-duration: 1s;
+  animation-delay: 2s;
   transition: all 0.5s;
 }
 .img-ganador {
@@ -340,9 +359,31 @@ body {
   margin-left: 2px;
   margin-right: 2px;
   padding-top: 10px;
+  border-radius: 10px;
 }
 .espacio-preg-sum {
   margin-right: 10px;
+}
+
+.txt-historia-ejer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.txt-historia-ejer > h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#txt-victoria {
+  display: none;
+}
+#contenido-victoria {
+  display: none;
+}
+#txt-perdida {
+  display: none;
+}
+#contenido-perdida {
+  display: none;
 }
 
 /*--------------- EFECTOS HOVER ---------------*/
@@ -416,7 +457,7 @@ body {
   animation-duration: 1s;
 }
 .img-fuerte:hover {
-  animation: heartBeat;
+  animation: bounce;
   animation-duration: 1s;
 }
 .img-border-circulo:hover {
@@ -424,14 +465,14 @@ body {
   animation-duration: 1s;
 }
 .img-ciudadVic:hover {
-  animation: bounce;
+  animation: pulse;
   animation-duration: 0.8s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 3;
 }
 .img-ciudadPer:hover {
   animation: headShake;
   animation-duration: 0.8s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 3;
 }
 .txt-select-num:hover {
   margin-top: 30px;
