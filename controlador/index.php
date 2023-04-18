@@ -20,14 +20,14 @@ class modeloController{
 
     //pagina N1
     static function paginaN1(){
-        $producto = new Modelo();
-        $dato = $producto->mostrar("ejerciciosvalornum","idvalornum = 1");
+        /*$producto = new Modelo();
+        $dato = $producto->mostrar("ejerciciosvalornum","idvalornum = 1");*/
         require_once("vista/paginaN1.php");
     }
     //pagina N1
     static function pagina2N1(){
-        $producto = new Modelo();
-        $dato = $producto->mostrar("ejerciciosvalornum","idvalornum = 1");
+        /*$producto = new Modelo();
+        $dato = $producto->mostrar("ejerciciosvalornum","idvalornum = 1");*/
         require_once("vista/pagina2N1.php");
     }
 
