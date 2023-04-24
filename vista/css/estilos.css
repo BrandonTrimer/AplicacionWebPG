@@ -57,26 +57,32 @@ body {
   margin: 0;
 }
 /*------ contenido boton nivel*/
-.contenedor-nivel > h1 {
+.contenedor-menu > h1 {
   margin-top: 20px;
   margin-bottom: 15px;
   text-align: center;
 }
+.contenedor-btn {
+  border: solid;
+  width: 300px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 5%;
+  display: inline-block;
+}
 .btn-nivel {
   border: solid;
-  width: 80%;
-  height: 60px;
+  width: 90%;
+  height: 80px;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 30px;
+  margin-left: 10px;
 
-  background: rgb(41, 163, 84);
-  background: linear-gradient(
-    251deg,
-    rgba(41, 163, 84, 1) 14%,
-    rgba(75, 217, 103, 1) 54%,
-    rgba(167, 238, 69, 1) 84%,
-    rgba(246, 246, 246, 1) 100%
+  background: rgb(194, 241, 145);
+  background: radial-gradient(
+    circle,
+    rgba(194, 241, 145, 1) 12%,
+    rgba(58, 144, 100, 0.7707457983193278) 51%
   );
 
   display: grid;
@@ -395,7 +401,7 @@ body {
 }
 
 .btn-nivel:hover {
-  background-color: #41dc54;
+  background-color: #278a64;
   transition: all 0.2s;
   margin-left: 40px;
   border: solid;
