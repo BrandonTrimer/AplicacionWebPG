@@ -62,9 +62,10 @@ body {
   margin-bottom: 15px;
   text-align: center;
 }
+
 .contenedor-btn {
-  border: solid;
-  width: 300px;
+  width: 220px;
+  height: 120px;
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 5%;
@@ -72,19 +73,16 @@ body {
 }
 .btn-nivel {
   border: solid;
-  width: 90%;
-  height: 80px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-
-  background: rgb(194, 241, 145);
+  height: 90px;
+  /*background: rgb(194, 241, 145);
   background: radial-gradient(
     circle,
     rgba(194, 241, 145, 1) 12%,
     rgba(58, 144, 100, 0.7707457983193278) 51%
-  );
-
+  );*/
+  background-image: url(../img/fondoNivel2.jpg);
+  background-size: cover;
+  border-radius: 10px 20px 30px 40px;
   display: grid;
   place-items: center;
   transition: all 0.2s;
@@ -399,14 +397,18 @@ body {
   animation-duration: 1s;
   border: 2px solid;
 }
-
+/*------- boton menu niveles*/
 .btn-nivel:hover {
   background-color: #278a64;
   transition: all 0.2s;
-  margin-left: 40px;
+  /*margin-left: 40px;*/
+  height: 90px;
   border: solid;
+  border-radius: 30px 40px 50px 60px;
 }
-
+.contenedor-btn:hover {
+  background-image: url(./img/fondoNivel.jpg);
+}
 .img-sig:hover {
   animation: shakeX;
   animation-duration: 1s;
