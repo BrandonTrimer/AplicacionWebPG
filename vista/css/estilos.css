@@ -72,20 +72,17 @@ body {
   display: inline-block;
 }
 .btn-nivel {
-  border: solid;
+  box-shadow: -10px 9px 12px;
   height: 90px;
-  /*background: rgb(194, 241, 145);
-  background: radial-gradient(
-    circle,
-    rgba(194, 241, 145, 1) 12%,
-    rgba(58, 144, 100, 0.7707457983193278) 51%
-  );*/
-  background-image: url(../img/fondoNivel2.jpg);
+  background-image: url(../img/fondoNivel3.png);
   background-size: cover;
-  border-radius: 10px 20px 30px 40px;
+  font-weight: 550;
   display: grid;
   place-items: center;
-  transition: all 0.2s;
+  transition: all 0.5s;
+  transform: rotate(0deg);
+  background-position-y: 15%;
+  background-repeat: no-repeat;
 }
 
 /*--------------- CONTENIDO EJERCICIOS ---------------*/
@@ -399,12 +396,9 @@ body {
 }
 /*------- boton menu niveles*/
 .btn-nivel:hover {
-  background-color: #278a64;
-  transition: all 0.2s;
-  /*margin-left: 40px;*/
-  height: 90px;
-  border: solid;
-  border-radius: 30px 40px 50px 60px;
+  background-position: 0px -90px;
+  box-shadow: -10px 9px 8px;
+  transition: all 0.5s;
 }
 .contenedor-btn:hover {
   background-image: url(./img/fondoNivel.jpg);
