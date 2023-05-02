@@ -1,6 +1,5 @@
 <?php
 require_once("layout/header.php");
-require_once("layout/niveles.php");
 /* ----------------- EJERCICIO 1 ---------------- */
 $opciones1 = [];
 $opciones1 = array(
@@ -73,7 +72,7 @@ $limite = 0;
 
 ?>
 
-  <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight contenedor-ejercicios-minH">
+  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight contenedor-ejercicios-minH">
     <div id="accordionExample" class="contenedor-nivel row text-center">
         
         <div class="row content-hist-min">

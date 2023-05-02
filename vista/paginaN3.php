@@ -1,6 +1,5 @@
 <?php
 require_once("layout/header.php");
-require_once("layout/niveles.php");
 
 $num1f1 = rand(5,9);
 $num2f1 = rand(5,9);
@@ -12,7 +11,7 @@ $num1f2Ej2 = rand(1,5);
 $num2f2Ej2 = rand(0,5);
 ?>
 
-  <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight">
+  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row justify-content-md-center text-center">
             <h2>Ejercicio 3</h2>

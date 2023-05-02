@@ -1,6 +1,5 @@
 <?php
 require_once("layout/header.php");
-require_once("layout/niveles.php");
 
 $posicion = [];
 
@@ -26,7 +25,7 @@ $posicion[3] = $opciones1[$numR1[3]];
 
 ?>
 
-  <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight">
+  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row">
             <h2>Ejercicio 5</h2>

@@ -1,9 +1,8 @@
 <?php
 require_once("layout/header.php");
-require_once("layout/niveles.php");
 ?>
 
-  <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight contenedor-ejercicios-minH">
+  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight contenedor-ejercicios-minH">
     <div id="accordionExample" class="contenedor-nivel row text-center">
         <div class="row">
             <h2>Historia</h2>

@@ -1,12 +1,11 @@
 <?php
 require_once("layout/header.php");
-require_once("layout/niveles.php");
 $numUniRam = rand(1,9);
 $numDecRam = rand(1,9);
 $numCenRam = rand(1,9);
 ?>
 
-  <div class="contenedor-ejercicios col-md-9 animate__animated animate__bounceInRight">
+  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight border">
     <div class="contenedor-nivel row text-center">
         <div class="row">
           
