@@ -5,7 +5,7 @@ $numDecRam = rand(1,9);
 $numCenRam = rand(1,9);
 ?>
 
-  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight border">
+  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row">
           
