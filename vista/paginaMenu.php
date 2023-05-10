@@ -5,7 +5,7 @@ require_once("layout/header.php");
 
 <div class="contenedor-menu text-center">
 
-    <h1>Niveles</h1>
+    <h1 class="animate__animated animate__bounceInDown txttitulolevel">Niveles</h1>
     <div class="contenedor-btn animate__animated animate__bounceInDown btnNivel1">
       <a href="paginaN1" class="btn btn-outline-white btn-nivel" role="button">Nivel 1  <br>Valor de los Números</a>
     </div>

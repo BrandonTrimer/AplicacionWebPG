@@ -13,6 +13,7 @@
 
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
+    <a class="navbar-brand" href="index">Inicio</a>
     <a class="navbar-brand" href="paginaMenu">Menu</a>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
