@@ -106,13 +106,18 @@ body {
   fondo antiguo*/
   margin: 0 auto;
 }
+
 .row > h2,
-h5 {
+.row > h5,
+.row > div > h2 {
   color: white;
 }
 .contenedor-presentacion {
   display: flex;
   justify-content: center;
+}
+.row > h5 {
+  width: 80%;
 }
 .texto-img {
   display: flex;

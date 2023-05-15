@@ -27,7 +27,7 @@ $posicion[3] = $opciones1[$numR1[3]];
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
-        <div class="row">
+        <div class="row justify-content-md-center text-center">
             <h2>Ejercicio 5</h2>
             <h5>Seleccione la división interpretada como multiplicación, si no ves la respuesta presiona el boton rojo para seguir buscando</h5>
         </div>

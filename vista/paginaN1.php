@@ -7,7 +7,7 @@ $numCenRam = rand(1,9);
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
-        <div class="row">
+        <div class="row justify-content-md-center text-center">
           
             <h2>Ejercicio 1</h2>
             <h5>Llena las casillas según el valor que representa el número</h5>

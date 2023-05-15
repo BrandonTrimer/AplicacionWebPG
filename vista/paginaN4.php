@@ -36,9 +36,9 @@ $posicion[3] = $opciones1[$numR1[3]];
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
-        <div class="row">
+        <div class="row justify-content-md-center text-center">
             <h2>Ejercicio 4</h2>
-            <h5>Selecciona la cantidad de veces que se debe repetir un número según el ejercicio. Si no ves la respuesta presiona el boton rojo para seguir buscando</h5>
+            <h5 class="txtEjer">Selecciona la cantidad de veces que se debe repetir un número según el ejercicio. Si no ves la respuesta presiona el boton rojo para seguir buscando</h5>
         </div>
         <div class="row justify-content-md-center text-center cont-opt">
             <div class="col-md-3 align-self-center">
