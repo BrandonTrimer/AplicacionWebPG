@@ -11,15 +11,15 @@ $numCenMRam = rand(1,9);
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
-        <div class="row">
+        <div class="row justify-content-md-center text-center">
             <h2>Ejercicio 2</h2>
             <h5>Ordena los números en la tabla según su valor posicional </h5>
         </div>
-        <div class="row">
+        <div class="row justify-content-md-center text-center">
             <div class="col-md-3 align-self-center">
               <h2><?php echo ($numUniRam.$numDecRam.$numCenRam." ".$numUniMRam.$numDecMRam.$numCenMRam)?> = </h2>
             </div>
-            <div class="col-md-9 cont-ejer-n1">
+            <div class="col-md-8 cont-ejer-n1">
                 <div class="row ejer-n1">
                     <div class="col-2 colum btn-fondo"><h1>CENTENA MIL</h1></div>
                     <div class="col-2 colum btn-fondo"><h1>DECENA MIL</h1></div>

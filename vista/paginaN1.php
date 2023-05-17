@@ -12,7 +12,7 @@ $numCenRam = rand(1,9);
             <h2>Ejercicio 1</h2>
             <h5>Llena las casillas según el valor que representa el número</h5>
         </div>
-        <div class="row border justify-content-md-center text-center">
+        <div class="row justify-content-md-center text-center">
             <div class="col-md-3 align-self-center">
               <h2><?php echo ($numCenRam.$numDecRam.$numUniRam) ?> = </h2>
             </div>
