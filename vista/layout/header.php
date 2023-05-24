@@ -16,9 +16,8 @@
     <a class="navbar-brand" href="index">Inicio</a>
     <a class="navbar-brand" href="paginaMenu">Menu</a>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      </ul>
-      <h5 class="navbar-text"></h5>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"> </ul>
+      <a class="navbar-brand btnFinal" href="paginaMenu">Grupo de Estudio</a>
     </div>
   </div>
 </nav>

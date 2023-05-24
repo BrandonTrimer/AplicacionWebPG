@@ -15,9 +15,21 @@ body {
 }
 .navbar-brand {
   margin-left: 50px;
+  margin-bottom: 10px;
+  border-bottom: solid rgba(0, 0, 0, 0);
+  transition: all 0.2s;
 }
 .navbar-text {
   margin-right: 50px;
+}
+.btnFinal {
+  margin-right: 50px;
+  padding: 8px 8px 8px 8px;
+  border: solid rgb(224, 150, 72);
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(11, 59, 80);
+  transition: all 0.2s;
 }
 /*--------------- CONTENIDO ---------------*/
 .fondo {
@@ -43,22 +55,6 @@ body {
   border-radius: 20px;
   cursor: pointer;
   font-size: 40px;
-  /*width: 150px;
-  height: 150px;
-  margin-top: 40px;
-  padding-top: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 40px;
-
-  border: 2px solid;
-  background: rgb(15, 83, 107);
-  background: linear-gradient(
-    90deg,
-    rgba(15, 83, 107, 1) 0%,
-    rgba(58, 153, 191, 1) 50%,
-    rgba(190, 228, 236, 1) 100%
-  );*/
   border: solid rgb(224, 150, 72);
 
   color: white;
@@ -428,6 +424,15 @@ body {
   color: rgb(11, 59, 80);
   background-color: rgb(224, 150, 72);
 }
+
+/*------ header */
+.navbar-brand:hover {
+  border-bottom: solid rgb(224, 150, 72);
+}
+.btnFinal:hover {
+  color: white;
+}
+
 /*------- boton menu niveles*/
 .btn-nivel:hover {
   background-position: 0px -90px;
