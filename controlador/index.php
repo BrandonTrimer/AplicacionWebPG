@@ -62,7 +62,7 @@ class modeloController{
     }
 
     //pagina historia resultados
-    static function paginaHistoriaRes(){
-        require_once("vista/paginaHistoriaRes.php");
+    static function paginaGEAdmin(){
+        require_once("vista/paginaGEAdmin.php");
     }
 }
