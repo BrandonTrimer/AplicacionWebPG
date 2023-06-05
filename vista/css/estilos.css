@@ -13,15 +13,13 @@ body {
 .navbar {
   background: rgba(0, 0, 0, 0);
 }
-.btnInicio {
-  margin-left: 50px;
-}
 .navbar-brand {
   margin-bottom: 10px;
   padding: 8px 8px 8px 8px;
   border-radius: 5px;
   border: solid rgba(0, 0, 0, 0);
   transition: all 0.2s;
+  margin-left: 20px;
 }
 .navbar-text {
   margin-right: 50px;
