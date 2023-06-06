@@ -43,6 +43,19 @@ body {
   width: 320px;
   height: 320px;
 }
+/*------ contenido heador User*/
+.imgUser {
+  width: 120px;
+  height: 120px;
+}
+.groups-content {
+  border: solid 2px;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+}
+.groups-content > h5 {
+  margin-bottom: 20px;
+}
 /*------ letras y boton*/
 .texto-boton {
   padding-top: 40px;

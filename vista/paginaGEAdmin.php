@@ -1,5 +1,5 @@
 <?php
-require_once("layout/header.php");
+require_once("layout/headerUser.php");
 ?>
 <!---
   <div class="contenedor-ejercicios contenedor-ejercicios-minH col-md-9 animate__animated animate__bounceInRight">
