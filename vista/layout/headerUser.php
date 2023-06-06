@@ -33,14 +33,14 @@
     </div><hr>
     <h5>Grupos Creados</h5>
     <div class="groups-content">
-        
         <div class="group text-center border">
             <div class="group-title">
                 <h5>Los adolecentes mas perrones de la galaxia</h5>
             </div>
             <div class="group-btn">
-                <button class="btn btn-primary" type="submit">Editar</button>
-                <button class="btn btn-danger" type="submit">Eliminar</button>
+                <button class="btn btn-outline-success" type="submit">Ver</button>
+                <button class="btn btn-outline-primary" type="submit">Editar</button>
+                <button class="btn btn-outline-danger" type="submit">Eliminar</button>
             </div>
         </div>
     </div>
