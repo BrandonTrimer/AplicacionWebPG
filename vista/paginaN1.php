@@ -3,6 +3,8 @@ require_once("layout/header.php");
 $numUniRam = rand(1,9);
 $numDecRam = rand(1,9);
 $numCenRam = rand(1,9);
+var_dump($dato);
+echo $dato[1];
 ?>
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
