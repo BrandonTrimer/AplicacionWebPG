@@ -21,7 +21,7 @@ class modeloController{
     //pagina N1
     static function paginaN1(){
         $producto = new Modelo();
-        $dato = $producto->mostrar("maestro","idMaestro = 1");
+        $dato = $producto->mostrarU("maestro","idMaestro = 1");
         require_once("vista/paginaN1.php");
     }
     //pagina N1

@@ -3,8 +3,14 @@ require_once("layout/header.php");
 $numUniRam = rand(1,9);
 $numDecRam = rand(1,9);
 $numCenRam = rand(1,9);
-var_dump($dato);
-echo $dato[1];
+
+print_r ($dato[0]);
+echo $dato['1'];
+foreach ($datos as $key => $value) {
+  foreach($value as $v):
+    echo $v['nombre'];
+  endforeach;
+}
 ?>
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">

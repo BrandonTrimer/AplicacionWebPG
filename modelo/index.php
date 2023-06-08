@@ -18,10 +18,10 @@ class Modelo{
         } 
 
         public function mostrarU($tabla,$condicion){
-        $consul="select unidad from ".$tabla." where ".$condicion.";";
+        $consul="select nombre from ".$tabla." where ".$condicion.";";
         $resu=$this->db->query($consul);
         $uni = $resu->FETCHALL(PDO::FETCH_ASSOC);
 
-        return $resu;
+        return $uni;
         } 
 }
