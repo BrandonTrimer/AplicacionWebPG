@@ -14,7 +14,7 @@
 <nav class="navbar navbar-expand-lg justify-content-center">
   <a class="navbar-brand btnInicio" href="index">Inicio</a>
   <a class="navbar-brand" href="paginaMenu">Menu</a>
-  <a class="navbar-brand btnGrupo"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+  <a class="navbar-brand"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
     <ion-icon name="person-outline"></ion-icon> Perfil
   </a>
 </nav>

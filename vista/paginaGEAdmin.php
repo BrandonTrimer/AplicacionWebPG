@@ -1,28 +1,46 @@
 <?php
 require_once("layout/headerUser.php");
 ?>
-<!---
   <div class="contenedor-ejercicios contenedor-ejercicios-minH col-md-9 animate__animated animate__bounceInRight">
-    <div class="contenedor-nivel row text-center">
-        <div class="row justify-content-md-center text-center">
-            <h2 class="animate__animated animate__zoomInDown">¡¡¡ VICTORIA !!!</h2>
-            <h5 class="animate__animated animate__zoomInDown">Tu robot es mas fuerte que el Meteorito, salvaste la ciudad !!!</h5>
-        </div>
-        <div class="row"></div>
-          <div class="col-3 animate__animated animate__bounceInRight">
-            <img src="vista/img/imgRobot2t.png" alt="" class="img-hist img-ganador img-fuerte">
-            <h5>Puntos = 6</h5>
-          </div>
-          <div class="col-3 animate__animated animate__bounceInRight">
-            <img src="vista/img/imgMeteorot.png" alt="" class="img-hist img-perdedor img-debil">
-            <h5>Puntos = 4</h5>
-          </div>
-          <div class="col-6 animate__animated animate__bounceInRight">
-            <img src="vista/img/imgCiudad.jpg" alt="" class="img-hist img-ciudadRes img-ciudadVic">
-          </div>
-        </div>
+    <div class="row contenedor-listaText">
+      <h3 class="text-center">Lista de Integrantes</h3>
+      <h4 class="col ">Grupo: Los adolecentes mas perrones de la galaxia</h4>
+      <button type="button" class="col-2 btn btn-success btn-agregar"><ion-icon name="add-outline"></ion-icon>Agregar</button>
     </div>
-  </div>-->
+    
+    <div class="contenedor-listaInt justify-content-center">
+      <table class="table table-hover justify-content-md-center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>
+              <button class="btn btn-primary" type="submit">Editar</button>
+              <button class="btn btn-danger" type="submit">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <<td>
+              <button class="btn btn-primary" type="submit">Editar</button>
+              <button class="btn btn-danger" type="submit">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   
   

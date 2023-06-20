@@ -43,7 +43,7 @@ body {
   width: 320px;
   height: 320px;
 }
-/*------ contenido heador User*/
+/*------ contenido header User*/
 .imgUser {
   width: 120px;
   height: 120px;
@@ -56,6 +56,26 @@ body {
 }
 .groups-content > h5 {
   margin-bottom: 20px;
+}
+.contenedor-listaText > h3 {
+  color: white;
+  margin-top: 10px;
+}
+.contenedor-listaText > h4,
+.btn-agregar {
+  color: white;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.contenedor-listaText > .btn {
+  margin-right: 30px;
+}
+.contenedor-listaInt {
+  width: 98%;
+  margin-top: 20px;
+}
+.contenedor-listaInt > table {
+  color: white;
 }
 /*------ letras y boton*/
 .texto-boton {
