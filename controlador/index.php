@@ -61,7 +61,7 @@ class modeloController{
         require_once("vista/paginaHistoriaEjer.php");
     }
 
-    //pagina historia resultados
+    //pagina perfil profesor
     static function paginaGEAdmin(){
         require_once("vista/paginaGEAdmin.php");
     }

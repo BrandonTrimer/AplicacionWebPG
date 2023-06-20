@@ -71,12 +71,15 @@ body {
   margin-right: 30px;
 }
 .contenedor-listaInt {
-  width: 98%;
   margin-top: 20px;
 }
 .contenedor-listaInt > table {
   color: white;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
 }
+
 /*------ letras y boton*/
 .texto-boton {
   padding-top: 40px;
