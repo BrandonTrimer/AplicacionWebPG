@@ -1,10 +1,22 @@
 <?php
 require_once("layout/headerUser.php");
+/*
+print_r ($datoNomP[0]);
+foreach ($datoNomP as $key => $value) {
+  foreach($value as $v):
+    echo 'hola ';
+    echo $v['nombre'];
+  endforeach;
+}*/
 ?>
   <div class="contenedor-ejercicios contenedor-ejercicios-minH col-md-9 animate__animated animate__bounceInRight">
     <div class="row contenedor-listaText">
       <h3 class="text-center">Lista de Integrantes</h3>
-      <h4 class="col ">Grupo: "Los adolecentes mas perrones de la galaxia"</h4>
+      <h4 class="col ">Grupo: "<?php foreach ($datoNomG as $key => $value) {
+                                        foreach($value as $v):
+                                          echo $v['nombre'];
+                                        endforeach;
+                                      } ?>"</h4>
       <button type="button" class="col-2 btn btn-success btn-agregar" data-bs-toggle="modal" data-bs-target="#agregarInt"><ion-icon name="add-outline"></ion-icon>Agregar</button>
     </div>
     

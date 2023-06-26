@@ -7,7 +7,7 @@ class Modelo{
         $this->Modelo = array();
         $this->db = new PDO('mysql:host=localhost;dbname=juegamate','root','');
     }
-
+/* ------------------------- Funcion SELECCIONAR */
     public function mostrar($tabla,$condicion){
         $consul="select * from ".$tabla." where ".$condicion.";";
             $resu=$this->db->query($consul);
@@ -15,13 +15,5 @@ class Modelo{
                 $this->datos[]=$filas;
             }
             return $this->datos;
-        } 
-
-        public function mostrarU($tabla,$condicion){
-        $consul="select nombre from ".$tabla." where ".$condicion.";";
-        $resu=$this->db->query($consul);
-        $uni = $resu->FETCHALL(PDO::FETCH_ASSOC);
-
-        return $uni;
-        } 
+        }
 }
