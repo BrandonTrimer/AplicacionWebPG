@@ -1,5 +1,5 @@
 <?php
-require_once("layout/headerUser.php");
+
 /*
 print_r ($datoNomP[0]);
 foreach ($datoNomP as $key => $value) {
@@ -9,6 +9,27 @@ foreach ($datoNomP as $key => $value) {
   endforeach;
 }*/
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="vista/css/estilos.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg justify-content-center">
+  <a class="navbar-brand btnInicio" href="index">Inicio</a>
+  <a class="navbar-brand" href="paginaMenu">Menu</a>
+  <a class="navbar-brand btnGrupo"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+    <ion-icon name="person-outline"></ion-icon> Perfil
+  </a>
+</nav>
+
   <div class="contenedor-ejercicios contenedor-ejercicios-minH col-md-9 animate__animated animate__bounceInRight">
     <div class="row contenedor-listaText">
       <h3 class="text-center">Lista de Integrantes</h3>
@@ -134,6 +155,65 @@ foreach ($datoNomP as $key => $value) {
   </div>
 </div>
 
+ <!----------------------- Offvanvas perfil de usuario -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil de Usuario</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="img-content text-center">
+        <img src="vista/img/iconoUser.webp" class="imgUser" alt="">
+        <h4>Eduardo</h4>
+        <h4>Espinosa Castillo</h6>
+    </div><hr>
+    <button class="btn btn-primary btn-crearG" data-bs-toggle="modal" data-bs-target="#crearGrupo" type="submit">Crear Grupo</button>
+    <h5>Grupos Creados</h5>
+    <div class="groups-content">
+        <div class="group text-center border">
+            <div class="group-title">
+                <h5><?php foreach ($datoNomG as $key => $value) {
+                                        foreach($value as $v):
+                                          echo $v['nombre'];?>
+                                        </h5>
+            </div>
+            <div class="group-btn">
+                <button class="btn btn-outline-success" type="submit">Ver</button>
+                <button class="btn btn-outline-primary" type="submit">Editar</button>
+                <button class="btn btn-outline-danger" type="submit">Eliminar</button>
+            </div>
+            <?php endforeach;
+                                      } ?>
+        </div>
+    </div>
+  </div>
+</div>
 
+<!----------------------- Modal agregar grupo  -->
+<div class="modal fade" id="crearGrupo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Nuevo Grupo</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body justify-content-center">
+        <form action="" method="get">
+          <div class="row g-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">¿Como se llamara su Grupo?</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Los Genios" name="nombreG">
+              <input type="hidden" name="hid" value="guardar">
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+               <button type="submit" class="btn btn-success me-md-2" name="btnCrear" value="GUARDAR">Crear</button>
+               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <?php
 require_once("layout/footer.php");

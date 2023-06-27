@@ -31,6 +31,7 @@
         <h4>Eduardo</h4>
         <h4>Espinosa Castillo</h6>
     </div><hr>
+    <button class="btn btn-primary btn-crearG" type="submit">Crear Grupo</button>
     <h5>Grupos Creados</h5>
     <div class="groups-content">
         <div class="group text-center border">
@@ -47,116 +48,4 @@
   </div>
 </div>
 
-
- <!----------------------- Modal escoger opcion  -->
-<div class="modal fade" id="escogerOpcion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Grupo de Estudio</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row contenedor-ejerN4 justify-content-md-center text-center" data-bs-toggle="modal" data-bs-target="#iniciarGrupo">
-          <div class="col-5 colum btn-fondo align-self-center select-conten2">
-            <h4>Ingresar a un grupo</h4>
-          </div>
-          <div class="col-5 colum btn-fondo align-self-center select-conten2" data-bs-toggle="modal" data-bs-target="#crearGrupo">
-            <h4>Crear Grupo</h4>
-          </div>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
- <!----------------------- Modal entrar grupo  -->
-<div class="modal fade" id="iniciarGrupo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Ingresar al Grupo de Estudio</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body justify-content-center">
-        <form>
-          <div class="row g-3">
-            <div class="col form-floating mb-3">
-              <input type="text" class="form-control" id="floatingFname" placeholder="First name">
-              <label for="floatingFname">Nombre</label>
-            </div>
-            <div class="col form-floating">
-              <input type="text" class="form-control" id="floatingLname" placeholder="Last name">
-              <label for="floatingLname">Apellido</label>
-            </div>
-          </div>
-
-          <div class="form-floating">
-            <input type="text" class="form-control" id="floatingCodigo" placeholder="Password">
-            <label for="floatingCodigo">Codigo de Grupo</label>
-          </div><hr>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-bs-toggle="collapse" href="#collapseExample" aria-controls="collapseExample">
-            <label class="form-check-label" for="flexCheckDefault">
-              Ingresar como Profesor
-            </label>
-          </div>
-
-          <div class="collapse" id="collapseExample">
-            <div class="form-floating">
-              <input type="password" class="form-control" id="floatingCodigo" placeholder="Password">
-              <label for="floatingCodigo">Contraseña</label>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
- <!----------------------- Modal crear grupo  -->
-<div class="modal fade" id="crearGrupo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Grupo de Estudio</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="row g-3">
-            <div class="col form-floating mb-3">
-              <input type="text" class="form-control" id="floatingFname" placeholder="First name">
-              <label for="floatingFname">Nombre</label>
-            </div>
-            <div class="col form-floating">
-              <input type="text" class="form-control" id="floatingLname" placeholder="Last name">
-              <label for="floatingLname">Apellido</label>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">¿Como se llamara su Grupo?</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Los Genios">
-          </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Contraseña</label>
-          </div>
-          
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <a href="paginaGEAdmin" type="button" class="btn btn-primary">Aceptar</a>
-      </div>
-    </div>
-  </div>
-</div>
 

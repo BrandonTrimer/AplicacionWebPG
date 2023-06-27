@@ -20,14 +20,10 @@ class modeloController{
 
     //pagina N1
     static function paginaN1(){
-        /*$producto = new Modelo();
-        $dato = $producto->mostrar("maestro","idMaestro = 1");*/
         require_once("vista/paginaN1.php");
     }
     //pagina N1
     static function pagina2N1(){
-        /*$producto = new Modelo();
-        $dato = $producto->mostrar("ejerciciosvalornum","idvalornum = 1");*/
         require_once("vista/pagina2N1.php");
     }
 
@@ -68,6 +64,17 @@ class modeloController{
 
         $nombreGrup = new Modelo();
         $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = 1");
+        require_once("vista/paginaGEAdmin.php");
+    }
+
+    // --------------------------- FUNCIONES GET FORMULARIOS
+
+     //guardar grupo
+    static function guardar(){
+        $nombre= $_REQUEST['nombre'];
+        $datos = "'".$nombre."',";
+        $nombreProf = new Modelo();
+        $datoNomP = $nombreProf->mostrar("maestro","idMaestro = 1");
         require_once("vista/paginaGEAdmin.php");
     }
 }
