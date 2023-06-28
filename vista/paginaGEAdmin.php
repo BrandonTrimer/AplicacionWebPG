@@ -33,7 +33,7 @@ foreach ($datoNomP as $key => $value) {
   <div class="contenedor-ejercicios contenedor-ejercicios-minH col-md-9 animate__animated animate__bounceInRight">
     <div class="row contenedor-listaText">
       <h3 class="text-center">Lista de Integrantes</h3>
-      <h4 class="col ">Grupo: "<?php foreach ($datoNomG as $key => $value) {
+      <h4 class="col ">Grupo: "<?php foreach ($datoNomGT as $key => $value) {
                                         foreach($value as $v):
                                           echo $v['nombre'];
                                         endforeach;
@@ -52,23 +52,19 @@ foreach ($datoNomP as $key => $value) {
           </tr>
         </thead>
         <tbody>
+            <?php foreach ($datoNomEst as $key => $value) {
+                    foreach($value as $v): ?>
           <tr>
             <th scope="row">1</th>
-            <td>Mark antonio</td>
-            <td>Otto castillos</td>
+            <td><?php echo $v['nombre'] ?></td>
+            <td><?php echo $v['apellido'] ?></td>
             <td>
               <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#editarInt">Editar</button>
               <button class="btn btn-danger" type="submit" data-bs-toggle="modal" data-bs-target="#eliminarInt">Eliminar</button>
             </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>
-              <button class="btn btn-primary" type="submit">Editar</button>
-              <button class="btn btn-danger" type="submit">Eliminar</button>
-            </td>
+            <?php endforeach;
+                } ?>
           </tr>
         </tbody>
       </table>
@@ -164,16 +160,25 @@ foreach ($datoNomP as $key => $value) {
   <div class="offcanvas-body">
     <div class="img-content text-center">
         <img src="vista/img/iconoUser.webp" class="imgUser" alt="">
-        <h4>Eduardo</h4>
-        <h4>Espinosa Castillo</h6>
+        <h4><?php foreach ($datoNomP as $key => $value) {
+                                        foreach($value as $v):
+                                          echo $v['nombre'];
+                                        endforeach;
+                                      } ?></h4>
+        <h4><?php foreach ($datoNomP as $key => $value) {
+                                        foreach($value as $v):
+                                          echo $v['apellido'];
+                                        endforeach;
+                                      } ?></h6>
     </div><hr>
     <button class="btn btn-primary btn-crearG" data-bs-toggle="modal" data-bs-target="#crearGrupo" type="submit">Crear Grupo</button>
     <h5>Grupos Creados</h5>
+    <?php foreach ($datoNomG as $key => $value) {
+                                        foreach($value as $v):?>
     <div class="groups-content">
         <div class="group text-center border">
             <div class="group-title">
-                <h5><?php foreach ($datoNomG as $key => $value) {
-                                        foreach($value as $v):
+                <h5><?php 
                                           echo $v['nombre'];?>
                                         </h5>
             </div>
@@ -182,10 +187,10 @@ foreach ($datoNomP as $key => $value) {
                 <button class="btn btn-outline-primary" type="submit">Editar</button>
                 <button class="btn btn-outline-danger" type="submit">Eliminar</button>
             </div>
-            <?php endforeach;
-                                      } ?>
         </div>
     </div>
+    <?php endforeach;
+                                      } ?>
   </div>
 </div>
 
@@ -202,11 +207,11 @@ foreach ($datoNomP as $key => $value) {
           <div class="row g-3">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">¿Como se llamara su Grupo?</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Los Genios" name="nombreG">
-              <input type="hidden" name="hid" value="guardar">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Los Genios" name="nombreG" required>
+              
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-               <button type="submit" class="btn btn-success me-md-2" name="btnCrear" value="GUARDAR">Crear</button>
+               <button type="submit" class="btn btn-success me-md-2" name="btnCrear" value="guardar">Crear</button>
                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
             </div>
           </div>

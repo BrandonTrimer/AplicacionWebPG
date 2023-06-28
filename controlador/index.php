@@ -62,8 +62,14 @@ class modeloController{
         $nombreProf = new Modelo();
         $datoNomP = $nombreProf->mostrar("maestro","idMaestro = 1");
 
+        $nombreEst = new Modelo();
+        $datoNomEst = $nombreEst->mostrar("estudiante","idgrupo = 1");
+
         $nombreGrup = new Modelo();
         $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = 1");
+
+        $nombreGrupTitulo = new Modelo();
+        $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = 1 and idGrupo = 1");
         require_once("vista/paginaGEAdmin.php");
     }
 
@@ -71,10 +77,13 @@ class modeloController{
 
      //guardar grupo
     static function guardar(){
-        $nombre= $_REQUEST['nombre'];
-        $datos = "'".$nombre."',";
-        $nombreProf = new Modelo();
-        $datoNomP = $nombreProf->mostrar("maestro","idMaestro = 1");
+        $codigo = 2345;
+        $idM = 1;
+        /*$nombre= $_REQUEST['nombreG'];
+        $datos = "'".$nombre."',".$codigo.",".$idM;
+        $grupo = new Modelo();
+        $datoGrupo = $grupo->agregar("grupo",$datos);
+        header("location:".urlsite);*/
         require_once("vista/paginaGEAdmin.php");
     }
 }
