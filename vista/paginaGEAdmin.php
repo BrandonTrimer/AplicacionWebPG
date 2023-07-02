@@ -183,9 +183,9 @@ foreach ($datoNomP as $key => $value) {
                                         </h5>
             </div>
             <div class="group-btn">
-                <button class="btn btn-outline-success" type="submit">Ver</button>
-                <button class="btn btn-outline-primary" type="submit">Editar</button>
-                <button class="btn btn-outline-danger" type="submit">Eliminar</button>
+                <button class="btn btn-success" type="submit"><ion-icon name="eye-outline"></ion-icon></button>
+                <button class="btn btn-primary" type="submit"><ion-icon name="pencil-outline"></ion-icon></button>
+                <button class="btn btn-danger" type="submit"><ion-icon name="trash-outline"></ion-icon></button>
             </div>
         </div>
     </div>
@@ -203,7 +203,7 @@ foreach ($datoNomP as $key => $value) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body justify-content-center">
-        <form action="" method="get">
+        <form action="guardar" method="POST">
           <div class="row g-3">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">¿Como se llamara su Grupo?</label>

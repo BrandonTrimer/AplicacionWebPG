@@ -77,13 +77,15 @@ class modeloController{
 
      //guardar grupo
     static function guardar(){
-        $codigo = 2345;
+        $codigo = 4545;
         $idM = 1;
-        /*$nombre= $_REQUEST['nombreG'];
-        $datos = "'".$nombre."',".$codigo.",".$idM;
+        $nombre= $_REQUEST['nombreG'];
+        $datos = "'".$nombre."','".$codigo."','".$idM."'";
+        //$datos = $nombre.", ".$codigo.", ".$idM;
         $grupo = new Modelo();
         $datoGrupo = $grupo->agregar("grupo",$datos);
-        header("location:".urlsite);*/
-        require_once("vista/paginaGEAdmin.php");
+        //header("location:".urlsite);
+        //require_once("vista/paginaGEAdmin.php");
+        header("location:".paginaGEAdmin);
     }
 }
