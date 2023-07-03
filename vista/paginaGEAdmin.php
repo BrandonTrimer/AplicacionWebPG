@@ -33,12 +33,13 @@ foreach ($datoNomP as $key => $value) {
   <div class="contenedor-ejercicios contenedor-ejercicios-minH col-md-9 animate__animated animate__bounceInRight">
     <div class="row contenedor-listaText">
       <h3 class="text-center">Lista de Integrantes</h3>
-      <h4 class="col ">Grupo: "<?php foreach ($datoNomGT as $key => $value) {
+      <h4 class="col">Grupo: "<?php foreach ($datoNomGT as $key => $value) {
                                         foreach($value as $v):
                                           echo $v['nombre'];
                                         endforeach;
                                       } ?>"</h4>
       <button type="button" class="col-2 btn btn-success btn-agregar" data-bs-toggle="modal" data-bs-target="#agregarInt"><ion-icon name="add-outline"></ion-icon>Agregar</button>
+      <h5>Codigo: 2344</h5>
     </div>
     
     <div class="contenedor-listaInt">
@@ -65,7 +66,6 @@ foreach ($datoNomP as $key => $value) {
           </tr>
             <?php endforeach;
                 } ?>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -173,24 +173,26 @@ foreach ($datoNomP as $key => $value) {
     </div><hr>
     <button class="btn btn-primary btn-crearG" data-bs-toggle="modal" data-bs-target="#crearGrupo" type="submit">Crear Grupo</button>
     <h5>Grupos Creados</h5>
-    <?php foreach ($datoNomG as $key => $value) {
-                                        foreach($value as $v):?>
-    <div class="groups-content">
-        <div class="group text-center border">
-            <div class="group-title">
-                <h5><?php 
-                                          echo $v['nombre'];?>
-                                        </h5>
-            </div>
-            <div class="group-btn">
-                <button class="btn btn-success" type="submit"><ion-icon name="eye-outline"></ion-icon></button>
-                <button class="btn btn-primary" type="submit"><ion-icon name="pencil-outline"></ion-icon></button>
-                <button class="btn btn-danger" type="submit"><ion-icon name="trash-outline"></ion-icon></button>
-            </div>
-        </div>
+    <div class="groupTotal overflow-y-auto">
+      <?php foreach ($datoNomG as $key => $value) {
+                                          foreach($value as $v):?>
+      <div class="groups-content">
+          <div class="group text-center border">
+              <div class="group-title">
+                  <h5><?php 
+                                            echo $v['nombre'];?>
+                                          </h5>
+              </div>
+              <div class="group-btn">
+                  <button class="btn btn-success" type="submit"><ion-icon name="eye-outline"></ion-icon></button>
+                  <button class="btn btn-primary" type="submit"><ion-icon name="pencil-outline"></ion-icon></button>
+                  <button class="btn btn-danger" type="submit"><ion-icon name="trash-outline"></ion-icon></button>
+              </div>
+          </div>
+      </div>
+      <?php endforeach;
+                                        } ?>
     </div>
-    <?php endforeach;
-                                      } ?>
   </div>
 </div>
 
