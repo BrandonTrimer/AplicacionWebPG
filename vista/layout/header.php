@@ -65,20 +65,21 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body justify-content-center">
-        <form>
+
+        <form action="login" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" id="floatingFname" placeholder="First name">
+              <input type="text" class="form-control" name="nombre" id="floatingFname" placeholder="First name">
               <label for="floatingFname">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" id="floatingLname" placeholder="Last name">
+              <input type="text" class="form-control" name="apellido" id="floatingLname" placeholder="Last name">
               <label for="floatingLname">Apellido</label>
             </div>
           </div>
 
           <div class="form-floating">
-            <input type="text" class="form-control" id="floatingCodigo" placeholder="Password">
+            <input type="text" class="form-control" name="codigoGr" id="floatingCodigo" placeholder="Password">
             <label for="floatingCodigo">Codigo de Grupo</label>
           </div><hr>
           <div class="form-check">
@@ -90,15 +91,16 @@
 
           <div class="collapse" id="collapseExample">
             <div class="form-floating">
-              <input type="password" class="form-control" id="floatingCodigo" placeholder="Password">
+              <input type="password" class="form-control" name="passwordMa" id="floatingCodigo" placeholder="Password">
               <label for="floatingCodigo">Contraseña</label>
             </div>
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" name="btnLogin">Aceptar</button>
+          </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
+
       </div>
     </div>
   </div>

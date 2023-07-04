@@ -73,7 +73,7 @@ class modeloController{
         require_once("vista/paginaGEAdmin.php");
     }
 
-    // --------------------------- FUNCIONES GET FORMULARIOS
+    // --------------------------- FUNCIONES FORMULARIOS
 
      //guardar grupo
     static function guardar(){
@@ -87,5 +87,26 @@ class modeloController{
         //header("location:".urlsite);
         //require_once("vista/paginaGEAdmin.php");
         header("location:".paginaGEAdmin);
+    }
+    static function login(){
+        $nombre= $_REQUEST['nombre'];
+        $apellido= $_REQUEST['apellido'];
+        $clave= $_REQUEST['passwordMa'];
+        $codigo= $_REQUEST['codigoGr'];
+
+        //$datos = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$clave."'";
+        $datos = "nombre = '".$nombre."'";
+        $user = new Modelo();
+        //$datoUser = $user->mostrar2("maestro",$datos);
+        if ($datoUser = $user->mostrar2("maestro",$datos)) {
+            session_start();
+            $_SESSION["id"] = $datoUser->idMaestro;
+            require_once("vista/index.php");
+        } else {
+            require_once("vista/paginaGEAdmin.php");
+        }
+        
+
+        //header("location:".urlsite);
     }
 }

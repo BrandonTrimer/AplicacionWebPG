@@ -28,4 +28,11 @@ class Modelo{
                 return false;
             }
         }
+
+    public function mostrar2($tabla,$condicion){
+        $consul="select * from ".$tabla." where ".$condicion.";";
+            $resu=$this->db->query($consul);
+            $this->datos=$resu->fetch_object();
+            return $this->datos;
+        }
 }
