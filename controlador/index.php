@@ -59,18 +59,51 @@ class modeloController{
 
     //pagina perfil profesor
     static function paginaGEAdmin(){
-        $nombreProf = new Modelo();
-        $datoNomP = $nombreProf->mostrar("maestro","idMaestro = 1");
 
-        $nombreEst = new Modelo();
-        $datoNomEst = $nombreEst->mostrar("estudiante","idgrupo = 1");
+        $id;
+        $nombre= $_REQUEST['nombre'];
+        $apellido= $_REQUEST['apellido'];
+        $clave= $_REQUEST['passwordMa'];
+        $codigo= $_REQUEST['codigoGr'];
 
-        $nombreGrup = new Modelo();
-        $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = 1");
+        //$datos = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$clave."'";
+        $datos = "nombre = '".$nombre."'";
+        $user = new Modelo();
+        //$datoUser = $user->mostrar2("maestro",$datos);
+        if ($datoUser = $user->mostrar("maestro",$datos)) {
 
-        $nombreGrupTitulo = new Modelo();
-        $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = 1 and idGrupo = 1");
-        require_once("vista/paginaGEAdmin.php");
+            foreach ($datoUser as $key => $value) {
+                foreach($value as $v):
+                  $id = $v['idMaestro'];
+                endforeach;
+                }
+
+            session_start();
+            //$_SESSION["id"] = $datoUser->idMaestro;
+            $_SESSION["id"] = $id;
+            $_SESSION["nombre"] = $nombre;
+            $_SESSION["apellido"] = $apellido;
+            $_SESSION["clave"] = $clave;
+            $_SESSION["codigo"] = $codigo;
+
+            $nombreProf = new Modelo();
+            $datoNomP = $nombreProf->mostrar("maestro","idMaestro = "."'".$_SESSION["id"]."'");
+            
+            $nombreEst = new Modelo();
+            //$datoNomEst = $nombreEst->mostrar("estudiante","idgrupo = 1");
+            $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$_SESSION["id"]."'");
+            
+            $nombreGrup = new Modelo();
+            $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = 1");
+            
+            $nombreGrupTitulo = new Modelo();
+            $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = 1 and idGrupo = 1");
+            
+            require_once("vista/paginaGEAdmin.php");
+        } else {
+            require_once("vista/paginaMenu.php");
+        }
+        
     }
 
     // --------------------------- FUNCIONES FORMULARIOS
@@ -98,12 +131,15 @@ class modeloController{
         $datos = "nombre = '".$nombre."'";
         $user = new Modelo();
         //$datoUser = $user->mostrar2("maestro",$datos);
-        if ($datoUser = $user->mostrar2("maestro",$datos)) {
+        if ($datoUser = $user->mostrar("maestro",$datos)) {
             session_start();
-            $_SESSION["id"] = $datoUser->idMaestro;
-            require_once("vista/index.php");
-        } else {
+            //$_SESSION["id"] = $datoUser->idMaestro;
+            $_SESSION["nombre"] = $nombre;
+            $_SESSION["apellido"] = $apellido;
+            $_SESSION["clave"] = $clave;
             require_once("vista/paginaGEAdmin.php");
+        } else {
+            require_once("vista/paginaMenu.php");
         }
         
 

@@ -7,6 +7,24 @@ foreach ($datoNomP as $key => $value) {
     echo 'hola ';
     echo $v['nombre'];
   endforeach;
+
+
+  <?php 
+    if (!empty($nombre)) {
+      echo $nombre;
+      echo $apellido;
+      echo $codigo;
+      echo $clave;
+      echo "tttttt";
+      //print_r ($datoUser);
+      echo $_SESSION["nombre"]." ".$_SESSION["apellido"]." ".$_SESSION["clave"];
+    } else {
+      echo "usuario reconocido";
+    }
+    
+    ?>
+
+
 }*/
 ?>
 <!DOCTYPE html>

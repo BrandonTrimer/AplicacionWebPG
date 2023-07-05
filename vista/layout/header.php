@@ -66,7 +66,7 @@
       </div>
       <div class="modal-body justify-content-center">
 
-        <form action="login" method="POST">
+        <form action="paginaGEAdmin" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
               <input type="text" class="form-control" name="nombre" id="floatingFname" placeholder="First name">

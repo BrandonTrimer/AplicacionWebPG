@@ -21,19 +21,6 @@
 <div class="row fondo justify-content-md-center text-center">
   <div class="col-md-6 col-md-4 animate__animated animate__bounceInLeft">
     <h3 class="texto-boton">Entra y practica las matematicas de forma divertida</h3>
-    <?php 
-    if (!empty($nombre)) {
-      echo $nombre;
-      echo $apellido;
-      echo $codigo;
-      echo $clave;
-      echo "tttttt";
-      print_r ($datoUser);
-    } else {
-      echo "usuario reconocido";
-    }
-    
-    ?>
     <div class="row">
       <div class="col-12">
         <a href="paginaMenu" class="btn btn-outline-white btn-circle" role="button">Jugar</a>
