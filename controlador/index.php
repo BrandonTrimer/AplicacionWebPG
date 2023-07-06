@@ -94,10 +94,10 @@ class modeloController{
             $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$_SESSION["id"]."'");
             
             $nombreGrup = new Modelo();
-            $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = 1");
+            $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = "."'".$_SESSION["id"]."'");
             
             $nombreGrupTitulo = new Modelo();
-            $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = 1 and idGrupo = 1");
+            $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["id"]."'"." and idGrupo = 1");
             
             require_once("vista/paginaGEAdmin.php");
         } else {

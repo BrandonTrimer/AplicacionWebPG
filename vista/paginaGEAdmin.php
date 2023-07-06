@@ -71,7 +71,11 @@ foreach ($datoNomP as $key => $value) {
           </tr>
         </thead>
         <tbody>
-            <?php foreach ($datoNomEst as $key => $value) {
+            <?php 
+            
+            if (!empty($datoNomEst)) {
+               //echo "si hay datos";
+               foreach ($datoNomEst as $key => $value) {
                     foreach($value as $v): ?>
           <tr>
             <th scope="row">1</th>
@@ -83,7 +87,19 @@ foreach ($datoNomP as $key => $value) {
             </td>
           </tr>
             <?php endforeach;
-                } ?>
+                } 
+        
+             } else {
+               ?>
+              <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td><h3>NO HAY ESTUDIANTES AGREGADOS</h3></td>
+              </tr>
+        <?php
+             }
+            ?>
+            
         </tbody>
       </table>
     </div>
