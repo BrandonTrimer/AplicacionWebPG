@@ -60,7 +60,7 @@ class modeloController{
     //pagina perfil profesor
     static function paginaGEAdmin(){
 
-        $id;
+        $id = '';
         $nombre= $_REQUEST['nombre'];
         $apellido= $_REQUEST['apellido'];
         $clave= $_REQUEST['passwordMa'];
@@ -68,6 +68,7 @@ class modeloController{
 
         //$datos = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$clave."'";
         $datos = "nombre = '".$nombre."'";
+         
         $user = new Modelo();
         //$datoUser = $user->mostrar2("maestro",$datos);
         if ($datoUser = $user->mostrar("maestro",$datos)) {
@@ -75,6 +76,15 @@ class modeloController{
             foreach ($datoUser as $key => $value) {
                 foreach($value as $v):
                   $id = $v['idMaestro'];
+                endforeach;
+                }
+            $datosIdGrupo = "idMaestro = '".$id."'";
+            $datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo);
+            foreach ($datoIdGrupo as $key => $value) {
+                foreach($value as $v):
+                  if ($v['idMaestro']=$id) {
+                    $idGrupo = $v['idMaestro'];
+                  } 
                 endforeach;
                 }
 
@@ -97,7 +107,7 @@ class modeloController{
             $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = "."'".$_SESSION["id"]."'");
             
             $nombreGrupTitulo = new Modelo();
-            $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["id"]."'"." and idGrupo = 1");
+            $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["id"]."'"." and idGrupo = '".$idGrupo."'");
             
             require_once("vista/paginaGEAdmin.php");
         } else {
