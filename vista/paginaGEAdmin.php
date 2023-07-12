@@ -58,6 +58,12 @@ foreach ($datoNomP as $key => $value) {
                                       } ?>"</h4>
       <button type="button" class="col-2 btn btn-success btn-agregar" data-bs-toggle="modal" data-bs-target="#agregarInt"><ion-icon name="add-outline"></ion-icon>Agregar</button>
       <h5>Codigo: 2344</h5>
+      <?php 
+      $num1=rand(10,99);
+      $num2=rand(10,99);
+      $codigo=$num1.$num2;
+      echo $codigo;
+      ?>
     </div>
     
     <div class="contenedor-listaInt">
@@ -115,22 +121,22 @@ foreach ($datoNomP as $key => $value) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body justify-content-center">
-        <form>
+        <form action="guardarE" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" id="floatingFname" placeholder="First name">
+              <input type="text" class="form-control" name="nombreE" id="floatingFname" placeholder="First name">
               <label for="floatingFname">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" id="floatingLname" placeholder="Last name">
+              <input type="text" class="form-control" name="apellidoE" id="floatingLname" placeholder="Last name">
               <label for="floatingLname">Apellido</label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Aceptar</button>
             </div>
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
       </div>
     </div>
   </div>
@@ -239,7 +245,7 @@ foreach ($datoNomP as $key => $value) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body justify-content-center">
-        <form action="guardar" method="POST">
+        <form action="guardarG" method="POST">
           <div class="row g-3">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">¿Como se llamara su Grupo?</label>

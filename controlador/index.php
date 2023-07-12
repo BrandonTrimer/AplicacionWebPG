@@ -62,16 +62,8 @@ class modeloController{
 
         session_start();
         
-        //$datos = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$clave."'";
-        $datos = "nombre = '".$_SESSION["nombre"]."'";
         $user = new Modelo();
-        $datoUser = $user->mostrar("maestro",$datos);
-
-        foreach ($datoUser as $key => $value) {
-            foreach($value as $v):
-               $_SESSION["id"] = $v['idMaestro'];
-            endforeach;
-            }
+        
         $datosIdGrupo = "idMaestro = '". $_SESSION["id"]."'";
         $datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo);
         foreach ($datoIdGrupo as $key => $value) {
@@ -103,7 +95,7 @@ class modeloController{
     // --------------------------- FUNCIONES FORMULARIOS
 
      //guardar grupo
-    static function guardar(){
+    static function guardarG(){
         session_start();
         $codigo = 4545;
         $idM = $_SESSION["id"];
@@ -116,6 +108,22 @@ class modeloController{
         //require_once("vista/paginaGEAdmin.php");
         header("location:".paginaGEAdmin);
     }
+    //guardar estudiantes
+    static function guardarE(){
+        session_start();
+        $codigo = 4545;
+        $idM = $_SESSION["id"];
+        $nombre= $_REQUEST['nombreE'];
+        $apellido= $_REQUEST['apellidoE'];
+        $datos = "'".$nombre."','".$codigo."','".$idM."'";
+        //$datos = $nombre.", ".$codigo.", ".$idM;
+        $grupo = new Modelo();
+        $datoGrupo = $grupo->agregar("estudiante e","grupo g",$datos);
+        //header("location:".urlsite);
+        //require_once("vista/paginaGEAdmin.php");
+        header("location:".paginaGEAdmin);
+    }
+    // ------------------- Iniciar Session 
     static function login(){
         $nombre= $_REQUEST['nombre'];
         $apellido= $_REQUEST['apellido'];
@@ -128,6 +136,15 @@ class modeloController{
         //$datoUser = $user->mostrar2("maestro",$datos);
         if ($datoUser = $user->mostrar("maestro",$datos)) {
             session_start();
+            //$datos = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$clave."'";
+            $datos = "nombre = '".$nombre."'";
+            $datoUser = $user->mostrar("maestro",$datos);
+
+            foreach ($datoUser as $key => $value) {
+                foreach($value as $v):
+                   $_SESSION["id"] = $v['idMaestro'];
+                endforeach;
+                }
             //$_SESSION["id"] = $datoUser->idMaestro;
             $_SESSION["nombre"] = $nombre;
             $_SESSION["apellido"] = $apellido;

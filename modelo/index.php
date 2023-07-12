@@ -16,7 +16,17 @@ class Modelo{
             }
             return $this->datos;
         }
-
+/* ------------------------- Funcion SELECCIONAR Grupo Estudiante*/
+    public function mostrarGE($tabla1,$tabla2,$condicion){
+        $consul="select e.idEstudiante,e.nombre,e.apellido,g.codigo,g.idGrupo 
+                from ".$tabla1." inner join ".$tabla2." 
+                on ".$condicion.";";
+            $resu=$this->db->query($consul);
+            while($filas = $resu->FETCHALL(PDO::FETCH_ASSOC)) {
+                $this->datos[]=$filas;
+            }
+            return $this->datos;
+        }
 /* ------------------------- Funcion INSERTAR*/
     public function agregar($tabla,$datos){
         $consul="insert into ".$tabla." (idGrupo, nombre, codigo, idMaestro) values (null,".$datos.");";
