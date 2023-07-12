@@ -63,6 +63,7 @@ foreach ($datoNomP as $key => $value) {
       $num2=rand(10,99);
       $codigo=$num1.$num2;
       echo $codigo;
+      echo $_SESSION['id'];
       ?>
     </div>
     
@@ -220,13 +221,16 @@ foreach ($datoNomP as $key => $value) {
           <div class="group text-center border">
               <div class="group-title">
                   <h5><?php 
-                                            echo $v['nombre'];?>
+                                            echo $v['nombre'];echo " id ".$v['idGrupo'];?>
                                           </h5>
               </div>
               <div class="group-btn">
-                  <button class="btn btn-success" type="submit"><ion-icon name="eye-outline"></ion-icon></button>
-                  <button class="btn btn-primary" type="submit"><ion-icon name="pencil-outline"></ion-icon></button>
-                  <button class="btn btn-danger" type="submit"><ion-icon name="trash-outline"></ion-icon></button>
+                <form action="seleccionarGrupo" method="POST">
+                  <button class="btn btn-success" type="submit" name="selecG"><ion-icon name="eye-outline"></ion-icon></button>
+                  <button class="btn btn-primary" type="button"><ion-icon name="pencil-outline"></ion-icon></button>
+                  <button class="btn btn-danger" type="button"><ion-icon name="trash-outline"></ion-icon></button>
+                </form>
+                
               </div>
           </div>
       </div>
