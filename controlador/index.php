@@ -57,10 +57,10 @@ class modeloController{
         require_once("vista/paginaHistoriaEjer.php");
     }
     //pagina historia ejercicios
-    static function seleccionarGrupo($idGrupo){
+    static function seleccionarGrupo(){
         session_start();
-         $_SESSION["id"] = $idGrupo;
-        require_once("vista/paginaHistoriaEjer.php");
+        $_SESSION['idGS'] = $_POST['idGrupoSelect'];
+        header("location:".paginaGEAdmin);
     }
 
     //pagina perfil profesor
@@ -80,21 +80,35 @@ class modeloController{
             endforeach;
             }
             
-
-            $nombreProf = new Modelo();
-            $datoNomP = $nombreProf->mostrar("maestro","idMaestro = "."'".$_SESSION["idM"]."'");
+        // nombre profesor en perfil
+        $nombreProf = new Modelo();
+        $datoNomP = $nombreProf->mostrar("maestro","idMaestro = "."'".$_SESSION["idM"]."'");
+        // nombre de los grupos en perfil
+        $nombreGrup = new Modelo();
+        $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'");
+        $idGrupoSelect = $_SESSION['idGS'];
+        if (isset($_POST['selectG'])) {
+            $idGrupoSelect = $_POST['idGrupoSelect'];
+            // lista de nombres de los estudiantes en inicio
+            $nombreEst = new Modelo();
+            //$datoNomEst = $nombreEst->mostrar("estudiante","idgrupo = 1");
+            $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$idGrupoSelect."'");
+            // nombre del grupo en inicio
+            $nombreGrupTitulo = new Modelo();
+            $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$idGrupoSelect."'");
             
+        } else {
+
             $nombreEst = new Modelo();
             //$datoNomEst = $nombreEst->mostrar("estudiante","idgrupo = 1");
             $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$idGrupo."'");
-            
-            $nombreGrup = new Modelo();
-            $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'");
-            
             $nombreGrupTitulo = new Modelo();
             $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$idGrupo."'");
-            
-            require_once("vista/paginaGEAdmin.php");
+        }
+        
+        
+        
+        require_once("vista/paginaGEAdmin.php");
         
     }
 

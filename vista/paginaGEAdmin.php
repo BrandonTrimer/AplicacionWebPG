@@ -62,8 +62,9 @@ foreach ($datoNomP as $key => $value) {
       $num1=rand(10,99);
       $num2=rand(10,99);
       $codigo=$num1.$num2;
-      echo $codigo;
-      echo $_SESSION['id'];
+      //echo $codigo;
+      //echo $_SESSION['idM'];
+      
       ?>
     </div>
     
@@ -221,14 +222,16 @@ foreach ($datoNomP as $key => $value) {
           <div class="group text-center border">
               <div class="group-title">
                   <h5><?php 
-                                            echo $v['nombre'];echo " id ".$v['idGrupo'];?>
+                                            echo $v['nombre'];?>
                                           </h5>
               </div>
               <div class="group-btn">
-                <form action="seleccionarGrupo" method="POST">
-                  <button class="btn btn-success" type="submit" name="selecG"><ion-icon name="eye-outline"></ion-icon></button>
+                <form action="paginaGEAdmin" method="POST">
+                  <input type="hidden" name="idGrupoSelect" value="<?php echo $v['idGrupo'];?>" required>
+                  <button class="btn btn-success" type="submit" name="selectG"><ion-icon name="eye-outline"></ion-icon></button>
                   <button class="btn btn-primary" type="button"><ion-icon name="pencil-outline"></ion-icon></button>
                   <button class="btn btn-danger" type="button"><ion-icon name="trash-outline"></ion-icon></button>
+                
                 </form>
                 
               </div>
