@@ -86,7 +86,7 @@ class modeloController{
         // nombre de los grupos en perfil
         $nombreGrup = new Modelo();
         $datoNomG = $nombreGrup->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'");
-        $idGrupoSelect = $_SESSION['idGS'];
+        
         if (isset($_POST['selectG'])) {
             $idGrupoSelect = $_POST['idGrupoSelect'];
             // lista de nombres de los estudiantes en inicio
