@@ -100,7 +100,6 @@ class modeloController{
         } else {
 
             $nombreEst = new Modelo();
-            //$datoNomEst = $nombreEst->mostrar("estudiante","idgrupo = 1");
             $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$idGrupo."'");
             $nombreGrupTitulo = new Modelo();
             $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$idGrupo."'");
@@ -126,6 +125,26 @@ class modeloController{
         $datoGrupo = $grupo->agregar("grupo",$datos);
         //header("location:".urlsite);
         //require_once("vista/paginaGEAdmin.php");
+        header("location:".paginaGEAdmin);
+    }
+    //guardar grupo
+    static function editarG(){
+        session_start();
+        $idG= $_SESSION['idGrupoInic'];
+        $nombre= $_REQUEST['nomGEdit'];
+        $dato = "nombre = '".$nombre."'";
+        $condicion = "grupo.idGrupo = '".$idG."'";
+        $grupo = new Modelo();
+        $datoGrupo = $grupo->actualizar("grupo",$dato,$condicion);
+        header("location:".paginaGEAdmin);
+    }
+    //eliminar grupo
+    static function eliminarG(){
+        session_start();
+        $idG= $_SESSION['idGrupoInic'];
+        $condicion = "grupo.idGrupo = '".$idG."'";
+        $grupo = new Modelo();
+        $datoGrupo = $grupo->eliminar("grupo",$condicion);
         header("location:".paginaGEAdmin);
     }
     //guardar estudiantes

@@ -38,6 +38,26 @@ class Modelo{
                 return false;
             }
         }
+/* ------------------------- Funcion ACTUALIZAR*/
+    public function actualizar($tabla, $data, $condicion){       
+        $consulta="update ".$tabla." set ".$data." where ".$condicion;
+        $resultado=$this->db->query($consulta);
+        if ($resultado) {
+            return true;
+        }else {
+            return false;
+        }
+     }
+/* ------------------------- Funcion ELIMINAR*/
+    public function eliminar($tabla, $condicion){
+        $eli="delete from ".$tabla." where ".$condicion;
+        $res=$this->db->query($eli);
+        if ($res) {
+            return true; 
+        }else {
+            return false;
+        }
+    }
 /*
     public function mostrar2($tabla,$condicion){
         $consul="select * from ".$tabla." where ".$condicion.";";

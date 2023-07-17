@@ -54,9 +54,11 @@ foreach ($datoNomP as $key => $value) {
       <h4 class="col">Grupo: "<?php foreach ($datoNomGT as $key => $value) {
                                         foreach($value as $v):
                                           echo $v['nombre'];
+                                          $_SESSION['idGrupoInic'] = $v['idGrupo'];
                                           $_SESSION['nomGrupoInic'] = $v['nombre'];
                                         endforeach;
                                       } ?>" <button class="btn btn-outline-light" type="button" name="editG" data-bs-toggle="modal" data-bs-target="#editarGrupo"><ion-icon name="pencil-outline"></ion-icon></button>
+                                      <button class="btn btn-outline-danger" type="button" name="elimG" data-bs-toggle="modal" data-bs-target="#eliminarGrupo"><ion-icon name="trash-outline"></ion-icon></button>
                                       </h4>
       <button type="button" class="col-2 btn btn-success btn-agregar" data-bs-toggle="modal" data-bs-target="#agregarInt"><ion-icon name="add-outline"></ion-icon>Agregar</button>
       <h5>Codigo: 2344</h5>
@@ -232,8 +234,6 @@ foreach ($datoNomP as $key => $value) {
                   <input type="hidden" name="idGrupoSelect" value="<?php echo $v['idGrupo'];?>" required>
                   <input type="hidden" name="nomGrupoEditar" value="<?php echo $v['nombre'];?>">
                   <button class="btn btn-success" type="submit" name="selectG"><ion-icon name="eye-outline"></ion-icon></button>
-                  <button class="btn btn-primary" type="button" name="editG" data-bs-toggle="modal" data-bs-target="#editarGrupo"><ion-icon name="pencil-outline"></ion-icon></button>
-                  <button class="btn btn-danger" type="button" name="elimG" data-bs-toggle="modal" data-bs-target="#eliminarGrupo"><ion-icon name="trash-outline"></ion-icon></button>
                 
                 </form>
                 
@@ -282,29 +282,29 @@ foreach ($datoNomP as $key => $value) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body justify-content-center">
-        <form>
+        <form action="editarG" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
               <?php 
               if (isset($_POST['editG'])) { 
                 ?>
-                <input type="text" class="form-control" id="floatingFname" value="<?php echo $_POST['nomGrupoEditar'] ?>" placeholder="First name">
+                <input type="text" class="form-control" id="floatingFname" name="nomGEdit" value="<?php echo $_POST['nomGrupoEditar'] ?>" placeholder="First name">
                 <?php
               } else {
                 ?>
-                <input type="text" class="form-control" id="floatingFname" value="<?php echo  $_SESSION['nomGrupoInic'] ?>" placeholder="First name">
+                <input type="text" class="form-control" id="floatingFname" name="nomGEdit" value="<?php echo  $_SESSION['nomGrupoInic'] ?>" placeholder="First name">
                 <?php
               }
               
               ?>
               <label for="floatingFname">Nombre</label>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" name="btnEditGroup" class="btn btn-primary">Aceptar</button>
+            </div>
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
       </div>
     </div>
   </div>
@@ -318,13 +318,15 @@ foreach ($datoNomP as $key => $value) {
         <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Grupo</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <h4>¿Esta seguro que quiere eliminar este grupo?</h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
-      </div>
+      <form action="eliminarG">
+        <div class="modal-body">
+          <h4>¿Esta seguro que quiere eliminar el grupo "<?php echo $_SESSION['nomGrupoInic'] ?>"?</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Aceptar</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
