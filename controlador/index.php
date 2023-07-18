@@ -112,7 +112,7 @@ class modeloController{
     }
 
     // --------------------------- FUNCIONES FORMULARIOS
-
+    // ------------- FUNCIONES GRUPO
      //guardar grupo
     static function guardarG(){
         session_start();
@@ -120,9 +120,9 @@ class modeloController{
         $idM = $_SESSION["idM"];
         $nombre= $_REQUEST['nombreG'];
         $datos = "'".$nombre."','".$codigo."','".$idM."'";
-        //$datos = $nombre.", ".$codigo.", ".$idM;
+        $colm = "idGrupo, nombre, codigo, idMaestro";
         $grupo = new Modelo();
-        $datoGrupo = $grupo->agregar("grupo",$datos);
+        $datoGrupo = $grupo->agregar("grupo",$colm,$datos);
         //header("location:".urlsite);
         //require_once("vista/paginaGEAdmin.php");
         header("location:".paginaGEAdmin);
@@ -147,19 +147,19 @@ class modeloController{
         $datoGrupo = $grupo->eliminar("grupo",$condicion);
         header("location:".paginaGEAdmin);
     }
+
+    // ------------- FUNCIONES ESTUDIANTE
     //guardar estudiantes
     static function guardarE(){
         session_start();
         $codigo = 4545;
-        $idM = $_SESSION["id"];
+        $idG = $_SESSION["idGrupoInic"];
         $nombre= $_REQUEST['nombreE'];
         $apellido= $_REQUEST['apellidoE'];
-        $datos = "'".$nombre."','".$apellido."','".$idM."'";
-        //$datos = $nombre.", ".$codigo.", ".$idM;
+        $datos = "'".$nombre."','".$apellido."','".$idG."'";
+        $colm = "idEstudiante, nombre, apellido, idGrupo";
         $grupo = new Modelo();
-        $datoGrupo = $grupo->agregar("estudiante",$datos);
-        //header("location:".urlsite);
-        //require_once("vista/paginaGEAdmin.php");
+        $datoGrupo = $grupo->agregar("estudiante",$colm,$datos);
         header("location:".paginaGEAdmin);
     }
     // ------------------- Iniciar Session 

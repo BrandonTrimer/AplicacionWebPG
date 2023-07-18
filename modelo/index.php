@@ -28,8 +28,9 @@ class Modelo{
             return $this->datos;
         }
 /* ------------------------- Funcion INSERTAR*/
-    public function agregar($tabla,$datos){
-        $consul="insert into ".$tabla." (idGrupo, nombre, codigo, idMaestro) values (null,".$datos.");";
+    public function agregar($tabla,$colm,$datos){
+        $consul="insert into ".$tabla." (".$colm.") values (null,".$datos.");";
+        //$consul="insert into ".$tabla." (idGrupo, nombre, codigo, idMaestro) values (null,".$datos.");";
         echo $consul;
             $resu=$this->db->query($consul);
             if ($resu) {

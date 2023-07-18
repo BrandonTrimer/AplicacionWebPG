@@ -79,6 +79,7 @@ foreach ($datoNomP as $key => $value) {
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
+            <th scope="col">Puntos</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
@@ -87,12 +88,14 @@ foreach ($datoNomP as $key => $value) {
             
             if (!empty($datoNomEst)) {
                //echo "si hay datos";
+               $cont = 1;
                foreach ($datoNomEst as $key => $value) {
                     foreach($value as $v): ?>
-          <tr>
-            <th scope="row">1</th>
+          <tr class="listEst">
+            <th scope="row"><?php echo $cont ++;?></th>
             <td><?php echo $v['nombre'] ?></td>
             <td><?php echo $v['apellido'] ?></td>
+            <td>10 pts</td>
             <td>
               <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#editarInt">Editar</button>
               <button class="btn btn-danger" type="submit" data-bs-toggle="modal" data-bs-target="#eliminarInt">Eliminar</button>
@@ -231,10 +234,12 @@ foreach ($datoNomP as $key => $value) {
               </div>
               <div class="group-btn">
                 <form action="paginaGEAdmin" method="POST">
-                  <input type="hidden" name="idGrupoSelect" value="<?php echo $v['idGrupo'];?>" required>
-                  <input type="hidden" name="nomGrupoEditar" value="<?php echo $v['nombre'];?>">
-                  <button class="btn btn-success" type="submit" name="selectG"><ion-icon name="eye-outline"></ion-icon></button>
+                  <div class="d-grid gap-2 col-4 mx-auto">
+                    <input type="hidden" name="idGrupoSelect" value="<?php echo $v['idGrupo'];?>" required>
+                    <input type="hidden" name="nomGrupoEditar" value="<?php echo $v['nombre'];?>">
+                    <button class="btn btn-success" type="submit" name="selectG">Ver Grupo</button>
                 
+                  </div>
                 </form>
                 
               </div>

@@ -60,6 +60,11 @@ body {
 .groupTotal {
   height: 45%;
 }
+.listEst {
+  height: 10%;
+  border: solid white;
+  margin-bottom: 300px;
+}
 .groups-content > h5 {
   margin-bottom: 20px;
 }
