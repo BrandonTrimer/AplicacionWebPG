@@ -61,9 +61,7 @@ body {
   height: 45%;
 }
 .listEst {
-  height: 10%;
-  border: solid white;
-  margin-bottom: 300px;
+  height: 65%;
 }
 .groups-content > h5 {
   margin-bottom: 20px;
@@ -85,13 +83,13 @@ body {
   margin-right: 30px;
 }
 .contenedor-listaInt {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .contenedor-listaInt > table {
   color: white;
   width: 80%;
   margin-left: 10%;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 /*------ letras y boton*/

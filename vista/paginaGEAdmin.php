@@ -72,7 +72,7 @@ foreach ($datoNomP as $key => $value) {
       ?>
     </div>
     
-    <div class="contenedor-listaInt">
+    <div class="contenedor-listaInt listEst overflow-y-auto">
       <table class="table tabla-lista justify-center">
         <thead>
           <tr>
@@ -91,14 +91,14 @@ foreach ($datoNomP as $key => $value) {
                $cont = 1;
                foreach ($datoNomEst as $key => $value) {
                     foreach($value as $v): ?>
-          <tr class="listEst">
+          <tr>
             <th scope="row"><?php echo $cont ++;?></th>
             <td><?php echo $v['nombre'] ?></td>
-            <td><?php echo $v['apellido'] ?></td>
+            <td><?php echo $v['apellido'].$v['idEstudiante'] ?></td>
             <td>10 pts</td>
             <td>
-              <button class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#editarInt">Editar</button>
-              <button class="btn btn-danger" type="submit" data-bs-toggle="modal" data-bs-target="#eliminarInt">Eliminar</button>
+              <button class="btn btn-primary" type="buttom" name="btnEditEst<?php echo $v['idEstudiante'] ?>" data-bs-toggle="modal" data-bs-target="#editarInt">Editar</button>
+              <button class="btn btn-danger" type="buttom" name="btnElimEst" data-bs-toggle="modal" data-bs-target="#eliminarInt">Eliminar</button>
             </td>
           </tr>
             <?php endforeach;
