@@ -94,14 +94,20 @@ foreach ($datoNomP as $key => $value) {
           <tr>
             <th scope="row"><?php echo $cont ++;?></th>
             <td><?php echo $v['nombre'] ?></td>
-            <td><?php echo $v['apellido'].$v['idEstudiante'] ?></td>
+            <td><?php echo $v['apellido']?></td>
             <td>10 pts</td>
             <td>
-              <button class="btn btn-primary" type="buttom" name="btnEditEst<?php echo $v['idEstudiante'] ?>" data-bs-toggle="modal" data-bs-target="#editarInt">Editar</button>
-              <button class="btn btn-danger" type="buttom" name="btnElimEst" data-bs-toggle="modal" data-bs-target="#eliminarInt">Eliminar</button>
+              <input type="hidden" name="nomEstEdit" value="<?php echo $v['nombre'];?>" required>
+              <input type="hidden" name="apellEstEdit" value="<?php echo $v['apellido'];?>" required>
+              <input type="hidden" name="idEstEdit" value="<?php echo $v['idEstudiante'];?>" required>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarInt<?php echo $v['idEstudiante']?>">Editar</button>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarInt">Eliminar</button>
+              <?php include("modalEditar.php");?>
             </td>
           </tr>
-            <?php endforeach;
+            <?php
+            include("modalEditar.php");
+            endforeach;
                 } 
         
              } else {
@@ -151,35 +157,7 @@ foreach ($datoNomP as $key => $value) {
   </div>
 </div>
 
- <!----------------------- Modal editar integrante  -->
-<div class="modal fade" id="editarInt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar nombre del integrante</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body justify-content-center">
-        <form>
-          <div class="row g-3">
-            <div class="col form-floating mb-3">
-              <input type="text" class="form-control" id="floatingFname" placeholder="First name">
-              <label for="floatingFname">Nombre</label>
-            </div>
-            <div class="col form-floating">
-              <input type="text" class="form-control" id="floatingLname" placeholder="Last name">
-              <label for="floatingLname">Apellido</label>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
-      </div>
-    </div>
-  </div>
-</div>
+ 
 
  <!----------------------- Modal eliminar integrante  -->
 <div class="modal fade" id="eliminarInt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -162,6 +162,16 @@ class modeloController{
         $datoGrupo = $grupo->agregar("estudiante",$colm,$datos);
         header("location:".paginaGEAdmin);
     }
+    //guardar estudiantes
+    static function editarE(){
+        session_start();
+        if (isset($_POST['btnEditEst'])) {
+
+        } else {
+
+        }
+        header("location:".urlsite);
+    }
     // ------------------- Iniciar Session 
     static function login(){
         $nombre= $_REQUEST['nombre'];
