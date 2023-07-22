@@ -15,6 +15,8 @@ class modeloController{
 
     //pagina menu
     static function paginaMenu(){
+        session_start();
+        session_destroy();
         require_once("vista/paginaMenu.php");
     }
 
@@ -72,13 +74,19 @@ class modeloController{
         
         $datosIdGrupo = "idMaestro = '". $_SESSION["idM"]."'";
         $datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo);
-        foreach ($datoIdGrupo as $key => $value) {
+
+        if (!isset($_SESSION['idG'])) {
+            foreach ($datoIdGrupo as $key => $value) {
             foreach($value as $v):
               if ($v['idMaestro']= $_SESSION["idM"]) {
                 $idGrupo = $v['idGrupo'];
+                $_SESSION['idG'] = $idGrupo;
               } 
             endforeach;
             }
+        } 
+        
+        
             
         // nombre profesor en perfil
         $nombreProf = new Modelo();
@@ -89,6 +97,7 @@ class modeloController{
         
         if (isset($_POST['selectG'])) {
             $idGrupoSelect = $_POST['idGrupoSelect'];
+            $_SESSION['idG'] = $idGrupoSelect;
             // lista de nombres de los estudiantes en inicio
             $nombreEst = new Modelo();
             //$datoNomEst = $nombreEst->mostrar("estudiante","idgrupo = 1");
@@ -97,12 +106,14 @@ class modeloController{
             $nombreGrupTitulo = new Modelo();
             $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$idGrupoSelect."'");
             
+            
         } else {
 
             $nombreEst = new Modelo();
-            $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$idGrupo."'");
+            $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$_SESSION['idG']."'");
             $nombreGrupTitulo = new Modelo();
-            $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$idGrupo."'");
+            $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$_SESSION['idG']."'");
+            
         }
         
         
@@ -160,17 +171,33 @@ class modeloController{
         $colm = "idEstudiante, nombre, apellido, idGrupo";
         $grupo = new Modelo();
         $datoGrupo = $grupo->agregar("estudiante",$colm,$datos);
+        $_SESSION['idG'] = $idG;
         header("location:".paginaGEAdmin);
     }
-    //guardar estudiantes
+    //editar estudiantes
     static function editarE(){
         session_start();
-        if (isset($_POST['btnEditEst'])) {
-
-        } else {
-
-        }
-        header("location:".urlsite);
+        $idE= $_POST['idEEdit'];
+        $idG= $_POST['idGEdit'];
+        $nombre= $_POST['nomEEdit'];
+        $apellido= $_POST['apellEEdit'];
+        $dato = "nombre = '".$nombre."', apellido = '".$apellido."'";
+        $condicion = "estudiante.idEstudiante = '".$idE."'";
+        $grupo = new Modelo();
+        $datoGrupo = $grupo->actualizar("estudiante",$dato,$condicion);
+        $_SESSION['idG'] = $idG;
+        header("location:".paginaGEAdmin);
+    }
+    //eliminar estudiante
+    static function eliminarE(){
+        session_start();
+        $idE= $_POST['idEElim'];
+        $idG= $_POST['idGElim'];
+        $condicion = "estudiante.idEstudiante = '".$idE."'";
+        $grupo = new Modelo();
+        $grupo->eliminar("estudiante",$condicion);
+        $_SESSION['idG'] = $idG;
+        header("location:".paginaGEAdmin);
     }
     // ------------------- Iniciar Session 
     static function login(){

@@ -56,6 +56,7 @@ foreach ($datoNomP as $key => $value) {
                                           echo $v['nombre'];
                                           $_SESSION['idGrupoInic'] = $v['idGrupo'];
                                           $_SESSION['nomGrupoInic'] = $v['nombre'];
+                                          echo $_SESSION['idG'];
                                         endforeach;
                                       } ?>" <button class="btn btn-outline-light" type="button" name="editG" data-bs-toggle="modal" data-bs-target="#editarGrupo"><ion-icon name="pencil-outline"></ion-icon></button>
                                       <button class="btn btn-outline-danger" type="button" name="elimG" data-bs-toggle="modal" data-bs-target="#eliminarGrupo"><ion-icon name="trash-outline"></ion-icon></button>
@@ -101,12 +102,10 @@ foreach ($datoNomP as $key => $value) {
               <input type="hidden" name="apellEstEdit" value="<?php echo $v['apellido'];?>" required>
               <input type="hidden" name="idEstEdit" value="<?php echo $v['idEstudiante'];?>" required>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarInt<?php echo $v['idEstudiante']?>">Editar</button>
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarInt">Eliminar</button>
-              <?php include("modalEditar.php");?>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarInt<?php echo $v['idEstudiante']?>">Eliminar</button>
             </td>
           </tr>
             <?php
-            include("modalEditar.php");
             endforeach;
                 } 
         
@@ -158,25 +157,74 @@ foreach ($datoNomP as $key => $value) {
 </div>
 
  
-
+<?php 
+foreach ($datoNomEst as $key => $value) 
+  foreach($value as $v):
+    ?>
  <!----------------------- Modal eliminar integrante  -->
-<div class="modal fade" id="eliminarInt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="eliminarInt<?php echo $v['idEstudiante']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form action="eliminarE" method="POST">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar integrante</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¿Esta seguro que quiere eliminar a "<?php echo $v['nombre']?> <?php echo $v['apellido']?>"?</p>
+        </div>
+        <div class="modal-footer">
+          <input type="hidden" name="idEElim" value="<?php echo $v['idEstudiante']?>">
+          <input type="hidden" name="idGElim" value="<?php echo $v['idGrupo']?>">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<?php
+  endforeach;
+?>
+
+<?php 
+foreach ($datoNomEst as $key => $value) 
+  foreach($value as $v):
+    ?>
+    <!----------------------- Modal editar integrante  -->
+<div class="modal fade" id="editarInt<?php echo $v['idEstudiante']?>" tabindex="-1" aria-labelledby="editarInt<?php echo $v['idEstudiante']?>Label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar integrante</h1>
+        <h1 class="modal-title fs-5" id="editarInt<?php echo $v['idEstudiante']?>Label">Editar nombre del integrante</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <h4>¿Esta seguro que quiere eliminar este integrante?</h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
+      <div class="modal-body justify-content-center">
+        <form action="editarE" method="POST">
+          <div class="row g-3">
+            <div class="col form-floating mb-3">
+              <input type="text" class="form-control" id="floatingFname" name="nomEEdit" placeholder="First name" value="<?php echo $v['nombre']?>" required>
+              <label for="floatingFname">Nombre</label>
+            </div>
+            <div class="col form-floating">
+              <input type="text" class="form-control" id="floatingLname" name="apellEEdit" placeholder="Last name" value="<?php echo $v['apellido']?>" required>
+              <label for="floatingLname">Apellido</label>
+            </div>
+            <div class="modal-footer">
+              <input type="hidden" name="idEEdit" value="<?php echo $v['idEstudiante']?>">
+              <input type="hidden" name="idGEdit" value="<?php echo $v['idGrupo']?>">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Aceptar</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
+    <?php
+  endforeach;
+?>
 
  <!----------------------- Offvanvas perfil de usuario -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
