@@ -51,18 +51,25 @@ foreach ($datoNomP as $key => $value) {
   <div class="contenedor-ejercicios contenedor-ejercicios-minH col-md-9 animate__animated animate__bounceInRight">
     <div class="row contenedor-listaText">
       <h3 class="text-center">Lista de Integrantes</h3>
-      <h4 class="col">Grupo: "<?php foreach ($datoNomGT as $key => $value) {
-                                        foreach($value as $v):
-                                          echo $v['nombre'];
-                                          $_SESSION['idGrupoInic'] = $v['idGrupo'];
-                                          $_SESSION['nomGrupoInic'] = $v['nombre'];
-                                          echo $_SESSION['idG'];
-                                        endforeach;
-                                      } ?>" <button class="btn btn-outline-light" type="button" name="editG" data-bs-toggle="modal" data-bs-target="#editarGrupo"><ion-icon name="pencil-outline"></ion-icon></button>
-                                      <button class="btn btn-outline-danger" type="button" name="elimG" data-bs-toggle="modal" data-bs-target="#eliminarGrupo"><ion-icon name="trash-outline"></ion-icon></button>
-                                      </h4>
-      <button type="button" class="col-2 btn btn-success btn-agregar" data-bs-toggle="modal" data-bs-target="#agregarInt"><ion-icon name="add-outline"></ion-icon>Agregar</button>
-      <h5>Codigo: 2344</h5>
+      <?php if (!empty($datoNomGT)) {?>
+        <h4 class="col">Grupo: "
+           <?php
+             foreach ($datoNomGT as $key => $value) {
+               foreach($value as $v):
+                 echo $v['nombre'];
+                 $_SESSION['idGrupoInic'] = $v['idGrupo'];
+                 $_SESSION['nomGrupoInic'] = $v['nombre'];
+               endforeach;
+             }
+             ?>" <button class="btn btn-outline-light" type="button" name="editG" data-bs-toggle="modal" data-bs-target="#editarGrupo"><ion-icon name="pencil-outline"></ion-icon></button>
+            <button class="btn btn-outline-danger" type="button" name="elimG" data-bs-toggle="modal" data-bs-target="#eliminarGrupo"><ion-icon name="trash-outline"></ion-icon></button>
+            </h4>
+            <button type="button" class="col-2 btn btn-success btn-agregar" data-bs-toggle="modal" data-bs-target="#agregarInt"><ion-icon name="add-outline"></ion-icon>Agregar</button>
+            <h5>Codigo: 2344</h5>
+           <?php
+           } else {
+             echo '<h4 class="col">¡¡ Seleccione un Grupo en Perfil !!</h4>';
+           }?>
       <?php 
       $num1=rand(10,99);
       $num2=rand(10,99);
@@ -138,11 +145,11 @@ foreach ($datoNomP as $key => $value) {
         <form action="guardarE" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" name="nombreE" id="floatingFname" placeholder="First name">
+              <input type="text" class="form-control" name="nombreE" id="floatingFname" placeholder="First name" required>
               <label for="floatingFname">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" name="apellidoE" id="floatingLname" placeholder="Last name">
+              <input type="text" class="form-control" name="apellidoE" id="floatingLname" placeholder="Last name" required>
               <label for="floatingLname">Apellido</label>
             </div>
             <div class="modal-footer">
@@ -236,27 +243,29 @@ foreach ($datoNomEst as $key => $value)
     <div class="img-content text-center">
         <img src="vista/img/iconoUser.webp" class="imgUser" alt="">
         <h4><?php foreach ($datoNomP as $key => $value) {
-                                        foreach($value as $v):
-                                          echo $v['nombre'];
-                                        endforeach;
-                                      } ?></h4>
+                  foreach($value as $v):
+                    echo $v['nombre'];
+                  endforeach;
+                } ?></h4>
         <h4><?php foreach ($datoNomP as $key => $value) {
-                                        foreach($value as $v):
-                                          echo $v['apellido'];
-                                        endforeach;
-                                      } ?></h6>
+                    foreach($value as $v):
+                      echo $v['apellido'];
+                    endforeach;
+                  } ?></h6>
     </div><hr>
     <button class="btn btn-primary btn-crearG" data-bs-toggle="modal" data-bs-target="#crearGrupo" type="submit">Crear Grupo</button>
-    <h5>Grupos Creados</h5>
+    <h5>Grupos Disponibles</h5>
     <div class="groupTotal overflow-y-auto">
-      <?php foreach ($datoNomG as $key => $value) {
-                                          foreach($value as $v):?>
+      <?php 
+      if (!empty($datoNomG)) {
+        foreach ($datoNomG as $key => $value) {
+                foreach($value as $v):?>
       <div class="groups-content">
           <div class="group text-center border">
               <div class="group-title">
                   <h5><?php 
-                                            echo $v['nombre'];?>
-                                          </h5>
+                      echo $v['nombre'];?>
+                    </h5>
               </div>
               <div class="group-btn">
                 <form action="paginaGEAdmin" method="POST">
@@ -272,7 +281,21 @@ foreach ($datoNomEst as $key => $value)
           </div>
       </div>
       <?php endforeach;
-                                        } ?>
+                      } ?>
+      <?php
+      } else {
+        ?>
+        <div class="groups-content">
+          <div class="group text-center border">
+              <div class="group-title">
+                  <h5>No hay Grupos Creados</h5>
+              </div>
+          </div>
+      </div>
+        <?php
+      }?>
+      
+            
     </div>
   </div>
 </div>

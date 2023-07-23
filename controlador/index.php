@@ -156,6 +156,20 @@ class modeloController{
         $condicion = "grupo.idGrupo = '".$idG."'";
         $grupo = new Modelo();
         $datoGrupo = $grupo->eliminar("grupo",$condicion);
+
+        $user = new Modelo();
+        
+        $datosIdGrupo = "idMaestro = '". $_SESSION["idM"]."'";
+        $datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo);
+        foreach ($datoIdGrupo as $key => $value) {
+            foreach($value as $v):
+              if ($v['idMaestro']= $_SESSION["idM"]) {
+                $idGrupo = $v['idGrupo'];
+                $_SESSION['idG'] = $idGrupo;
+              } 
+            endforeach;
+            }
+
         header("location:".paginaGEAdmin);
     }
 
@@ -226,8 +240,20 @@ class modeloController{
         } else {
             require_once("vista/paginaMenu.php");
         }
-        
 
         //header("location:".urlsite);
+    }
+
+//----------- Crear Nuevo Maestro
+    static function agregarM(){
+        session_start();
+        $nombre= $_REQUEST['nombreM'];
+        $apellido= $_REQUEST['apellidoM'];
+        $password= $_REQUEST['password'];
+        $datos = "'".$nombre."','".$apellido."','".$password."'";
+        $colm = "idMaestro, nombre, apellido, password";
+        $grupo = new Modelo();
+        $grupo->agregar("maestro",$colm,$datos);
+        header("location:".paginaGEAdmin);
     }
 }
