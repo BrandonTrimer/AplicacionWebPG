@@ -138,7 +138,7 @@ class modeloController{
         //require_once("vista/paginaGEAdmin.php");
         header("location:".paginaGEAdmin);
     }
-    //guardar grupo
+    //editar grupo
     static function editarG(){
         session_start();
         $idG= $_SESSION['idGrupoInic'];
@@ -249,11 +249,40 @@ class modeloController{
         session_start();
         $nombre= $_REQUEST['nombreM'];
         $apellido= $_REQUEST['apellidoM'];
+        $nombreG= $_REQUEST['nombreG'];
         $password= $_REQUEST['password'];
-        $datos = "'".$nombre."','".$apellido."','".$password."'";
-        $colm = "idMaestro, nombre, apellido, password";
+
+        $datosM = "'".$nombre."','".$apellido."','".$password."'";
+        $colmM = "idMaestro, nombre, apellido, password";
+        $maestro = new Modelo();
+        $datoMestro = $maestro->agregar("maestro",$colmM,$datosM);
+
+        $condicionM = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$password;
+        $user = new Modelo();
+        $datoMostrarIdM = $user->mostrar("maestro",$condicionM);
+        foreach ($datoMostrarIdM as $key => $value) {
+            foreach($value as $v):
+               $idM = $v['idMaestro'];
+            endforeach;
+            }
+
+        $codigo = 2332;
+        $datosG = "'".$nombreG."','".$codigo."','".$idM."'";
+        $colmG = "idGrupo, nombre, codigo, idMaestro";
         $grupo = new Modelo();
-        $grupo->agregar("maestro",$colm,$datos);
+        $datoGrupo = $grupo->agregar("grupo",$colmG,$datosG);
+
+        $condicionG = "nombre = '".$nombreG."' and codigo = '".$codigo."' and idMaestro = '".$idM;
+        $user = new Modelo();
+        $datoMostrarIdG = $user->mostrar("grupo",$condicionG);
+        foreach ($datoMostrarIdG as $key => $value) {
+            foreach($value as $v):
+               $idG = $v['idGrupo'];
+            endforeach;
+            }
+
+        $_SESSION['idG'] = $idG;
+        $_SESSION['idM'] = $idM;
         header("location:".paginaGEAdmin);
     }
 }

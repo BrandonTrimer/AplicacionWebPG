@@ -115,32 +115,32 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="agregarM" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" id="floatingFname" placeholder="First name">
+              <input type="text" class="form-control" name="nombreM" id="floatingFname" placeholder="First name">
               <label for="floatingFname">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" id="floatingLname" placeholder="Last name">
+              <input type="text" class="form-control" name="apellidoM" id="floatingLname" placeholder="Last name">
               <label for="floatingLname">Apellido</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">¿Como se llamara su Grupo?</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ejemplo: Los Genios">
+            <input type="text" class="form-control" name="nombreG" id="exampleFormControlInput1" placeholder="Ejemplo: Los Genios">
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Contraseña</label>
           </div>
-          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button href="paginaGEAdmin" type="submit" class="btn btn-primary">Aceptar</button>
+          </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <a href="paginaGEAdmin" type="button" class="btn btn-primary">Aceptar</a>
-      </div>
+      
     </div>
   </div>
 </div>
