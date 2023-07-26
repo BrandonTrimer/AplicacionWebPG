@@ -12,40 +12,19 @@
 <body>
 
 <nav class="navbar navbar-expand-lg justify-content-center">
-  <a class="navbar-brand btnInicio" href="index">Inicio</a>
   <a class="navbar-brand" href="paginaMenu">Menu</a>
-  <a class="navbar-brand"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-    <ion-icon name="person-outline"></ion-icon> Perfil
+  <a class="navbar-brand btnGrupo" data-bs-toggle="modal" data-bs-target="#escogerOpcion">
+    <ion-icon name="library-outline"></ion-icon> Abel Perez
   </a>
-</nav>
 
- <!----------------------- Offvanvas perfil de usuario -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil de Usuario</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div class="img-content text-center">
-        <img src="vista/img/iconoUser.webp" class="imgUser" alt="">
-        <h4>Eduardo</h4>
-        <h4>Espinosa Castillo</h6>
-    </div><hr>
-    <button class="btn btn-primary btn-crearG" type="submit">Crear Grupo</button>
-    <h5>Grupos Creados</h5>
-    <div class="groups-content">
-        <div class="group text-center border">
-            <div class="group-title">
-                <h5>Los adolecentes mas perrones de la galaxia</h5>
-            </div>
-            <div class="group-btn">
-                <button class="btn btn-outline-success" type="submit">Ver</button>
-                <button class="btn btn-outline-primary" type="submit">Editar</button>
-                <button class="btn btn-outline-danger" type="submit">Eliminar</button>
-            </div>
-        </div>
+  <!--<div class="container-fluid">
+    <a class="navbar-brand btnInicio" href="index">Inicio</a>
+    <a class="navbar-brand" href="paginaMenu">Menu</a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav justify-content-end"> </ul>
+      <a class="navbar-brand btnGrupo" data-bs-toggle="modal" data-bs-target="#escogerOpcion">
+        <ion-icon name="library-outline"></ion-icon> Grupo de Estudio
+      </a>
     </div>
-  </div>
-</div>
-
-
+  </div>-->
+</nav>

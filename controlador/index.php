@@ -73,17 +73,20 @@ class modeloController{
         $user = new Modelo();
         
         $datosIdGrupo = "idMaestro = '". $_SESSION["idM"]."'";
-        $datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo);
+        
 
         if (!isset($_SESSION['idG'])) {
-            foreach ($datoIdGrupo as $key => $value) {
-            foreach($value as $v):
-              if ($v['idMaestro']= $_SESSION["idM"]) {
-                $idGrupo = $v['idGrupo'];
-                $_SESSION['idG'] = $idGrupo;
-              } 
-            endforeach;
+            if ($datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo)) {
+                foreach ($datoIdGrupo as $key => $value) {
+                foreach($value as $v):
+                  if ($v['idMaestro']= $_SESSION["idM"]) {
+                    $idGrupo = $v['idGrupo'];
+                    $_SESSION['idG'] = $idGrupo;
+                  } 
+                endforeach;
             }
+            }
+            
         } 
         
         
@@ -97,22 +100,27 @@ class modeloController{
         
         if (isset($_POST['selectG'])) {
             $idGrupoSelect = $_POST['idGrupoSelect'];
+            $codigoGrupoSelect = $_POST['codGrupoSelect'];
             $_SESSION['idG'] = $idGrupoSelect;
+            $_SESSION['codigoG'] = $codigoGrupoSelect;
             // lista de nombres de los estudiantes en inicio
             $nombreEst = new Modelo();
-            //$datoNomEst = $nombreEst->mostrar("estudiante","idgrupo = 1");
             $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$idGrupoSelect."'");
             // nombre del grupo en inicio
             $nombreGrupTitulo = new Modelo();
             $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$idGrupoSelect."'");
+            // nombre del grupo en inicio
+            $codigoGrupo = new Modelo();
+            $datoCodG = $codigoGrupo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$idGrupoSelect."' and codigo = '".$codigoGrupoSelect."'");
             
-            
-        } else {
+        } elseif(isset($_SESSION['idG'])) {
 
             $nombreEst = new Modelo();
             $datoNomEst = $nombreEst->mostrar("estudiante","idGrupo = "."'".$_SESSION['idG']."'");
             $nombreGrupTitulo = new Modelo();
             $datoNomGT = $nombreGrupTitulo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$_SESSION['idG']."'");
+            $codigoGrupo = new Modelo();
+            $datoCodG = $codigoGrupo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$_SESSION['idG']."' and codigo = '".$_SESSION["codigoG"]."'");
             
         }
         
@@ -127,15 +135,34 @@ class modeloController{
      //guardar grupo
     static function guardarG(){
         session_start();
-        $codigo = 4545;
+        $codigo = rand(1000,9999);
+        $_SESSION['codigoG'] = $codigo;
+
+        $user = new Modelo();
+        $condicionCodG = "codigo = '".$codigo."'";
+        $datoMostrarIdG = $user->mostrar("grupo",$condicionCodG);
+        if (isset($datoMostrarIdG)) {
+            $codigo = rand(1000,9999);
+            $_SESSION['codigoG'] = $codigo;
+        }
+
         $idM = $_SESSION["idM"];
         $nombre= $_REQUEST['nombreG'];
-        $datos = "'".$nombre."','".$codigo."','".$idM."'";
+        $datos = "'".$nombre."','".$_SESSION['codigoG']."','".$idM."'";
         $colm = "idGrupo, nombre, codigo, idMaestro";
         $grupo = new Modelo();
         $datoGrupo = $grupo->agregar("grupo",$colm,$datos);
-        //header("location:".urlsite);
-        //require_once("vista/paginaGEAdmin.php");
+
+        //buscar idGrupo
+        $user = new Modelo();
+        $datosIdGrupo = "nombre = '".$nombre."'";
+        $datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo);
+        foreach ($datoIdGrupo as $key => $value) {
+            foreach($value as $v):
+              $idG = $v['idGrupo'];
+            endforeach;
+        }
+        $_SESSION['idG'] = $idG;
         header("location:".paginaGEAdmin);
     }
     //editar grupo
@@ -156,20 +183,19 @@ class modeloController{
         $condicion = "grupo.idGrupo = '".$idG."'";
         $grupo = new Modelo();
         $datoGrupo = $grupo->eliminar("grupo",$condicion);
-
-        $user = new Modelo();
         
+        $user = new Modelo();
         $datosIdGrupo = "idMaestro = '". $_SESSION["idM"]."'";
         $datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo);
         foreach ($datoIdGrupo as $key => $value) {
-            foreach($value as $v):
-              if ($v['idMaestro']= $_SESSION["idM"]) {
-                $idGrupo = $v['idGrupo'];
-                $_SESSION['idG'] = $idGrupo;
-              } 
-            endforeach;
-            }
-
+        foreach($value as $v):
+          if ($v['idMaestro']= $_SESSION["idM"]) {
+            $idGrupo = $v['idGrupo'];
+            $_SESSION['idG'] = $idGrupo;
+            $_SESSION['codigoG'] = $v['codigo'];
+          } 
+        endforeach;
+        }
         header("location:".paginaGEAdmin);
     }
 
@@ -177,7 +203,7 @@ class modeloController{
     //guardar estudiantes
     static function guardarE(){
         session_start();
-        $codigo = 4545;
+        $codigo = $_SESSION['codigoG'];
         $idG = $_SESSION["idGrupoInic"];
         $nombre= $_REQUEST['nombreE'];
         $apellido= $_REQUEST['apellidoE'];
@@ -213,15 +239,25 @@ class modeloController{
         $_SESSION['idG'] = $idG;
         header("location:".paginaGEAdmin);
     }
+
+    //eliminar Maestro
+    static function eliminarM(){
+        session_start();
+        $condicion = "maestro.idMaestro = '".$_SESSION['idM']."'";
+        $grupo = new Modelo();
+        $grupo->eliminar("maestro",$condicion);
+        header("location:".urlsite);
+    }
+
+
     // ------------------- Iniciar Session 
-    static function login(){
+    static function loginM(){
         $nombre= $_REQUEST['nombre'];
         $apellido= $_REQUEST['apellido'];
-        $clave= $_REQUEST['passwordMa'];
-        $codigo= $_REQUEST['codigoGr'];
+        $clave= $_REQUEST['password'];
 
-        //$datos = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$clave."'";
-        $datos = "nombre = '".$nombre."'";
+        $datos = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$clave."'";
+        //$datos = "nombre = '".$nombre."'";
         $user = new Modelo();
         //$datoUser = $user->mostrar2("maestro",$datos);
         if ($datoUser = $user->mostrar("maestro",$datos)) {
@@ -230,6 +266,14 @@ class modeloController{
             foreach ($datoUser as $key => $value) {
                 foreach($value as $v):
                    $_SESSION["idM"] = $v['idMaestro'];
+                endforeach;
+                }
+            $condicionG = "idMaestro = '".$_SESSION["idM"]."'";
+            $user = new Modelo();
+            $datoMostrarIdG = $user->mostrar("grupo",$condicionG);
+            foreach ($datoMostrarIdG as $key => $value) {
+                foreach($value as $v):
+                   $_SESSION["codigoG"] = $v['codigo'];
                 endforeach;
                 }
             //$_SESSION["id"] = $datoUser->idMaestro;
@@ -257,7 +301,7 @@ class modeloController{
         $maestro = new Modelo();
         $datoMestro = $maestro->agregar("maestro",$colmM,$datosM);
 
-        $condicionM = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$password;
+        $condicionM = "nombre = '".$nombre."' and apellido = '".$apellido."' and password = '".$password."'";
         $user = new Modelo();
         $datoMostrarIdM = $user->mostrar("maestro",$condicionM);
         foreach ($datoMostrarIdM as $key => $value) {
@@ -265,14 +309,23 @@ class modeloController{
                $idM = $v['idMaestro'];
             endforeach;
             }
-
-        $codigo = 2332;
+        
+        $codigo = rand(1000,9999);
+        $_SESSION['codigoG'] = $codigo;
+        $user = new Modelo();
+        $condicionCodG = "codigo = '".$codigo."'";
+        $datoMostrarIdG = $user->mostrar("grupo",$condicionCodG);
+        if (isset($datoMostrarIdG)) {
+            $codigo = rand(1000,9999);
+            $_SESSION['codigoG'] = $codigo;
+        }
+        
         $datosG = "'".$nombreG."','".$codigo."','".$idM."'";
         $colmG = "idGrupo, nombre, codigo, idMaestro";
         $grupo = new Modelo();
         $datoGrupo = $grupo->agregar("grupo",$colmG,$datosG);
 
-        $condicionG = "nombre = '".$nombreG."' and codigo = '".$codigo."' and idMaestro = '".$idM;
+        $condicionG = "nombre = '".$nombreG."' and codigo = '".$codigo."' and idMaestro = '".$idM."'";
         $user = new Modelo();
         $datoMostrarIdG = $user->mostrar("grupo",$condicionG);
         foreach ($datoMostrarIdG as $key => $value) {
@@ -284,5 +337,36 @@ class modeloController{
         $_SESSION['idG'] = $idG;
         $_SESSION['idM'] = $idM;
         header("location:".paginaGEAdmin);
+    }
+//-----------********--------Login estudiante---------------------------------------------
+    static function loginE(){
+        $nombre= $_REQUEST['nombre'];
+        $apellido= $_REQUEST['apellido'];
+        $codigo= $_REQUEST['codigo'];
+
+        $condicionE = "nombre = '".$nombre."' and apellido = '".$apellido."'";
+        $user = new Modelo();
+        if ($datoMostrarIdGE = $user->mostrar("estudiante",$condicionE)) {
+            session_start();
+            foreach ($datoMostrarIdGE as $key => $value) {
+                foreach($value as $v):
+                   $_SESSION["idEst"] = $v['idEstudiante'];
+                   $_SESSION["idgru"] = $v['idGrupo'];
+                endforeach;
+                }
+            $condicionG = "idGrupo = '".$_SESSION["idgru"]."' and codigo = '".$codigo."'";
+            $user = new Modelo();
+            $datoMostrarIdG = $user->mostrar("grupo",$condicionG);
+            foreach ($datoMostrarIdG as $key => $value) {
+                foreach($value as $v):
+                   $_SESSION["nombreGru"] = $v['nombre'];
+                endforeach;
+            }
+            //$_SESSION["id"] = $datoUser->idMaestro;
+            $_SESSION["codigoGru"] = $codigo;
+            require_once("vista/paginaMenu.php");
+        } else {
+            require_once("vista/index.php");
+        }
     }
 }

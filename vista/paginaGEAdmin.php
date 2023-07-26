@@ -41,13 +41,12 @@ foreach ($datoNomP as $key => $value) {
 <body>
 
 <nav class="navbar navbar-expand-lg justify-content-center">
-  <a class="navbar-brand btnInicio" href="index">Inicio</a>
-  <a class="navbar-brand" href="paginaMenu">Menu</a>
+  <!--<a class="navbar-brand btnInicio" href="index">Inicio</a>-->
+  <a class="navbar-brand" href="paginaMenu">Salir del Grupo</a>
   <a class="navbar-brand btnGrupo"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
     <ion-icon name="person-outline"></ion-icon> Perfil
   </a>
 </nav>
-
   <div class="contenedor-ejercicios contenedor-ejercicios-minH col-md-9 animate__animated animate__bounceInRight">
     <div class="row contenedor-listaText">
       <h3 class="text-center">Lista de Integrantes</h3>
@@ -65,19 +64,17 @@ foreach ($datoNomP as $key => $value) {
             <button class="btn btn-outline-danger" type="button" name="elimG" data-bs-toggle="modal" data-bs-target="#eliminarGrupo"><ion-icon name="trash-outline"></ion-icon></button>
             </h4>
             <button type="button" class="col-2 btn btn-success btn-agregar" data-bs-toggle="modal" data-bs-target="#agregarInt"><ion-icon name="add-outline"></ion-icon>Agregar</button>
-            <h5>Codigo: 2344</h5>
+            <h5>Codigo: <?php
+             foreach ($datoCodG as $key => $value) {
+               foreach($value as $v):
+                 echo $v['codigo'];
+               endforeach;
+             }
+             ?></h5>
            <?php
            } else {
              echo '<h4 class="col">¡¡ Seleccione un Grupo en Perfil !!</h4>';
            }?>
-      <?php 
-      $num1=rand(10,99);
-      $num2=rand(10,99);
-      $codigo=$num1.$num2;
-      //echo $codigo;
-      //echo $_SESSION['idM'];
-      
-      ?>
     </div>
     
     <div class="contenedor-listaInt listEst overflow-y-auto">
@@ -165,7 +162,8 @@ foreach ($datoNomP as $key => $value) {
 
  
 <?php 
-foreach ($datoNomEst as $key => $value) 
+if (isset($datoNomEst)) {
+  foreach ($datoNomEst as $key => $value) 
   foreach($value as $v):
     ?>
  <!----------------------- Modal eliminar integrante  -->
@@ -178,7 +176,7 @@ foreach ($datoNomEst as $key => $value)
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>¿Esta seguro que quiere eliminar a "<?php echo $v['nombre']?> <?php echo $v['apellido']?>"?</p>
+          <p>¿Esta seguro que quiere eliminar a <strong>"<?php echo $v['nombre']?> <?php echo $v['apellido']?></strong>"?</p>
         </div>
         <div class="modal-footer">
           <input type="hidden" name="idEElim" value="<?php echo $v['idEstudiante']?>">
@@ -192,10 +190,12 @@ foreach ($datoNomEst as $key => $value)
 </div>
 <?php
   endforeach;
+} 
 ?>
 
 <?php 
-foreach ($datoNomEst as $key => $value) 
+if (isset($datoNomEst)) {
+  foreach ($datoNomEst as $key => $value) 
   foreach($value as $v):
     ?>
     <!----------------------- Modal editar integrante  -->
@@ -231,6 +231,7 @@ foreach ($datoNomEst as $key => $value)
 </div>
     <?php
   endforeach;
+}
 ?>
 
  <!----------------------- Offvanvas perfil de usuario -->
@@ -239,17 +240,20 @@ foreach ($datoNomEst as $key => $value)
     <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil de Usuario</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarMaestro">Eliminar Perfril</button>
   <div class="offcanvas-body">
     <div class="img-content text-center">
         <img src="vista/img/iconoUser.webp" class="imgUser" alt="">
         <h4><?php foreach ($datoNomP as $key => $value) {
                   foreach($value as $v):
                     echo $v['nombre'];
+                    $_SESSION['nombreMaestro'] = $v['nombre'];
                   endforeach;
                 } ?></h4>
         <h4><?php foreach ($datoNomP as $key => $value) {
                     foreach($value as $v):
                       echo $v['apellido'];
+                      $_SESSION['apellidoMaestro'] = $v['apellido'];
                     endforeach;
                   } ?></h6>
     </div><hr>
@@ -264,14 +268,17 @@ foreach ($datoNomEst as $key => $value)
           <div class="group text-center border">
               <div class="group-title">
                   <h5><?php 
-                      echo $v['nombre'];?>
+                      echo $v['nombre'];
+                      echo $v['codigo'];?>
+                      
                     </h5>
               </div>
               <div class="group-btn">
                 <form action="paginaGEAdmin" method="POST">
                   <div class="d-grid gap-2 col-4 mx-auto">
-                    <input type="hidden" name="idGrupoSelect" value="<?php echo $v['idGrupo'];?>" required>
+                    <input type="hidden" name="idGrupoSelect" value="<?php echo $v['idGrupo'];?>">
                     <input type="hidden" name="nomGrupoEditar" value="<?php echo $v['nombre'];?>">
+                    <input type="hidden" name="codGrupoSelect" value="<?php echo $v['codigo'];?>">
                     <button class="btn btn-success" type="submit" name="selectG">Ver Grupo</button>
                 
                   </div>
@@ -374,7 +381,31 @@ foreach ($datoNomEst as $key => $value)
       </div>
       <form action="eliminarG">
         <div class="modal-body">
-          <h4>¿Esta seguro que quiere eliminar el grupo "<?php echo $_SESSION['nomGrupoInic'] ?>"?</h4>
+          <p>¿Esta seguro que quiere eliminar el grupo <strong>"<?php echo $_SESSION['nomGrupoInic'] ?></strong>"?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+ <!----------------------- Modal eliminar Maestro  -->
+<div class="modal fade" id="EliminarMaestro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Perfil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="eliminarM">
+        <div class="modal-body">
+          <p>¿Esta seguro que quiere eliminar a <strong> "<?php echo $_SESSION['nombreMaestro']." ".$_SESSION['apellidoMaestro'] ?></strong>"?
+        Tambien se borrara todos los grupos e integrantes que existan
+        </p>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

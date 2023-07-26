@@ -40,7 +40,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row contenedor-ejerN4 justify-content-md-center text-center" data-bs-toggle="modal" data-bs-target="#iniciarGrupo">
+        <div class="row contenedor-ejerN4 justify-content-md-center text-center" data-bs-toggle="modal" data-bs-target="#escogerMaEs">
           <div class="col-5 colum btn-fondo align-self-center select-conten2">
             <h4>Ingresar a un grupo</h4>
           </div>
@@ -55,9 +55,33 @@
   </div>
 </div>
 
+ <!----------------------- Modal escoger entre estudiante o maestro  -->
+<div class="modal fade" id="escogerMaEs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Grupo de Estudio</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row contenedor-ejerN4 justify-content-md-center text-center" data-bs-toggle="modal" data-bs-target="#formularioE">
+          <div class="col-5 colum btn-fondo align-self-center select-conten2">
+            <h4>Ingresar como Estudiante</h4>
+          </div>
+          <div class="col-5 colum btn-fondo align-self-center select-conten2" data-bs-toggle="modal" data-bs-target="#formularioM">
+            <h4>Ingresar como Maestro</h4>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
- <!----------------------- Modal entrar grupo  -->
-<div class="modal fade" id="iniciarGrupo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+ <!----------------------- Modal entrar grupo maestro -->
+<div class="modal fade" id="formularioM" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -66,7 +90,44 @@
       </div>
       <div class="modal-body justify-content-center">
 
-        <form action="login" method="POST">
+        <form action="loginM" method="POST">
+          <div class="row g-3">
+            <div class="col form-floating mb-3">
+              <input type="text" class="form-control" name="nombre" id="floatingFname" placeholder="First name" required>
+              <label for="floatingFname">Nombre</label>
+            </div>
+            <div class="col form-floating">
+              <input type="text" class="form-control" name="apellido" id="floatingLname" placeholder="Last name" required>
+              <label for="floatingLname">Apellido</label>
+            </div>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" name="password" id="floatingCodigo" placeholder="Password" required>
+            <label for="floatingCodigo">Contraseña</label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#escogerMaEs">Volver</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-success" name="btnLogin">Aceptar</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!----------------------- Modal entrar grupo estudiante -->
+<div class="modal fade" id="formularioE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Ingresar al Grupo de Estudio</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body justify-content-center">
+
+        <form action="loginE" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
               <input type="text" class="form-control" name="nombre" id="floatingFname" placeholder="First name">
@@ -77,27 +138,16 @@
               <label for="floatingLname">Apellido</label>
             </div>
           </div>
-
+          
           <div class="form-floating">
-            <input type="text" class="form-control" name="codigoGr" id="floatingCodigo" placeholder="Password">
-            <label for="floatingCodigo">Codigo de Grupo</label>
-          </div><hr>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" data-bs-toggle="collapse" href="#collapseExample" aria-controls="collapseExample">
-            <label class="form-check-label" for="flexCheckDefault">
-              Ingresar como Profesor
-            </label>
+              <input type="text" class="form-control" name="codigo" id="floatingCodigo" placeholder="Password">
+              <label for="floatingCodigo">Codigo de Grupo</label>
           </div>
-
-          <div class="collapse" id="collapseExample">
-            <div class="form-floating">
-              <input type="password" class="form-control" name="passwordMa" id="floatingCodigo" placeholder="Password">
-              <label for="floatingCodigo">Contraseña</label>
-            </div>
-          </div>
+          
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary" name="btnLogin">Aceptar</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#escogerMaEs">Volver</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-success" name="btnLogin">Aceptar</button>
           </div>
         </form>
 
@@ -105,7 +155,6 @@
     </div>
   </div>
 </div>
-
  <!----------------------- Modal crear grupo  -->
 <div class="modal fade" id="crearGrupo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -118,20 +167,20 @@
         <form action="agregarM" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" name="nombreM" id="floatingFname" placeholder="First name">
+              <input type="text" class="form-control" name="nombreM" id="floatingFname" placeholder="First name" required>
               <label for="floatingFname">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" name="apellidoM" id="floatingLname" placeholder="Last name">
+              <input type="text" class="form-control" name="apellidoM" id="floatingLname" placeholder="Last name" required>
               <label for="floatingLname">Apellido</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">¿Como se llamara su Grupo?</label>
-            <input type="text" class="form-control" name="nombreG" id="exampleFormControlInput1" placeholder="Ejemplo: Los Genios">
+            <input type="text" class="form-control" name="nombreG" id="exampleFormControlInput1" placeholder="Ejemplo: Los Genios" required>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password" required>
             <label for="floatingPassword">Contraseña</label>
           </div>
           <div class="modal-footer">

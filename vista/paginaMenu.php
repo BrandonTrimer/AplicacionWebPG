@@ -1,5 +1,10 @@
 <?php
-require_once("layout/header.php");
+if (!empty($_SESSION['idEst'])) {
+  require_once("layout/headerUser.php");
+}else {
+  require_once("layout/header.php");
+}
+
 
 ?>
 
