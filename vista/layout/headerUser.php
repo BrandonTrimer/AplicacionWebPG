@@ -12,9 +12,10 @@
 <body>
 
 <nav class="navbar navbar-expand-lg justify-content-center">
-  <a class="navbar-brand" href="paginaMenu">Menu</a>
-  <a class="navbar-brand btnGrupo" data-bs-toggle="modal" data-bs-target="#escogerOpcion">
-    <ion-icon name="library-outline"></ion-icon> Abel Perez
+  <a class="navbar-brand" href="paginaMenu">Salir</a>
+  <a class="navbar-brand" href="paginaMenuEst">Menu</a>
+  <a class="navbar-brand btnGrupo" data-bs-toggle="offcanvas" data-bs-target="#perfil">
+    <ion-icon name="library-outline"></ion-icon> Perfil
   </a>
 
   <!--<div class="container-fluid">
@@ -28,3 +29,35 @@
     </div>
   </div>-->
 </nav>
+
+ <!----------------------- Offvanvas perfil de usuario -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="perfil" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil de Usuario</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="img-content text-center">
+        <img src="vista/img/mensaje.webp" class="imgUser" alt="">
+        <h4><?php echo $_SESSION['nombreEst'] ?></h4>
+        <h4><?php echo $_SESSION['apellidoEst'] ?></h6>
+    </div><hr>
+    <h5>Grupo: "<?php echo $_SESSION['nombreGru'] ?>"</h5>
+    <div class="groupTotal">
+      <?php
+      
+        ?>
+        <div class="groups-content">
+          <div class="group text-center border">
+              <div class="group-title">
+                <img src="vista/img/estrella.png" class="imgUser" alt="">
+                <h5>Estrellas Reunidas</h5>
+                <h4>"<?php echo $_SESSION['puntaje'] ?>"</h4>
+                <h6>Juega mas niveles para tener mas estrellas</h6>
+              </div>
+          </div>
+      </div>
+        
+    </div>
+  </div>
+</div>

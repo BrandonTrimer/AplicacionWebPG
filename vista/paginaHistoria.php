@@ -1,5 +1,10 @@
 <?php
-require_once("layout/header.php");
+session_start();
+if (!empty($_SESSION['idEst'])) {
+  require_once("layout/headerUser.php");
+}else {
+  require_once("layout/header.php");
+}
 ?>
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight contenedor-ejercicios-minH">

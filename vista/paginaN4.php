@@ -1,5 +1,10 @@
 <?php
-require_once("layout/header.php");
+session_start();
+if (!empty($_SESSION['idEst'])) {
+  require_once("layout/headerUser.php");
+}else {
+  require_once("layout/header.php");
+}
 
 $posicion = [];
 
@@ -221,5 +226,7 @@ $posicion[3] = $opciones1[$numR1[3]];
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="vista/js/nivel4Ejercicios.js"></script>
 <?php
 require_once("layout/footer.php");

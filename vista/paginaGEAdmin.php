@@ -43,7 +43,7 @@ foreach ($datoNomP as $key => $value) {
 <nav class="navbar navbar-expand-lg justify-content-center">
   <!--<a class="navbar-brand btnInicio" href="index">Inicio</a>-->
   <a class="navbar-brand" href="paginaMenu">Salir del Grupo</a>
-  <a class="navbar-brand btnGrupo"data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+  <a class="navbar-brand btnGrupo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
     <ion-icon name="person-outline"></ion-icon> Perfil
   </a>
 </nav>
@@ -100,7 +100,7 @@ foreach ($datoNomP as $key => $value) {
             <th scope="row"><?php echo $cont ++;?></th>
             <td><?php echo $v['nombre'] ?></td>
             <td><?php echo $v['apellido']?></td>
-            <td>10 pts</td>
+            <td><?php echo $v['puntaje'] ?> pts</td>
             <td>
               <input type="hidden" name="nomEstEdit" value="<?php echo $v['nombre'];?>" required>
               <input type="hidden" name="apellEstEdit" value="<?php echo $v['apellido'];?>" required>
@@ -240,7 +240,7 @@ if (isset($datoNomEst)) {
     <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil de Usuario</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarMaestro">Eliminar Perfril</button>
+  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarMaestro">Eliminar Perfil</button>
   <div class="offcanvas-body">
     <div class="img-content text-center">
         <img src="vista/img/iconoUser.webp" class="imgUser" alt="">
@@ -268,8 +268,7 @@ if (isset($datoNomEst)) {
           <div class="group text-center border">
               <div class="group-title">
                   <h5><?php 
-                      echo $v['nombre'];
-                      echo $v['codigo'];?>
+                      echo $v['nombre'];?>
                       
                     </h5>
               </div>
@@ -415,5 +414,7 @@ if (isset($datoNomEst)) {
     </div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <?php
 require_once("layout/footer.php");

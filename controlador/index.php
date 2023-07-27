@@ -19,6 +19,11 @@ class modeloController{
         session_destroy();
         require_once("vista/paginaMenu.php");
     }
+    //pagina menu estudiante
+    static function paginaMenuEst(){
+        session_start();
+        require_once("vista/paginaMenuEst.php");
+    }
 
     //pagina N1
     static function paginaN1(){
@@ -67,14 +72,10 @@ class modeloController{
 
     //pagina perfil profesor
     static function paginaGEAdmin(){
-
         session_start();
         
         $user = new Modelo();
-        
         $datosIdGrupo = "idMaestro = '". $_SESSION["idM"]."'";
-        
-
         if (!isset($_SESSION['idG'])) {
             if ($datoIdGrupo = $user->mostrar("grupo",$datosIdGrupo)) {
                 foreach ($datoIdGrupo as $key => $value) {
@@ -84,13 +85,11 @@ class modeloController{
                     $_SESSION['idG'] = $idGrupo;
                   } 
                 endforeach;
-            }
+                }
             }
             
         } 
         
-        
-            
         // nombre profesor en perfil
         $nombreProf = new Modelo();
         $datoNomP = $nombreProf->mostrar("maestro","idMaestro = "."'".$_SESSION["idM"]."'");
@@ -123,11 +122,7 @@ class modeloController{
             $datoCodG = $codigoGrupo->mostrar("grupo","idMaestro = "."'".$_SESSION["idM"]."'"." and idGrupo = '".$_SESSION['idG']."' and codigo = '".$_SESSION["codigoG"]."'");
             
         }
-        
-        
-        
         require_once("vista/paginaGEAdmin.php");
-        
     }
 
     // --------------------------- FUNCIONES FORMULARIOS
@@ -338,11 +333,12 @@ class modeloController{
         $_SESSION['idM'] = $idM;
         header("location:".paginaGEAdmin);
     }
-//-----------********--------Login estudiante---------------------------------------------
+//-----------------------------Login estudiante---------------------------------------------
     static function loginE(){
         $nombre= $_REQUEST['nombre'];
         $apellido= $_REQUEST['apellido'];
         $codigo= $_REQUEST['codigo'];
+        
 
         $condicionE = "nombre = '".$nombre."' and apellido = '".$apellido."'";
         $user = new Modelo();
@@ -350,23 +346,67 @@ class modeloController{
             session_start();
             foreach ($datoMostrarIdGE as $key => $value) {
                 foreach($value as $v):
-                   $_SESSION["idEst"] = $v['idEstudiante'];
-                   $_SESSION["idgru"] = $v['idGrupo'];
+                   $idEst = $v['idEstudiante'];
+                   $_SESSION["idGru"] = $v['idGrupo'];
+                   $_SESSION["nombreEst"] = $v['nombre'];
+                   $_SESSION["apellidoEst"] = $v['apellido'];
+                   $_SESSION['puntaje'] = $v['puntaje'];
                 endforeach;
                 }
-            $condicionG = "idGrupo = '".$_SESSION["idgru"]."' and codigo = '".$codigo."'";
+            $condicionG = "idGrupo = '".$_SESSION["idGru"]."' and codigo = '".$codigo."'";
             $user = new Modelo();
-            $datoMostrarIdG = $user->mostrar("grupo",$condicionG);
-            foreach ($datoMostrarIdG as $key => $value) {
-                foreach($value as $v):
-                   $_SESSION["nombreGru"] = $v['nombre'];
-                endforeach;
+            if ($datoMostrarIdG = $user->mostrar("grupo",$condicionG)) {
+                foreach ($datoMostrarIdG as $key => $value) {
+                    foreach($value as $v):
+                       $_SESSION["nombreGru"] = $v['nombre'];
+                       $_SESSION["codigoGru"] = $v['codigo'];
+                    endforeach;
+                    }
+                //$_SESSION["id"] = $datoUser->idMaestro;
+                $_SESSION['idEst'] = $idEst;
+                header("location:".paginaMenuEst);
+            }else {
+                header("location:".paginaMenu);
             }
-            //$_SESSION["id"] = $datoUser->idMaestro;
-            $_SESSION["codigoGru"] = $codigo;
-            require_once("vista/paginaMenu.php");
+            
         } else {
-            require_once("vista/index.php");
+            header("location:".paginaMenu);
         }
     }
+
+    //aumentar puntaje de estudiante
+    static function aumentarPts(){
+        session_start();
+        $puntaje = $_SESSION['puntaje'];
+        $pagina = $_POST['pagina'];
+        $dificultad = $_POST['dificultad'];
+
+        switch ($dificultad) {
+            case 1:
+                $puntaje = $puntaje + 1;
+                break;
+            case 2:
+                $puntaje = $puntaje + 2;
+                break;
+            case 3:
+                $puntaje = $puntaje + 3;
+                break;
+            case 4:
+                $puntaje = $puntaje + 5;
+                break;
+            default:
+                $puntaje = $puntaje + 1;
+                break;
+        }
+
+        $dato = "puntaje = '".$puntaje."'";
+        $condicion = "estudiante.idEstudiante = '".$_SESSION['idEst']."'";
+        $grupo = new Modelo();
+        $datoGrupo = $grupo->actualizar("estudiante",$dato,$condicion);
+        $_SESSION['puntaje'] = $puntaje;
+        //require_once("vista/paginaN1.php");
+        header("location:".$pagina);
+    }
+
+
 }

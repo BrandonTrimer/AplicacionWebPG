@@ -1,5 +1,10 @@
 <?php
-require_once("layout/header.php");
+session_start();
+if (!empty($_SESSION['idEst'])) {
+  require_once("layout/headerUser.php");
+}else {
+  require_once("layout/header.php");
+}
 
 $num1f1 = rand(5,9);
 $num2f1 = rand(5,9);
@@ -239,5 +244,7 @@ $num2f2Ej2 = rand(0,5);
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="vista/js/nivel3Ejercicios.js"></script>
 <?php
 require_once("layout/footer.php");

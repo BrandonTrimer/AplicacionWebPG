@@ -130,17 +130,17 @@
         <form action="loginE" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" name="nombre" id="floatingFname" placeholder="First name">
+              <input type="text" class="form-control" name="nombre" id="floatingFname" placeholder="First name" required>
               <label for="floatingFname">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" name="apellido" id="floatingLname" placeholder="Last name">
+              <input type="text" class="form-control" name="apellido" id="floatingLname" placeholder="Last name" required>
               <label for="floatingLname">Apellido</label>
             </div>
           </div>
           
           <div class="form-floating">
-              <input type="text" class="form-control" name="codigo" id="floatingCodigo" placeholder="Password">
+              <input type="text" class="form-control" name="codigo" id="floatingCodigo" placeholder="Password" required>
               <label for="floatingCodigo">Codigo de Grupo</label>
           </div>
           

@@ -1,5 +1,10 @@
 <?php
-require_once("layout/header.php");
+session_start();
+if (!empty($_SESSION['idEst'])) {
+  require_once("layout/headerUser.php");
+}else {
+  require_once("layout/header.php");
+}
 /* ----------------- EJERCICIO 1 ---------------- */
 $opciones1 = [];
 $opciones1 = array(
@@ -498,5 +503,6 @@ $limite = 0;
   </div>
 </div>
 
+<script src="vista/js/historiaPreguntas.js"></script>
 <?php
 require_once("layout/footer.php");

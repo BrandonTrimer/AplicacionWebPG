@@ -48,6 +48,15 @@ body {
   width: 120px;
   height: 120px;
 }
+.imgEst {
+  width: 160px;
+  height: 160px;
+}
+.imgEjer {
+  width: 250px;
+  height: 250px;
+  border: solid;
+}
 .btn-crearG {
   margin-bottom: 10px;
 }
@@ -255,6 +264,12 @@ body {
   margin-top: -40px;
   width: 60px;
   height: 60px;
+}
+.img-atr {
+  margin-top: -40px;
+  width: 60px;
+  height: 60px;
+  transform: rotateY(180deg);
 }
 .img-border-circulo {
   border: solid black;
@@ -503,10 +518,10 @@ body {
 .contenedor-btn:hover {
   background-image: url(./img/fondoNivel.jpg);
 }
-.img-sig:hover {
+/*.img-sig:hover {
   animation: shakeX;
   animation-duration: 1s;
-}
+}*/
 
 .btn-confirmar:hover {
   animation: heartBeat;

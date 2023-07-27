@@ -1,24 +1,25 @@
 <?php
-require_once("layout/header.php");
+session_start();
+if (!empty($_SESSION['idEst'])) {
+  require_once("layout/headerUser.php");
+}else {
+  require_once("layout/header.php");
+}
 
 $num1f1 = rand(1,5);
 $num2f1 = rand(0,5);
 $num1f2 = rand(1,5);
 $num2f2 = rand(0,5);
-$num1f1Ej2 = rand(1,5);
-$num2f1Ej2 = rand(0,5);
-$num1f2Ej2 = rand(1,5);
-$num2f2Ej2 = rand(0,5);
 ?>
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row justify-content-md-center text-center">
             <h2>Ejercicio 2</h2>
-            <h5>Realiza las siguientes sumas</h5>
+            <h5>Realiza las siguiente suma</h5>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-7">
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
               <div class="col-2 colum btn-fondo"><h4><?php echo $num1f1 ?></h4></div>
@@ -67,68 +68,24 @@ $num2f2Ej2 = rand(0,5);
               </div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
-              <div class="col-2"></div>
-              <div class="col-2 colum btn-fondo"><h4><?php echo $num1f1Ej2 ?></h4></div>
-              <div class="col-2 colum btn-fondo"><h4><?php echo $num2f1Ej2 ?></h4></div>
-            </div>
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
-              <div class="col-2"><h6 class="simb-mas">+</h6></div>
-              <div class="col-2 colum btn-fondo"><h4><?php echo $num1f2Ej2 ?></h4></div>
-              <div class="col-2 colum btn-fondo"><h4><?php echo $num2f2Ej2 ?></h4></div>
-            </div>
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
-              <div class="col-2"></div>
-              <div class="col-2 colum fondo-verde"><h4 id="num-ejer2-res1"></h4></div>
-              <div class="col-2 colum fondo-verde"><h4 id="num-ejer2-res2"></h4></div>
-            </div>
-            <div class="row justify-content-md-center text-center contenedor-min">
-              <div class="col-2"></div>
-              <div class="col-2">
-                <div class="row justify-content-md-center text-center cont-btn-aum">
-                  <button id="btn-ejer2-aum1" type="button" class="btn-aum-num">
-                    <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
-                  </button>
-                </div>
-                <div class="row justify-content-md-center text-center cont-btn-dis">
-                  <button id="btn-ejer2-dis1" type="button" class="btn-dis-num">
-                    <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
-                  </button>
-                </div>
-              </div>
-              <div class="col-2">
-                <div class="row justify-content-md-center text-center cont-btn-aum">
-                  <button id="btn-ejer2-aum2" type="button" class="btn-aum-num">
-                    <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
-                  </button>
-                </div>
-                <div class="row justify-content-md-center text-center cont-btn-dis">
-                  <button id="btn-ejer2-dis2" type="button" class="btn-dis-num">
-                    <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-md-center text-center">
-              <div class="col-1">
-                <button type="button" onclick="resultadoEjer2(<?php echo $num1f1Ej2.','.$num1f2Ej2.','.$num2f1Ej2.','.$num2f2Ej2?>)" class="btn btn-confirmar">Revisar</button>
-              </div>
-            </div>
+          <!--  imagen   -->
+
+
+          <div class="col-3 ">
+            
+            <img src="vista/img/resolverSum.webp" class="imgEjer" alt="">
+            <input type="hidden" name="dificultad" id="num-ejer2-res1">
+            <input type="hidden" name="dificultad" id="num-ejer2-res2">
+            
           </div>
+
+
         </div>
     </div>
 
     <div class="row justify-content-md-center text-center contenedor-invi">
       <div class="col-3">
         <button type="button" class="btn btn-primary btn-confirmar"></button>
-      </div>
-    </div>
-    <div class="row text-center justify-content-end">
-      <div class="col-2">
-        <a href="#" role="button">
-          <img src="vista/img/flechaD.png" class="img-sig" alt="">
-        </a>
       </div>
     </div>
 
@@ -190,15 +147,20 @@ $num2f2Ej2 = rand(0,5);
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h2 class="modal-title fs-2" id="exampleModalLabel">Muy Bien !!!</h2>
       </div>
-      <div class="modal-body">
-        <h4>Respondiste perfectamente !!!</h4>
+      <div class="modal-body text-center">
+        <h4>¡¡¡ Respondiste Perfectamente !!!</h4>
+        <h5>Reuniste 2 estrella</h5>
+        <h6>Estrellas Totales Reunidas: <?php echo $_SESSION['puntaje'] + 2 ?></h6>
       </div>
-      <div class="modal-footer">
-        <a href="paginaN2" class="btn btn-primary">repetir</a>
-      </div>
+      <form action="aumentarPts" method="POST">
+        <div class="modal-footer">
+          <input type="hidden" name="dificultad" value="<?php echo 2;?>">
+          <input type="hidden" name="pagina" value="<?php echo "paginaN2";?>">
+          <button type="submit" class="btn btn-primary">Genial</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -220,5 +182,7 @@ $num2f2Ej2 = rand(0,5);
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="vista/js/nivel2Ejercicios.js"></script>
 <?php
 require_once("layout/footer.php");

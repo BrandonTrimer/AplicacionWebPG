@@ -1,5 +1,10 @@
 <?php
-require_once("layout/header.php");
+session_start();
+if (!empty($_SESSION['idEst'])) {
+  require_once("layout/headerUser.php");
+}else {
+  require_once("layout/header.php");
+}
 
 $numUniRam = rand(1,9);
 $numDecRam = rand(1,9);
@@ -58,6 +63,13 @@ $numCenMRam = rand(1,9);
     <div class="row justify-content-md-center text-center">
       <div class="col-md-3">
         <button type="button" onclick="RevisarEjer2(<?php echo ($numUniRam.','.$numDecRam.','.$numCenRam.','.$numUniMRam.','.$numDecMRam.','.$numCenMRam)?>)" class="btn btn-confirmar">Revisar</button>
+      </div>
+    </div>
+    <div class="row text-center justify-content-end">
+      <div class="col-2">
+        <a href="paginaN1" role="button">
+          <img src="vista/img/flechaD.png" class="img-atr" alt="">
+        </a>
       </div>
     </div>
 
@@ -120,16 +132,20 @@ $numCenMRam = rand(1,9);
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h2 class="modal-title fs-2" id="exampleModalLabel">Muy Bien !!!</h2>
       </div>
-      <div class="modal-body">
-        <h4>Respondiste perfectamente !!!</h4>
+      <div class="modal-body text-center">
+        <h4>¡¡¡ Respondiste Perfectamente !!!</h4>
+        <h5>Reuniste 1 estrella</h5>
+        <h6>Estrellas Totales Reunidas: <?php echo $_SESSION['puntaje'] + 1 ?></h6>
       </div>
-      <div class="modal-footer">
-        <a href="pagina2N1" class="btn btn-success">Siguiente ejercicio</a>
-        <a href="paginaN1" class="btn btn-primary">repetir</a>
-      </div>
+      <form action="aumentarPts" method="POST">
+        <div class="modal-footer">
+          <input type="hidden" name="dificultad" value="<?php echo 1;?>">
+          <input type="hidden" name="pagina" value="<?php echo "pagina2N1";?>">
+          <button type="submit" class="btn btn-primary">Genial</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -151,5 +167,7 @@ $numCenMRam = rand(1,9);
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="vista/js/nivel1Ejercicios.js"></script>
 <?php
 require_once("layout/footer.php");
