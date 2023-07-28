@@ -5,7 +5,7 @@ if (!empty($_SESSION['idEst'])) {
 }else {
   require_once("layout/header.php");
 }
-
+/*
 $posicion = [];
 
 $preg1 = "2 x 4";
@@ -36,6 +36,47 @@ $posicion[0] = $opciones1[$numR1[0]];
 $posicion[1] = $opciones1[$numR1[1]];
 $posicion[2] = $opciones1[$numR1[2]];
 $posicion[3] = $opciones1[$numR1[3]];
+*/
+$cont = rand(1,2);
+switch ($cont) {
+  case 1:
+    $preg = "2 x 4";
+    $opciones = array(
+      1 => "2 veces 4 o 4 veces 2",
+      2 => "2 veces 2 o 4 veces 4",
+      3 => "2 veces 2 o 4 veces 2",
+      4 => "2 veces 4 o 4 veces 4",
+      5 => "2 veces 8 o 8 veces 2",
+      6 => "4 veces 2 o 4 veces 4",
+      7 => "4 veces 8 o 8 veces 4",
+      8 => "2 veces 4 o 4 veces 8"
+    );
+    break;
+    
+  case 2:
+    $preg = "3 x 5";
+    $opciones = array(
+      1 => "3 veces 5 o 5 veces 3",
+      2 => "3 veces 3 o 5 veces 5",
+      3 => "5 veces 3 o 3 veces 3",
+      4 => "3 veces 5 o 5 veces 5",
+      5 => "3 veces 3 o 5 veces 3",
+      6 => " veces 2 o 4 veces 4",
+      7 => "4 veces 8 o 8 veces 4",
+      8 => "2 veces 4 o 4 veces 8"
+    );
+    break;
+  
+  default:
+    # code...
+    break;
+}
+$numR = array_rand($opciones, 4);
+
+$posicion[0] = $opciones[$numR[0]];
+$posicion[1] = $opciones[$numR[1]];
+$posicion[2] = $opciones[$numR[2]];
+$posicion[3] = $opciones[$numR[3]];
 
 ?>
 
@@ -47,7 +88,7 @@ $posicion[3] = $opciones1[$numR1[3]];
         </div>
         <div class="row justify-content-md-center text-center cont-opt">
             <div class="col-md-3 align-self-center">
-              <h2><?php echo $preg1; ?></h2>
+              <h2><?php echo $preg; ?></h2>
             </div>
             <div class="col-md-7 col-10">
               <div class="row ejer-n1">
@@ -70,7 +111,7 @@ $posicion[3] = $opciones1[$numR1[3]];
         </div>
 
         <div class="row contenedor-ejerN4 justify-content-md-center text-center">
-          <div onclick="compararRes('<?php echo $opciones1[1]; ?>')" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-a">
+          <div onclick="compararRes('<?php echo $opciones[1]; ?>')" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-a">
             <h4>Ahi esta la respuesta</h4>
           </div>
           <div href="index" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-b">
@@ -86,7 +127,6 @@ $posicion[3] = $opciones1[$numR1[3]];
     <div class="row text-center justify-content-end espacio-btn-sig">
       <div class="col-2">
         <a href="#" role="button">
-          <img src="vista/img/flechaD.png" class="img-sig" alt="">
         </a>
       </div>
     </div>
@@ -194,18 +234,45 @@ $posicion[3] = $opciones1[$numR1[3]];
 <!----------------- CONTENIDO MODALS RESULTADOS---------------------->
 <div class="modal fade" id="modal-bien" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <?php
+    if (!empty($_SESSION['idEst'])) {
+      ?>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-2" id="exampleModalLabel">Muy Bien !!!</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>¡¡¡ Respondiste Perfectamente !!!</h4>
+          <h5>Reuniste 3 estrella</h5>
+          <h6>Estrellas Totales Reunidas: <?php echo $_SESSION['puntaje'] + 3 ?></h6>
+        </div>
+        <form action="aumentarPts" method="POST">
+          <div class="modal-footer">
+            <input type="hidden" name="dificultad" value="<?php echo 3;?>">
+            <input type="hidden" name="pagina" value="<?php echo "paginaN4";?>">
+            <button type="submit" class="btn btn-primary">Genial</button>
+          </div>
+        </form>
       </div>
-      <div class="modal-body">
-        <h4>Respondiste perfectamente !!!</h4>
+      <?php
+    }else {
+      ?>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Respondiste perfectamente !!!</h4>
+        </div>
+        <div class="modal-footer">
+          <a href="paginaN4" class="btn btn-primary">repetir</a>
+        </div>
       </div>
-      <div class="modal-footer">
-        <a href="paginaN4" class="btn btn-primary">repetir</a>
-      </div>
-    </div>
+      <?php
+    }
+    ?>
   </div>
 </div>
 

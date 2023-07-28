@@ -7,7 +7,7 @@ if (!empty($_SESSION['idEst'])) {
 }
 
 $posicion = [];
-
+/*
 $preg1 = "12 ÷ 6 = 2";
 $opciones1 = array(
   1 => "12 = 6 x 2",
@@ -26,7 +26,47 @@ $posicion[0] = $opciones1[$numR1[0]];
 $posicion[1] = $opciones1[$numR1[1]];
 $posicion[2] = $opciones1[$numR1[2]];
 $posicion[3] = $opciones1[$numR1[3]];
+*/
+$cont = rand(1,2);
+switch ($cont) {
+  case 1:
+    $preg1 = "12 ÷ 6 = 2";
+    $opciones1 = array(
+      1 => "12 = 6 x 2",
+      2 => "12 x 6 = 2",
+      3 => "2 = 12 x 6",
+      4 => "12 x 2 = 6",
+      5 => "12 x 6 = 2",
+      6 => "2 x 12 = 6",
+      7 => "2 x 6 = 8",
+      8 => "6 x 6 = 2"
+    );
+    break;
+    
+  case 2:
+    $preg1 = "6 ÷ 2 = 3";
+    $opciones1 = array(
+      1 => "2 x 3 = 6",
+      2 => "2 x 6 = 3",
+      3 => "3 = 2 x 6",
+      4 => "6 x 3 = 2",
+      5 => "2 x 2 = 6",
+      6 => "3 x 3 = 6",
+      7 => "2 x 3 = 5",
+      8 => "3 x 6 = 2"
+    );
+    break;
+  
+  default:
+    # code...
+    break;
+}
+$numR1 = array_rand($opciones1, 4);
 
+$posicion[0] = $opciones1[$numR1[0]];
+$posicion[1] = $opciones1[$numR1[1]];
+$posicion[2] = $opciones1[$numR1[2]];
+$posicion[3] = $opciones1[$numR1[3]];
 
 ?>
 
@@ -75,7 +115,6 @@ $posicion[3] = $opciones1[$numR1[3]];
     <div class="row text-center justify-content-end espacio-btn-sig">
       <div class="col-2">
         <a href="#" role="button">
-          <img src="vista/img/flechaD.png" class="img-sig" alt="">
         </a>
       </div>
     </div>
@@ -153,18 +192,45 @@ $posicion[3] = $opciones1[$numR1[3]];
 <!----------------- CONTENIDO MODALS RESULTADOS---------------------->
 <div class="modal fade" id="modal-bien" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <?php
+    if (!empty($_SESSION['idEst'])) {
+      ?>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-2" id="exampleModalLabel">Muy Bien !!!</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>¡¡¡ Respondiste Perfectamente !!!</h4>
+          <h5>Reuniste 3 estrella</h5>
+          <h6>Estrellas Totales Reunidas: <?php echo $_SESSION['puntaje'] + 3 ?></h6>
+        </div>
+        <form action="aumentarPts" method="POST">
+          <div class="modal-footer">
+            <input type="hidden" name="dificultad" value="<?php echo 3;?>">
+            <input type="hidden" name="pagina" value="<?php echo "paginaN5";?>">
+            <button type="submit" class="btn btn-primary">Genial</button>
+          </div>
+        </form>
       </div>
-      <div class="modal-body">
-        <h4>Respondiste perfectamente !!!</h4>
+      <?php
+    }else {
+      ?>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Respondiste perfectamente !!!</h4>
+        </div>
+        <div class="modal-footer">
+          <a href="paginaN5" class="btn btn-primary">repetir</a>
+        </div>
       </div>
-      <div class="modal-footer">
-        <a href="paginaN5" class="btn btn-primary">repetir</a>
-      </div>
-    </div>
+      <?php
+    }
+    ?>
   </div>
 </div>
 

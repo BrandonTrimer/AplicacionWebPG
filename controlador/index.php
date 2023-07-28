@@ -395,7 +395,7 @@ class modeloController{
                 $puntaje = $puntaje + 5;
                 break;
             default:
-                $puntaje = $puntaje + 1;
+                $puntaje = $puntaje + 0;
                 break;
         }
 

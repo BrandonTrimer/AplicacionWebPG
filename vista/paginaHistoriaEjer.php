@@ -122,8 +122,8 @@ $limite = 0;
 
                 <div class="col-6">
                     <img src="vista/img/imgRobot1t.png" alt="" class="img-hist img-robot1">
-                    <h5>Puntos obtenidos</h5>
-                    <h4 id="puntos1"></h4>
+                    <h5 class="txtBlanco">Puntos obtenidos</h5>
+                    <h4 class="txtBlanco" id="puntos1">0</h4>
                 </div>
              </div>
            </div>
@@ -185,8 +185,8 @@ $limite = 0;
 
                 <div class="col-6">
                     <img src="vista/img/imgRobot1t.png" alt="" class="img-hist img-robot1">
-                    <h5>Puntos obtenidos</h5>
-                    <h4 id="puntos2"></h4>
+                    <h5 class="txtBlanco">Puntos obtenidos</h5>
+                    <h4 class="txtBlanco" id="puntos2">0</h4>
                 </div>
              </div>
            </div>
@@ -229,13 +229,14 @@ $limite = 0;
                 </div>
                <div class="col-5">
                     <img src="vista/img/imgRobot1t.png" alt="" class="img-hist img-robot1">
-                    <h5>Puntos obtenidos</h5>
-                    <h4 id="puntos3"></h4>
+                    <h5 class="txtBlanco">Puntos obtenidos</h5>
+                    <h4 class="txtBlanco" id="puntos3">0</h4>
                 </div>
              </div>
            </div>
 
            <!----------------------- CUADRO 4 ------------------------------>
+           <!----------------------- RESULTADO VICTORIA ------------------------------>
            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
            
            <div id="txt-victoria" class="row txt-historia-ejer">
@@ -245,19 +246,43 @@ $limite = 0;
            <div id="contenido-victoria" class="row accordion-body ">
               <div class="col-3 animate__animated animate__bounceInRight">
                 <img src="vista/img/imgRobot2t.png" alt="" class="img-hist img-ganador img-fuerte">
-                <h5>Puntos</h5>
-                <h4 id="puntos4"></h4>
+                <h5 class="txtBlanco">Puntos</h5>
+                <h4 class="txtBlanco" id="puntos4">0</h4>
               </div>
               <div class="col-3 animate__animated animate__bounceInRight">
                 <img src="vista/img/imgMeteorot.png" alt="" class="img-hist img-perdedor img-debil">
-                <h5>Puntos</h5>
-                <h4>2</h4>
+                <h5 class="txtBlanco">Puntos</h5>
+                <h4 class="txtBlanco">2</h4>
               </div>
               <div class="col-6 animate__animated animate__bounceInRight">
                 <img src="vista/img/imgCiudad.jpg" alt="" class="img-hist img-ciudadRes img-ciudadVic">
               </div>
-            </div>
+              
+              <div class="row justify-content-md-center text-center animate__animated animate__bounceInRight">
+                <div class="col-8">
+                  <?php
+                  if (!empty($_SESSION['idEst'])) {
+                    ?>
+                    <form action="aumentarPts" method="POST">
+                      <input type="hidden" name="dificultad" value="<?php echo 4;?>">
+                      <input type="hidden" name="pagina" value="<?php echo "paginaMenuEst";?>">
+                      <button type="submit" class="btn btn-warning ">Obtener <br> !! 5 Estrellas !!</button>
+                    </form>
+                    <?php
+                  } else {
+                    ?>
+                    <a href="paginaMenu" class="btn btn-light">Terminar Desafio</a>
+                    <?php
+                  }
+                  
+                  ?>
+                  
 
+                </div>
+              </div>
+
+            </div>
+            <!----------------------- RESULTADO DERROTA ------------------------------>
             <div id="txt-perdida" class="row txt-historia-ejer">
               <h2>PERDISTE...</h2>
               <h5>No superaste al meteorito, la ciudad fue destruida...</h5>
@@ -265,17 +290,26 @@ $limite = 0;
             <div id="contenido-perdida" class="row accordion-body ">
               <div class="col-3 animate__animated animate__fadeInRight">
                 <img src="vista/img/imgMeteorot.png" alt="" class="img-hist img-ganador img-fuerte">
-                <h5>Puntos</h5>
-                <h4>2</h4>
+                <h5 class="txtBlanco">Puntos</h5>
+                <h4 class="txtBlanco">2</h4>
               </div>
               <div class="col-3 animate__animated animate__fadeInRight">
                 <img src="vista/img/imgRobot1t.png" alt="" class="img-hist img-perdedor img-debil">
-                <h5>Puntos</h5>
-                <h4 id="puntos5"></h4>
+                <h5 class="txtBlanco">Puntos</h5>
+                <h4 class="txtBlanco" id="puntos5">0</h4>
               </div>
               <div class="col-6 animate__animated animate__fadeInRight">
                 <img src="vista/img/imgCiudadRota.jpg" alt="" class="img-hist img-ciudadRes img-ciudadPer">
               </div>
+              
+            
+              <div class="row justify-content-md-center text-center animate__animated animate__fadeInRight">
+                <div class="col-8">
+                  <a href="paginaHistoriaEjer" class="btn btn-confirmar">Volver a Empezar</a>
+                  <a href="paginaMenu" class="btn btn-confirmar">Terminar Desafio</a>
+                </div>
+              </div>
+
              </div>
 
            </div>
@@ -503,6 +537,7 @@ $limite = 0;
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="vista/js/historiaPreguntas.js"></script>
 <?php
 require_once("layout/footer.php");

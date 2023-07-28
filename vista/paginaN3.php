@@ -10,10 +10,6 @@ $num1f1 = rand(5,9);
 $num2f1 = rand(5,9);
 $num1f2 = rand(1,5);
 $num2f2 = rand(0,5);
-$num1f1Ej2 = rand(5,9);
-$num2f1Ej2 = rand(5,9);
-$num1f2Ej2 = rand(1,5);
-$num2f2Ej2 = rand(0,5);
 ?>
 
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
@@ -23,7 +19,7 @@ $num2f2Ej2 = rand(0,5);
             <h5>Realiza las siguientes restas</h5>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-7">
             <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
               <div class="col-2"></div>
               <div class="col-2 colum btn-fondo"><h4><?php echo $num1f1 ?></h6></div>
@@ -72,71 +68,18 @@ $num2f2Ej2 = rand(0,5);
               </div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
-              <div class="col-2"></div>
-              <div class="col-2 colum btn-fondo"><h4><?php echo $num1f1Ej2 ?></h4></div>
-              <div class="col-2 colum btn-fondo"><h4><?php echo $num2f1Ej2 ?></h4></div>
-            </div>
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
-              <div class="col-2"><h6 class="simb-mas">-</h6></div>
-              <div class="col-2 colum btn-fondo"><h4><?php echo $num1f2Ej2 ?></h4></div>
-              <div class="col-2 colum btn-fondo"><h4><?php echo $num2f2Ej2 ?></h4></div>
-            </div>
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
-              <div class="col-2"></div>
-              <div class="col-2 colum fondo-verde"><h4 id="num-ejer2-res1N3"></h4></div>
-              <div class="col-2 colum fondo-verde"><h4 id="num-ejer2-res2N3"></h4></div>
-            </div>
-            <div class="row justify-content-md-center text-center contenedor-min">
-              <div class="col-2"></div>
-              <div class="col-2">
-                <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer2-aum1N3" type="button" class="btn-aum-num">
-                    <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
-                  </button>
-                </div>
-                <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer2-dis1N3" type="button" class="btn-dis-num">
-                    <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
-                  </button>
-                </div>
-              </div>
-              <div class="col-2">
-                <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer2-aum2N3" type="button" class="btn-aum-num">
-                    <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
-                  </button>
-                </div>
-                <div class="row justify-content-md-center text-center">
-                  <button id="btn-ejer2-dis2N3" type="button" class="btn-dis-num">
-                    <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="row justify-content-md-center text-center">
-              <div class="col-1">
-                <button type="button" onclick="resultadoEjer2Res(<?php echo $num1f1Ej2.','.$num1f2Ej2.','.$num2f1Ej2.','.$num2f2Ej2?>)" class="btn btn-confirmar">Revisar</button>
-              </div>
-            </div>
+
+          <div class="col-3">
+            <input type="hidden" name="dificultad" id="num-ejer2-res1N3">
+            <input type="hidden" name="dificultad" id="num-ejer2-res2N3">
+            <img src="vista/img/estPensando.jpg" class="imgEjer" alt="">
           </div>
-        </div>
-        <div class="row">
-          
         </div>
     </div>
 
     <div class="row justify-content-md-center text-center contenedor-invi">
       <div class="col-3">
         <button type="button" class="btn btn-primary btn-confirmar"></button>
-      </div>
-    </div>
-    <div class="row text-center justify-content-end">
-      <div class="col-2">
-        <a href="#" role="button">
-          <img src="vista/img/flechaD.png" class="img-sig" alt="">
-        </a>
       </div>
     </div>
 
@@ -212,18 +155,45 @@ $num2f2Ej2 = rand(0,5);
 <!----------------- CONTENIDO MODALS RESULTADOS---------------------->
 <div class="modal fade" id="modal-bien" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <?php
+    if (!empty($_SESSION['idEst'])) {
+      ?>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-2" id="exampleModalLabel">Muy Bien !!!</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <h4>¡¡¡ Respondiste Perfectamente !!!</h4>
+          <h5>Reuniste 2 estrella</h5>
+          <h6>Estrellas Totales Reunidas: <?php echo $_SESSION['puntaje'] + 2 ?></h6>
+        </div>
+        <form action="aumentarPts" method="POST">
+          <div class="modal-footer">
+            <input type="hidden" name="dificultad" value="<?php echo 2;?>">
+            <input type="hidden" name="pagina" value="<?php echo "paginaN3";?>">
+            <button type="submit" class="btn btn-primary">Genial</button>
+          </div>
+        </form>
       </div>
-      <div class="modal-body">
-        <h4>Respondiste perfectamente !!!</h4>
+      <?php
+    }else {
+      ?>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Respondiste perfectamente !!!</h4>
+        </div>
+        <div class="modal-footer">
+          <a href="paginaN3" class="btn btn-primary">repetir</a>
+        </div>
       </div>
-      <div class="modal-footer">
-        <a href="paginaN3" class="btn btn-primary">repetir</a>
-      </div>
-    </div>
+      <?php
+    }
+    ?>
   </div>
 </div>
 

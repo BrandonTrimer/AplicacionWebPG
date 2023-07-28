@@ -159,24 +159,46 @@ $numCenRam = rand(1,9);
 <!----------------- CONTENIDO MODALS RESULTADOS---------------------->
 <div class="modal fade" id="modal-bien" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title fs-2" id="exampleModalLabel">Muy Bien !!!</h2>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <h4>¡¡¡ Respondiste Perfectamente !!!</h4>
-        <h5>Reuniste 1 estrella</h5>
-        <h6>Estrellas Totales Reunidas: <?php echo $_SESSION['puntaje'] + 1 ?></h6>
-      </div>
-      <form action="aumentarPts" method="POST">
-        <div class="modal-footer">
-          <input type="hidden" name="dificultad" value="<?php echo 1;?>">
-          <input type="hidden" name="pagina" value="<?php echo "paginaN1";?>">
-          <button type="submit" class="btn btn-primary">Genial</button>
+    <?php
+    if (!empty($_SESSION['idEst'])) {
+      ?>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-2" id="exampleModalLabel">Muy Bien !!!</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </form>
-    </div>
+        <div class="modal-body text-center">
+          <h4>¡¡¡ Respondiste Perfectamente !!!</h4>
+          <h5>Reuniste 1 estrella</h5>
+          <h6>Estrellas Totales Reunidas: <?php echo $_SESSION['puntaje'] + 1 ?></h6>
+        </div>
+        <form action="aumentarPts" method="POST">
+          <div class="modal-footer">
+            <input type="hidden" name="dificultad" value="<?php echo 1;?>">
+            <input type="hidden" name="pagina" value="<?php echo "paginaN1";?>">
+            <button type="submit" class="btn btn-primary">Genial</button>
+          </div>
+        </form>
+      </div>
+      <?php
+    }else {
+      ?>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="exampleModalLabel">Muy Bien!!!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Respondiste perfectamente !!!</h4>
+        </div>
+        <div class="modal-footer">
+          <a href="paginaN1" class="btn btn-primary">repetir</a>
+        </div>
+      </div>
+      <?php
+    }
+    ?>
+    
   </div>
 </div>
 

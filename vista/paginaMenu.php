@@ -25,7 +25,7 @@ require_once("layout/header.php");
       <a href="paginaN5" class="btn btn-outline-white btn-nivel" role="button">Nivel 5  <br>Division</a>
     </div>
     <div class="contenedor-btn animate__animated animate__bounceInDown btnNivel6">
-      <a href="paginaHistoria" class="btn btn-outline-white btn-nivel" role="button">Historia y <br>Desafios</a>
+      <a href="paginaHistoria" class="btn btn-outline-white btn-nivel" role="button">Desafio <br>Extremo</a>
     </div>
   
 </div>
