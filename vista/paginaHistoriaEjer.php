@@ -271,7 +271,7 @@ $limite = 0;
                     <?php
                   } else {
                     ?>
-                    <a href="paginaMenu" class="btn btn-light">Terminar Desafio</a>
+                    <a href="paginaMenu" class="btn btn-confirmar">Terminar Desafio</a>
                     <?php
                   }
                   
