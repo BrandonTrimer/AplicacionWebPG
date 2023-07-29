@@ -119,7 +119,13 @@ if (!empty($_SESSION['idEst'])) {
             </div>
            </div>
            
-           
+           <div class="row text-center justify-content-end">
+            <div class="col-2">
+              <a href="paginaHistoriaEjer" role="button">
+                <img src="vista/img/imgStart.webp" class="img-border-circulo" alt="">
+              </a>
+            </div>
+           </div>
 
         </div>
         <!-- 
@@ -149,13 +155,7 @@ if (!empty($_SESSION['idEst'])) {
 
     
     
-    <div class="row text-center justify-content-end espacio-btn-sig">
-      <div class="col-2">
-        <a href="paginaHistoriaEjer" role="button">
-          <img src="vista/img/imgComt.png" class="img-border-circulo" alt="">
-        </a>
-      </div>
-    </div>
+    
   </div>
   
 </div>

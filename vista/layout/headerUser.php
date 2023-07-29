@@ -48,7 +48,7 @@
       <?php
       
         ?>
-        <div class="groups-content border">
+        <div class="groups-content2">
           <div class="group text-center">
               <div class="group-title">
                 <img src="vista/img/estrella.png" class="imgEstrella" alt="">
