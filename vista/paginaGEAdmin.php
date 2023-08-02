@@ -237,7 +237,7 @@ if (isset($datoNomEst)) {
  <!----------------------- Offvanvas perfil de usuario -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil de Usuario</h5>
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil del Maestro</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarMaestro">Eliminar Perfil</button>
