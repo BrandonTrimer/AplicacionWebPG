@@ -85,7 +85,7 @@ $limite = 0;
         <!----------------------- CUADRO 1 ------------------------------>
            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
            <div class="row txt-historia-ejer justify-content-md-center text-center">
-              <h2>Ejercicios</h2>
+              <h2>Ejercicios - Desafio Extremo</h2>
               <h5>Seleccione el ejercicio que está correcto </h5>
             </div> 
            <div class="row accordion-body">

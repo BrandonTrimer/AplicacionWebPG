@@ -17,7 +17,7 @@ $numCenMRam = rand(1,9);
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row justify-content-md-center text-center">
-            <h2>Ejercicio 2</h2>
+            <h2>Ejercicio 2 - Valor de los números</h2>
             <h5>Ordena los números en la tabla según su valor posicional </h5>
         </div>
         <div class="row justify-content-md-center text-center">

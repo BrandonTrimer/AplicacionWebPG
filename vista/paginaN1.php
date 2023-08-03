@@ -16,7 +16,7 @@ $numCenRam = rand(1,9);
     <div class="contenedor-nivel row text-center">
         <div class="row justify-content-md-center text-center">
           
-            <h2>Ejercicio 1</h2>
+            <h2>Ejercicio 1 - Valor de los números</h2>
             <h5>Llena las casillas según el valor que representa el número</h5>
         </div>
         <div class="row justify-content-md-center text-center">

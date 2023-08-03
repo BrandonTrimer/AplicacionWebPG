@@ -15,7 +15,7 @@ $num2f2 = rand(0,5);
   <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row justify-content-md-center text-center">
-            <h2>Ejercicio 2</h2>
+            <h2>Ejercicio - Suma</h2>
             <h5>Realiza las siguiente suma</h5>
         </div>
         <div class="row">

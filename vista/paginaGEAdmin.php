@@ -60,7 +60,7 @@ foreach ($datoNomP as $key => $value) {
                  $_SESSION['nomGrupoInic'] = $v['nombre'];
                endforeach;
              }
-             ?>" <button class="btn btn-outline-light" type="button" name="editG" data-bs-toggle="modal" data-bs-target="#editarGrupo"><ion-icon name="pencil-outline"></ion-icon></button>
+             ?> " <button class="btn btn-outline-light" type="button" name="editG" data-bs-toggle="modal" data-bs-target="#editarGrupo"><ion-icon name="pencil-outline"></ion-icon></button>
             <button class="btn btn-outline-danger" type="button" name="elimG" data-bs-toggle="modal" data-bs-target="#eliminarGrupo"><ion-icon name="trash-outline"></ion-icon></button>
             </h4>
             <button type="button" class="col-2 btn btn-success btn-agregar" data-bs-toggle="modal" data-bs-target="#agregarInt"><ion-icon name="add-outline"></ion-icon>Agregar</button>
