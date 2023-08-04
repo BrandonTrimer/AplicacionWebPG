@@ -20,10 +20,10 @@ $numCenRam = rand(1,9);
             <h5>Llena las casillas según el valor que representa el número</h5>
         </div>
         <div class="row justify-content-md-center text-center">
-            <div class="col-md-3 align-self-center">
+            <div class="col-sm-3 align-self-center">
               <h2><?php echo ($numCenRam.$numDecRam.$numUniRam) ?> = </h2>
             </div>
-            <div class="col-md-7 cont-ejer-n1">
+            <div class="col-sm-7 cont-ejer-n1">
                 <div class="row ejer-n1">
                     <div class="col-3 colum btn-fondo"><h6>CENTENA</h6></div>
                     <div id="btn-cen-ejer9" class="col-1 colum btn-fondo"></div>

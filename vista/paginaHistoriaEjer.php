@@ -77,40 +77,40 @@ $limite = 0;
 
 ?>
 
-  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight contenedor-ejercicios-minH">
+  <div class="contenedor-ejercicios col-sm-11 animate__animated animate__bounceInRight contenedor-ejercicios-minH">
     <div id="accordionExample" class="contenedor-nivel row text-center">
         
         <div class="row content-hist-min">
 
         <!----------------------- CUADRO 1 ------------------------------>
            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-           <div class="row txt-historia-ejer justify-content-md-center text-center">
+           <div class="row txt-historia-ejer justify-content-sm-center text-center">
               <h2>Ejercicios - Desafio Extremo</h2>
               <h5>Seleccione el ejercicio que está correcto </h5>
             </div> 
            <div class="row accordion-body">
                <div class="col-6">
-                  <div class="row ejer-n1 justify-content-md-center text-center select-conten">
+                  <div class="row ejer-n1 justify-content-sm-center text-center select-conten">
                     <div id="selec1H" onclick="almacenarOpcion('<?php echo $posicion[0]; ?>')" class="col-6 colum btn-fondo espacio-preg">
                       <h5><?php echo $posicion[0]; ?></h6>
                     </div>
                   </div>
-                  <div class="row ejer-n1 justify-content-md-center text-center select-conten">
+                  <div class="row ejer-n1 justify-content-sm-center text-center select-conten">
                     <div id="selec2H" onclick="almacenarOpcion('<?php echo $posicion[1]; ?>')" class="col-6 colum btn-fondo espacio-preg">
                       <h5><?php echo $posicion[1]; ?></h5>
                     </div>
                   </div>
-                  <div class="row ejer-n1 justify-content-md-center text-center select-conten">
+                  <div class="row ejer-n1 justify-content-sm-center text-center select-conten">
                     <div id="selec3H" onclick="almacenarOpcion('<?php echo $posicion[2]; ?>')" class="col-6 colum btn-fondo espacio-preg">
                       <h5><?php echo $posicion[2]; ?></h5>
                     </div>
                   </div>
-                  <div class="row ejer-n1 justify-content-md-center text-center select-conten">
+                  <div class="row ejer-n1 justify-content-sm-center text-center select-conten">
                     <div id="selec4H" onclick="almacenarOpcion('<?php echo $posicion[3]; ?>')" class="col-6 colum btn-fondo espacio-preg">
                       <h5><?php echo $posicion[3]; ?></h5>
                     </div>
                   </div>
-                  <div class="row contenedor-ejerN4 justify-content-md-center text-center">
+                  <div class="row contenedor-ejerN4 justify-content-sm-center text-center">
                     <div onclick="compararRes('<?php echo $opciones1[1]; ?>')" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-a">
                       <h6>Ahi esta la respuesta</h6>
                     </div>
@@ -136,44 +136,44 @@ $limite = 0;
             </div> 
            <div class="row accordion-body">
                <div class="col-6">
-                  <div class="row ejer-n1 justify-content-md-center text-center">
+                  <div class="row ejer-n1 justify-content-sm-center text-center">
                     <div class="col-6">
-                        <div class="row ejer-n1 justify-content-md-center text-center">
+                        <div class="row ejer-n1 justify-content-sm-center text-center">
                             <div class="col-2"></div>
                             <div class="col-6 colum btn-fondo"><h3><?php echo $posicion2a[0] ?></h3></div>
                         </div>
-                        <div class="row ejer-n1 justify-content-md-center text-center">
+                        <div class="row ejer-n1 justify-content-sm-center text-center">
                             <div class="col-2"><h6 class="simb-mas">+</h6></div>
                             <div class="col-6 colum btn-fondo"><h3><?php echo $posicion2a[1] ?></h3></div>
                         </div>
-                        <div class="row ejer-n1 justify-content-md-center text-center">
+                        <div class="row ejer-n1 justify-content-sm-center text-center">
                             <div class="col-2"></div>
                             <div class="col-6 colum btn-fondo fondo-verde"><h3><?php echo $posicionSum[0] ?></h3></div>
                         </div>
-                        <div class="row ejer-n1 justify-content-md-center text-center select-conten">
+                        <div class="row ejer-n1 justify-content-sm-center text-center select-conten">
                             <div id="selec2AH" onclick="almacenarSuma(<?php echo $posicion2a[0].','.$posicion2a[1];?>,1)" class="col-9 colum btn-fondo espacio-select">Escoger</div>
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="row ejer-n1 justify-content-md-center text-center">
+                        <div class="row ejer-n1 justify-content-sm-center text-center">
                             <div class="col-2"></div>
                             <div class="col-6 colum btn-fondo"><h3><?php echo $posicion2b[0] ?></h3></div>
                         </div>
-                        <div class="row ejer-n1 justify-content-md-center text-center">
+                        <div class="row ejer-n1 justify-content-sm-center text-center">
                             <div class="col-2"><h6 class="simb-mas">+</h6></div>
                             <div class="col-6 colum btn-fondo"><h3><?php echo $posicion2b[1] ?></h3></div>
                         </div>
-                        <div class="row ejer-n1 justify-content-md-center text-center">
+                        <div class="row ejer-n1 justify-content-sm-center text-center">
                             <div class="col-2"></div>
                             <div class="col-6 colum btn-fondo fondo-verde"><h3><?php echo $posicionSum[1] ?></h3></div>
                         </div>
-                        <div class="row ejer-n1 justify-content-md-center text-center select-conten">
+                        <div class="row ejer-n1 justify-content-sm-center text-center select-conten">
                             <div id="selec2BH"  onclick="almacenarSuma(<?php echo $posicion2b[0].','.$posicion2b[1]; ?>,2)" class="col-9 colum btn-fondo espacio-select">Escoger</div>
                         </div>
                     </div>
                   </div>
                   
-                  <div class="row contenedor-ejerN4 justify-content-md-center text-center">
+                  <div class="row contenedor-ejerN4 justify-content-sm-center text-center">
                     <div onclick="compararSum(<?php echo $posicionSum[0].','.$posicionSum[1]; ?>)" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-a">
                       <h6>Ahi esta la respuesta</h6>
                     </div>
@@ -199,9 +199,9 @@ $limite = 0;
             </div>   
            <div class="row accordion-body">
                <div class="col-6">
-                  <div class="row ejer-n1 justify-content-md-center text-center">
+                  <div class="row ejer-n1 justify-content-sm-center text-center">
                     <div class="col-10">
-                        <div class="row ejer-n1 justify-content-md-center text-center">
+                        <div class="row ejer-n1 justify-content-sm-center text-center">
                           <?php while ($limite < $numR3cant){ ?>
                             <div class="col-2 colum btn-fondo espacio-select"><?php echo $numR3digito; ?></div>
                           <?php $limite++; } ?>
@@ -218,7 +218,7 @@ $limite = 0;
                   </div>
                   
 
-                  <div class="row contenedor-ejerN4 justify-content-md-center text-center">
+                  <div class="row contenedor-ejerN4 justify-content-sm-center text-center">
                     <div onclick="compararMult(<?php echo $numR3digito.','.$numR3cant; ?>)" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-a">
                       <h6>Ahi esta la respuesta</h6>
                     </div>
@@ -258,7 +258,7 @@ $limite = 0;
                 <img src="vista/img/imgCiudad.jpg" alt="" class="img-hist img-ciudadRes img-ciudadVic">
               </div>
               
-              <div class="row justify-content-md-center text-center animate__animated animate__bounceInRight">
+              <div class="row justify-content-sm-center text-center animate__animated animate__bounceInRight">
                 <div class="col-8">
                   <?php
                   if (!empty($_SESSION['idEst'])) {
@@ -303,7 +303,7 @@ $limite = 0;
               </div>
               
             
-              <div class="row justify-content-md-center text-center animate__animated animate__fadeInRight">
+              <div class="row justify-content-sm-center text-center animate__animated animate__fadeInRight">
                 <div class="col-8">
                   <a href="paginaHistoriaEjer" class="btn btn-confirmar">Volver a Empezar</a>
                   <a href="paginaMenu" class="btn btn-confirmar">Terminar Desafio</a>

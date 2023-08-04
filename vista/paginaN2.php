@@ -12,57 +12,57 @@ $num1f2 = rand(1,5);
 $num2f2 = rand(0,5);
 ?>
 
-  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
+  <div class="contenedor-ejercicios col-sm-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
-        <div class="row justify-content-md-center text-center">
+        <div class="row justify-content-sm-center text-center">
             <h2>Ejercicio - Suma</h2>
             <h5>Realiza las siguiente suma</h5>
         </div>
         <div class="row">
           <div class="col-7">
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
+            <div class="row ejer-n1 justify-content-sm-center text-center contenedor-min">
               <div class="col-2"></div>
               <div class="col-2 colum btn-fondo"><h4><?php echo $num1f1 ?></h4></div>
               <div class="col-2 colum btn-fondo"><h4><?php echo $num2f1 ?></h4></div>
             </div>
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
+            <div class="row ejer-n1 justify-content-sm-center text-center contenedor-min">
               <div class="col-2"><h6 class="simb-mas">+</h6></div>
               <div class="col-2 colum btn-fondo"><h4><?php echo $num1f2 ?></h4></div>
               <div class="col-2 colum btn-fondo"><h4><?php echo $num2f2 ?></h4></div>
             </div>
-            <div class="row ejer-n1 justify-content-md-center text-center contenedor-min">
+            <div class="row ejer-n1 justify-content-sm-center text-center contenedor-min">
               <div class="col-2"></div>
               <div class="col-2 colum fondo-verde"><h4 id="num-ejer1-res1"></h4></div>
               <div class="col-2 colum fondo-verde"><h4 id="num-ejer1-res2"></h4></div>
             </div>
-            <div class="row justify-content-md-center text-center contenedor-min">
+            <div class="row justify-content-sm-center text-center contenedor-min">
               <div class="col-2"></div>
               <div class="col-2">
-                <div class="row justify-content-md-center text-center cont-btn-aum">
+                <div class="row justify-content-sm-center text-center cont-btn-aum">
                   <button id="btn-ejer1-aum1" type="button" class="btn-aum-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
                   </button>
                 </div>
-                <div class="row justify-content-md-center text-center cont-btn-dis">
+                <div class="row justify-content-sm-center text-center cont-btn-dis">
                   <button id="btn-ejer1-dis1" type="button" class="btn-dis-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
                   </button>
                 </div>
               </div>
               <div class="col-2">
-                <div class="row justify-content-md-center text-center cont-btn-aum">
+                <div class="row justify-content-sm-center text-center cont-btn-aum">
                   <button id="btn-ejer1-aum2" type="button" class="btn-aum-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num ar" alt="">
                   </button>
                 </div>
-                <div class="row justify-content-md-center text-center cont-btn-dis">
+                <div class="row justify-content-sm-center text-center cont-btn-dis">
                   <button id="btn-ejer1-dis2" type="button" class="btn-dis-num">
                     <img src="vista/img/flechaNum.png" class="img-flecha-num" alt="">
                   </button>
                 </div>
               </div>
             </div>
-            <div class="row justify-content-md-center text-center">
+            <div class="row justify-content-sm-center text-center">
               <div class="col-1">
                 <button type="button" onclick="resultadoEjer1(<?php echo $num1f1.','.$num1f2.','.$num2f1.','.$num2f2?>)" class="btn btn-confirmar">Revisar</button>
               </div>

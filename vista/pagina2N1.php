@@ -14,17 +14,17 @@ $numDecMRam = rand(1,9);
 $numCenMRam = rand(1,9);
 ?>
 
-  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
+  <div class="contenedor-ejercicios col-sm-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
         <div class="row justify-content-md-center text-center">
             <h2>Ejercicio 2 - Valor de los números</h2>
             <h5>Ordena los números en la tabla según su valor posicional </h5>
         </div>
         <div class="row justify-content-md-center text-center">
-            <div class="col-md-3 align-self-center">
+            <div class="col-sm-3 align-self-center">
               <h2><?php echo ($numUniRam.$numDecRam.$numCenRam." ".$numUniMRam.$numDecMRam.$numCenMRam)?> = </h2>
             </div>
-            <div class="col-md-8 cont-ejer-n1">
+            <div class="col-sm-8 cont-ejer-n1">
                 <div class="row ejer-n1">
                     <div class="col-2 colum btn-fondo"><h1>CENTENA MIL</h1></div>
                     <div class="col-2 colum btn-fondo"><h1>DECENA MIL</h1></div>
@@ -44,8 +44,8 @@ $numCenMRam = rand(1,9);
             </div>
         </div>
         <div id="contenedor-num" class="row cont-select-num">
-            <div class="col-md-12 cont-ejer-n1">
-                <div class="row ejer-n1 justify-content-md-center text-center">
+            <div class="col-sm-12 cont-ejer-n1">
+                <div class="row ejer-n1 justify-content-sm-center text-center">
                     <div onclick="cambiarNum(0)" class="col-1 offset-1 colum btn-fondo txt-select-num"><h4>0</h4></div>
                     <div onclick="cambiarNum(1)" class="col-1 colum btn-fondo txt-select-num"><h4>1</h4></div>
                     <div onclick="cambiarNum(2)" class="col-1 colum btn-fondo txt-select-num"><h4>2</h4></div>

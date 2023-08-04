@@ -80,17 +80,17 @@ $posicion[3] = $opciones[$numR[3]];
 
 ?>
 
-  <div class="contenedor-ejercicios col-md-11 animate__animated animate__bounceInRight">
+  <div class="contenedor-ejercicios col-sm-11 animate__animated animate__bounceInRight">
     <div class="contenedor-nivel row text-center">
-        <div class="row justify-content-md-center text-center">
+        <div class="row justify-content-sm-center text-center">
             <h2>Ejercicio - Multiplicación</h2>
             <h5 class="txtEjer">Selecciona la cantidad de veces que se debe repetir un número según el ejercicio. Si no ves la respuesta presiona el boton rojo para seguir buscando</h5>
         </div>
-        <div class="row justify-content-md-center text-center cont-opt">
-            <div class="col-md-3 align-self-center">
+        <div class="row justify-content-sm-center text-center cont-opt">
+            <div class="col-sm-3 align-self-center">
               <h2><?php echo $preg; ?></h2>
             </div>
-            <div class="col-md-7 col-10">
+            <div class="col-sm-7 col-10">
               <div class="row ejer-n1">
                 <div id="ejerA" onclick="almacenarOpcion('<?php echo $posicion[0]; ?>')" class="col-6 colum btn-fondo select-conten">
                   <h5>a) <?php echo $posicion[0]; ?></h5>
@@ -110,7 +110,7 @@ $posicion[3] = $opciones[$numR[3]];
             </div>
         </div>
 
-        <div class="row contenedor-ejerN4 justify-content-md-center text-center">
+        <div class="row contenedor-ejerN4 justify-content-sm-center text-center">
           <div onclick="compararRes('<?php echo $opciones[1]; ?>')" class="col-4 colum btn-fondo align-self-center select-conten2 select-conten2-a">
             <h4>Ahi esta la respuesta</h4>
           </div>
