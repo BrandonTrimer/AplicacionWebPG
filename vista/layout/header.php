@@ -40,11 +40,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row contenedor-ejerN4 justify-content-md-center text-center" data-bs-toggle="modal" data-bs-target="#escogerMaEs">
-          <div class="col-5 colum btn-fondo align-self-center select-conten2">
+        <div class="row contenedor-ejerN4 justify-content-lg-center text-center" data-bs-toggle="modal" data-bs-target="#escogerMaEs">
+          <div class="col-4 col-lg-5 colum btn-fondo align-self-center select-conten2">
             <h4>Ingresar a un grupo</h4>
           </div>
-          <div class="col-5 colum btn-fondo align-self-center select-conten2" data-bs-toggle="modal" data-bs-target="#crearGrupo">
+          <div class="col-4 col-lg-5 colum btn-fondo align-self-center select-conten2" data-bs-toggle="modal" data-bs-target="#crearGrupo">
             <h4>Crear Grupo</h4>
           </div>
         </div>
@@ -64,11 +64,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row contenedor-ejerN4 justify-content-md-center text-center" data-bs-toggle="modal" data-bs-target="#formularioE">
-          <div class="col-5 colum btn-fondo align-self-center select-conten2">
+        <div class="row contenedor-ejerN4 justify-content-lg-center text-center" data-bs-toggle="modal" data-bs-target="#formularioE">
+          <div class="col-4 col-lg-5 colum btn-fondo align-self-center select-conten2">
             <h4>Ingresar como Estudiante</h4>
           </div>
-          <div class="col-5 colum btn-fondo align-self-center select-conten2" data-bs-toggle="modal" data-bs-target="#formularioM">
+          <div class="col-4 col-lg-5 colum btn-fondo align-self-center select-conten2" data-bs-toggle="modal" data-bs-target="#formularioM">
             <h4>Ingresar como Maestro</h4>
           </div>
         </div>
