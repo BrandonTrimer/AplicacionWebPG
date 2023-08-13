@@ -72,6 +72,8 @@ class modeloController{
 
     //pagina perfil profesor
     static function paginaGEAdmin(){
+
+
         session_start();
         
         $user = new Modelo();
@@ -123,6 +125,7 @@ class modeloController{
             
         }
         require_once("vista/paginaGEAdmin.php");
+
     }
 
     // --------------------------- FUNCIONES FORMULARIOS
@@ -277,7 +280,7 @@ class modeloController{
             $_SESSION["clave"] = $clave;
             header("location:".paginaGEAdmin);
         } else {
-            require_once("vista/paginaMenu.php");
+            header("location:".paginaMenu);
         }
 
         //header("location:".urlsite);
