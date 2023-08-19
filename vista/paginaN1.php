@@ -147,7 +147,7 @@ $numCenRam = rand(1,9);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body ratio ratio-4x3">
-        <iframe width="1310" height="499" src="https://www.youtube.com/embed/TkAhaG1EcTs" title="🤓 VALOR POSICIONAL | Unidades, Decenas y Centenas 👩🏻‍🏫" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/TkAhaG1EcTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>

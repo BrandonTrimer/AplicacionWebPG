@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="vista/css/estilos.css">
 </head>
 <body>
@@ -93,17 +93,17 @@
         <form action="loginM" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" name="nombre" id="floatingFname" placeholder="First name" required>
-              <label for="floatingFname">Nombre</label>
+              <input type="text" class="form-control" name="nombre" id="floatingFnameM" placeholder="First name" required>
+              <label for="floatingFnameM">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" name="apellido" id="floatingLname" placeholder="Last name" required>
-              <label for="floatingLname">Apellido</label>
+              <input type="text" class="form-control" name="apellido" id="floatingLnameM" placeholder="Last name" required>
+              <label for="floatingLnameM">Apellido</label>
             </div>
           </div>
           <div class="form-floating">
-            <input type="password" class="form-control" name="password" id="floatingCodigo" placeholder="Password" required>
-            <label for="floatingCodigo">Contraseña</label>
+            <input type="password" class="form-control" name="password" id="floatingCodigoM" placeholder="Password" required>
+            <label for="floatingCodigoM">Contraseña</label>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#escogerMaEs">Volver</button>
@@ -130,12 +130,12 @@
         <form action="loginE" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" name="nombre" id="floatingFname" placeholder="First name" required>
-              <label for="floatingFname">Nombre</label>
+              <input type="text" class="form-control" name="nombre" id="floatingFnameE" placeholder="First name" required>
+              <label for="floatingFnameE">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" name="apellido" id="floatingLname" placeholder="Last name" required>
-              <label for="floatingLname">Apellido</label>
+              <input type="text" class="form-control" name="apellido" id="floatingLnameE" placeholder="Last name" required>
+              <label for="floatingLnameE">Apellido</label>
             </div>
           </div>
           
@@ -167,12 +167,12 @@
         <form action="agregarM" method="POST">
           <div class="row g-3">
             <div class="col form-floating mb-3">
-              <input type="text" class="form-control" name="nombreM" id="floatingFname" placeholder="First name" required>
-              <label for="floatingFname">Nombre</label>
+              <input type="text" class="form-control" name="nombreM" id="floatingFnameG" placeholder="First name" required>
+              <label for="floatingFnameG">Nombre</label>
             </div>
             <div class="col form-floating">
-              <input type="text" class="form-control" name="apellidoM" id="floatingLname" placeholder="Last name" required>
-              <label for="floatingLname">Apellido</label>
+              <input type="text" class="form-control" name="apellidoM" id="floatingLnameG" placeholder="Last name" required>
+              <label for="floatingLnameG">Apellido</label>
             </div>
           </div>
           <div class="mb-3">
