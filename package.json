@@ -1,0 +1,14 @@
+{
+  "name": "aplicacionwebpg",
+  "version": "1.0.0",
+  "description": "aplicacion de ejercicios matematicos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BrandonTM",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.17.4"
+  }
+}
